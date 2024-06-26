@@ -1,0 +1,157 @@
+// td.col-action {
+// 	.btn-group {
+// 		visibility: hidden;
+// 	}
+// }
+// tr:hover {
+// 	td.col-action {
+// 		.btn-group {
+// 			visibility: visible;
+// 		}
+// 	}
+// }
+// 
+label.required {
+    &:after {
+        content: " (*)";
+        color: red;
+    }
+}
+
+.img-thumb-product {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.img-thumb-description {
+    display: block;
+    max-width: 50px;
+}
+
+.img-thumb-product-2x {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.img-thumb-description-2x {
+    display: block;
+    max-width: 100px;
+}
+
+.img-preview {
+    max-width: 240px;
+    max-height: 240px;
+}
+
+.m-l {
+    margin-left: 5px;
+}
+
+.col-no {
+    width: 50px;
+    text-align: center;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.modal-dialog-768 {
+    width: 768px;
+}
+
+.modal-dialog-1024 {
+    width: 1024px;
+}
+
+tr.row {
+    border-left: 5px solid transparent;
+}
+
+tr.row-success{
+    border-left: 5px solid #00a65a;
+}
+
+tr.row-primary{
+    border-left: 5px solid #3c8dbc;
+}
+
+tr.row-warning{
+    border-left: 5px solid #f39c12;
+}
+
+tr.row-default{
+    border-left: 5px solid #d2d6de;
+}
+
+tr.row-danger{
+    border-left: 5px solid #dd4b39;
+}
+
+tr.row-info{
+    border-left: 5px solid #00c0ef;
+}
+
+.w-m-100 {
+    max-width: 100px;
+}
+.help-text {
+    font-style: italic;
+}
+
+// Bootstrap 4.0 badge
+.badge-success {
+    color: #fff;
+    background-color: #28a745;
+}
+
+.badge-danger {
+    color: #fff;
+    background-color: #dc3545;
+}
+
+.badge-warning {
+    color: #212529;
+    background-color: #ffc107;
+}
+
+.text-v-mid {
+    vertical-align: middle;
+}
+
+.table-fixed-header tbody {
+    height: 300px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.table-fixed-header thead,
+.table-fixed-header tbody,
+.table-fixed-header tr,
+.table-fixed-header td,
+.table-fixed-header th {
+    display: block;
+}
+
+.table-fixed-header tbody td,
+.table-fixed-header tbody th,
+.table-fixed-header thead > tr > th {
+    float: left;
+    position: relative;
+
+    &::after {
+        content: '';
+        clear: both;
+        display: block;
+    }
+}
+
+@import "components/scrollbar";
+@import "components/button";
+@import "components/table";
+
+.pre-format {
+    border: 0;
+    background-color: transparent;
+    padding: 0px;
+}

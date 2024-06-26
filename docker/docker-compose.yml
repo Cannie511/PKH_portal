@@ -1,0 +1,22 @@
+version: '2.0'
+services:
+  web:
+    build: .
+    volumes:
+      - ./..:/opt/app
+    links:
+      - mysql
+    ports:
+      - 82:80
+  mysql:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=abc123456
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links:
+      - mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=abc123456
+    ports:
+      - 8081:80

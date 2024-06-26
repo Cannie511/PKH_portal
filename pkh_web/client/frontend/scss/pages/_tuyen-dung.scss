@@ -1,0 +1,21 @@
+@import "../_variable";
+#pageTuyendung {
+
+	h4 {
+		background: #fafafa;
+	    border-left: 2px solid $main-color;
+	    padding: 10px 0px 10px 10px;
+	}
+
+	.table-row {
+		padding: 5px 0px;
+
+		div:first-child {
+			font-weight: bold;
+		}
+
+		div {
+			//border-bottom: 1px solid #eee;
+		}
+	}
+}

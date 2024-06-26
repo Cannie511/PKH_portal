@@ -1,0 +1,79 @@
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use Auth;
+use Illuminate\Http\Request;
+use Input;
+use Validator;
+use Log;
+use Carbon\Carbon;
+
+use App\Services\{{StudlyName}}Service;
+use App\Services\DownloadService;
+
+/**
+ * {{StudlyName}}Controller
+ */
+class {{StudlyName}}Controller extends AdminBaseController
+{    
+    private ${{name}}Service;
+
+    public function __construct({{StudlyName}}Service ${{name}}Service, DownloadService $downloadService){
+        $this->{{name}}Service = ${{name}}Service;
+        $this->downloadService = $downloadService;
+        //$this->middleware('permission:screen.{{name}}');
+    }
+
+    /**
+     * Load init data
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function postInitData(Request $request) {
+        // $param = $request->all();
+        // $listEmployee = $this->employeeService->getDropdownEmployee();
+        // $result = [
+        //     'listEmployee' => $listEmployee
+        // ];
+        // return response()->success($result);
+        return response()->success([]);
+    }
+
+    /**
+     * Search
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function postSearch(Request $request) {
+        $param = $request->all();
+        $data = $this->{{name}}Service->selectList($param);
+        $result = [
+            'data' => $data
+        ];
+        return response()->success($result);
+    }
+
+    // /**
+    //  * Download Excel
+    //  *
+    //  * @param Request $request
+    //  * @return void
+    //  */
+    // public function postDownload(Request $request) {
+    //     $this->requirePermission('screen.{{name}}.download');
+    //     $param = $request->all();
+	//     $param['export'] = true;
+    //     $data = $this->{{name}}Service->selectList($param);
+    //     $paramDownload = [
+    //         "data" => $data,
+    //         "file_name" => "{{name}}",
+    //         "view" => "{{name}}-list"
+    //     ];
+    //     $result = $this->downloadService->downloadExcelFile($paramDownload);
+    //     return response()->success($result);
+    // }
+
+}

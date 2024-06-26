@@ -1,0 +1,51 @@
+@import "../_variable";
+
+header{
+	border-top: 3px solid $main-color;
+
+	.logo {
+		height: 100px;
+	}
+
+	.logo1 {
+		display: inline-block;
+		height: 100px;
+	}
+
+	.logo2 {
+		display: inline-block;
+		height: 50px;
+	}
+
+	.list {
+		position: relative;
+	    background: #fff;
+	    padding: 7px 10px;
+	    
+	    border-top: none;
+	    
+	    font-size: 12px;
+	    line-height: 20px;
+	    color: #777;
+	    text-align: center;
+
+	    hr {
+	    	margin: 2px 0px 6px 0px;
+	    }
+	}
+}
+
+@media (min-width:768px) {
+	header {
+		.list {
+			width: 250px;
+			border: 1px solid #ddd;
+		    box-shadow: 0px 1px 2px #ddd;
+		    border-bottom-left-radius: 10px;
+		    border-bottom-right-radius: 10px;
+		    text-align: center;
+		    float: right;
+		    text-align: left;
+		}
+	}
+}

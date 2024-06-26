@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  web:
+    build: ./..
+    volumes:
+      - ./../..:/opt/app
+    external_links:
+      - mysql
+      - phpmyadmin
+    ports:
+      - 80:80

@@ -1,0 +1,169 @@
+@import "../_variable";
+
+#navbar {
+	background: $main-color; 
+    border-top: 1px solid #29a1c4;
+    border-bottom: 1px solid #29a1c4;
+    border-radius:0px;
+    background-image: none;
+	background-repeat: no-repeat;
+	filter: none !important;
+	border-left:0px !important;
+	border-right:0px !important;
+	margin-bottom: 0px;
+}
+
+.navbar-collapse{
+	padding-left:0px;
+}
+
+.navbar button{
+	font-size:11px;
+	padding:8px 10px;
+	color:#fff !important;
+	text-shadow:none !important;
+}
+
+.navbar button:hover{
+	color: #fff !important;
+} 
+
+.navbar-toggle .icon-bar {
+	background:#fff;
+}
+
+.navbar .caret{
+	border-top-color:#fff !important;
+	border-bottom-color:#fff !important;
+}
+
+.navbar .brand{
+	color:#fff !important;
+	text-shadow:none !important;
+}
+
+.navbar .nav > li > a{
+	text-shadow:none !important;
+	padding:15px 15px 15px;
+	color:#fff !important;
+	-webkit-transition:background 1s ease;
+	-moz-transition:background 1s ease;
+	-o-transition:background 1s ease;
+	transition:background 1s ease;
+	font-size:13px !important;
+}
+
+.navbar .nav > li > a:hover{
+	color:#fff !important;
+	-webkit-transition:background 1s ease;
+	-moz-transition:background 1s ease;
+	-o-transition:background 1s ease;
+	transition:background 1s ease;
+}
+
+.navbar .nav .active > a,
+.navbar .nav .active > a:hover,
+.navbar .nav .active > a:focus {
+	color: #ffffff;
+	box-shadow:none;
+}
+
+
+.nav-collapse a{
+	font-weight:normal !important;
+	text-shadow:none !important;
+}
+
+.dropdown-menu{
+	border-radius:0px !important;
+	box-shadow:none !important;
+	border-bottom:none !important;
+	padding:0px 0px;
+	margin:0px;
+	text-shadow:none !important;
+	z-index: 2000;
+}
+
+.dropdown-menu a{
+	padding:8px 10px !important;
+	color:#fff !important;
+	-webkit-transition:background 1s ease;
+	-moz-transition:background 1s ease;
+	-o-transition:background 1s ease;
+	transition:background 1s ease;
+	font-size:13px !important;
+	text-shadow:none !important;
+}
+
+.dropdown-menu a:hover,.dropdown-menu a:focus{
+	filter:none !important;
+	-webkit-transition:background 1s ease;
+	-moz-transition:background 1s ease;
+	-o-transition:background 1s ease;
+	transition:background 1s ease;
+}
+
+.dropdown-menu::after, .dropdown-menu::before{
+	border:none !important;
+}
+
+
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
+   border-color: #3ba4c2;
+}
+
+.navbar button{
+	background:#29a1c4 !important;  
+}
+
+.navbar button:hover{
+	background:#29a1c4 !important;
+}
+
+.navbar .nav{
+border-right:1px solid #3ba4c2;
+}
+
+.navbar .nav > li > a{
+background: #30add1; 
+border-left:1px solid #3ba4c2;
+}
+
+.navbar .nav > li > a:hover{
+background:#29a1c4 !important;
+}
+
+.navbar .nav .active > a,
+.navbar .nav .active > a:hover,
+.navbar .nav .active > a:focus {
+background: #29a1c4 !important;
+}
+
+.dropdown-toggle{
+background: #30add1 !important;
+}
+
+
+.dropdown-menu{
+background:#30add1 !important;
+border:1px solid #29a1c4;
+}
+
+.dropdown-menu a{
+background:#30add1 !important;
+border-bottom:1px solid #29a1c4;
+}
+
+.dropdown-menu a:hover,.dropdown-menu a:focus{
+background:#29a1c4 !important;
+}
+
+@media (max-width:768px) {
+	.navbar .nav > li > a{
+		padding-left: 20px;
+	}
+
+	.dropdown-menu li {
+		padding-left: 40px;
+	}
+}

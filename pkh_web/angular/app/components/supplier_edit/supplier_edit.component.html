@@ -1,0 +1,45 @@
+<section class="content-header">
+    <h1>Suppliers <small>Supplier Management</small></h1>
+    <ol class="breadcrumb">
+        <li><a ui-sref="app.landing"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a ui-sref="app.supplierlist">Supplier Lists</a></li>
+        <li class="active">Edit Supplier</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-sm-12 col-md-7">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Edit Supplier</h3>
+                </div>
+                <form class="form-horizontal" name="form" ng-submit="vm.save(form.$valid)" novalidate>
+                    <div class="box-body">
+                        <div ng-if="vm.alerts" class="alert alert-{{alert.type}}" ng-repeat="alert in vm.alerts">
+                            <h4>{{alert.title}}</h4>
+                            <p>{{alert.msg}}</p>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error': (form.name.$invalid && ( vm.formSubmitted || form.name.$touched)) || vm.errors['data.entity.name'] != null }">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" ng-model="vm.model.data.entity.name" name="name" placeholder="Name" required>
+                                <p ng-if="vm.errors['data.entity.name']" class="help-block">{{vm.errors['data.entity.name'][0]}}</p>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error': form.short_name.$invalid && ( vm.formSubmitted || form.short_name.$touched)  || vm.errors['data.entity.short_name'] != null }">
+                            <label for="inputPassword3" class="col-sm-2 control-label">Short name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" ng-model="vm.model.data.entity.short_name" name="short_name" placeholder="Short name" required>
+                                <p ng-if="vm.errors['data.entity.short_name']" class="help-block">{{vm.errors['data.entity.short_name'][0]}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-footer">
+                        <a ui-sref="app.supplierlist" class="btn btn-default"><i class="fa fa-angle-double-left"></i> {{'COM_BTN_BACK' | translate}}</a>
+                        <button type="submit" class="btn btn-primary pull-right">{{'COM_BTN_UPDATE' | translate}}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

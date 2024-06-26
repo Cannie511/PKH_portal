@@ -1,0 +1,34 @@
+.bg-weekend {
+    background: #f2dede !important;
+}
+
+.bg-holiday {
+    background: #ff9898 !important;
+}
+
+.hrm0141 {
+    .tr-head {
+        background-color: #ecf0f5;
+        // background-color: #00c0ef;
+        // color: white;
+    }
+
+    .table-wrap {
+      position: relative;
+    }
+   
+    .table-scroll {
+
+      thead tr:nth-child(2) th {
+        top: 35px;
+      }
+      
+      .freeze-col-2 {
+        position: -webkit-sticky;
+        position: sticky;
+        left: 34px;
+        z-index: 2;
+        background:  #ecf0f5;;
+      }
+    }
+}

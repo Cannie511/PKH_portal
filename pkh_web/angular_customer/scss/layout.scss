@@ -1,0 +1,21 @@
+// td.col-action {
+// 	.btn-group {
+// 		visibility: hidden;
+// 	}
+// }
+
+// tr:hover {
+// 	td.col-action {
+// 		.btn-group {
+// 			visibility: visible;
+// 		}
+// 	}
+// }
+// 
+
+label.required {
+	&:after {
+		content: " (*)";
+		color: red;
+	}
+}

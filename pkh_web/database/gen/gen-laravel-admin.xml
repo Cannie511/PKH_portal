@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="doma-gen-example" default="gen" basedir=".">
+
+	<!-- Database Setting -->
+	<property name="dialectName" value="mysql"/>
+	<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+	<property name="url" value="jdbc:mysql://127.0.0.1:3306/phankhang"/>
+	<property name="user" value="root"/>
+	<property name="password" value="abc123456"/>
+
+	<property name="basePackage" value="com.ichivina.dms.web" />
+	<property name="baseGenDir" value="temp/tpl-laravel-admin" />
+
+	<property name="dirModel" value="${baseGenDir}/App/Models"/>
+
+	<!-- For Domain -->
+	<property name="javaDestDir" value="gen/domain/src/main/java" />
+	<property name="sqlDestDir" value="gen/domain/src/main/resources" />
+	<!-- For WEB -->
+	<property name="javaWebDestDir" value="gen/web/src/main/java" />
+	<property name="jsDestDir" value="gen/web/src/js" />
+	<property name="jspDestDir" value="gen/web/src/main/webapp/WEB-INF/views" />
+
+	<property name="entityPackageName" value="App.Models" />
+	<property name="templatePrimaryDir" value="tpl-laravel-admin" />
+
+	<path id="classpath">
+		<fileset dir="lib">
+			<include name="/**.*" />
+		</fileset>
+		<fileset dir="lib" includes="**/*.jar" />
+	</path>
+
+	<taskdef name="gen" classname="com.ichivina.tool.gen.task.Gen" classpathref="classpath" loaderref="loader" />
+
+	<typedef name="packageConfig" classname="com.ichivina.tool.gen.task.config.PackageConfig" loaderref="loader" />
+	<typedef name="fileConfig" classname="com.ichivina.tool.gen.task.config.FileConfig" loaderref="loader" />
+	<typedef name="param" classname="com.ichivina.tool.gen.task.config.KeyValueConfig" loaderref="loader" />
+
+	<target name="gen">
+
+		<delete includeEmptyDirs="true" quiet="true">
+			<fileset dir="gen" />
+		</delete>
+
+		<!-- Gen Model -->
+		<gen
+			dialectName="${dialectName}"
+			driverClassName="${driverClassName}"
+			url="${url}"
+			user="${user}"
+			password="${password}"
+			templatePrimaryDir="${templatePrimaryDir}"
+			tableTypes="TABLE">
+			<entityConfig
+				destdir="${dirModel}"
+				packageName=""
+				useListener="false"
+				overwrite="false"
+			/>
+		</gen>
+		<!--<move todir="${dirModel}" includeemptydirs="false">
+		    <fileset dir="${dirModel}"/>
+		    <mapper type="glob" from="**/*.java" to="*.php"/>
+		</move>-->
+		<move todir="${dirModel}">
+	      <fileset dir="${dirModel}">
+	        <include name="*.java"/>
+	      </fileset>
+	      <globmapper from="*.java" to="*.php"/>
+	    </move>
+
+		<!--<antcall target="gen-crud">
+			<param name="tableName" value="user_mst" />
+			<param name="entityClass" value="${entityPackageName}.UserMst" />
+			<param name="basePackage" value="${basePackage}" />
+			<param name="templatePrefix" value="template1." />
+			<param name="moduleName" value="USR" />
+			<param name="subModuleCode" value="01" />
+			<param name="baseUrl" value="/USR0100" />
+		</antcall>-->
+
+		<!--<antcall target="gen-crud">
+			<param name="tableName" value="mst_store" />
+			<param name="entityClass" value="${entityPackageName}.MstStore" />
+			<param name="basePackage" value="${basePackage}" />
+			<param name="moduleName" value="USR" />
+			<param name="subModuleCode" value="01" />
+			<param name="baseUrl" value="/USR0100" />
+		</antcall>-->
+
+		<!--<antcall target="copy">
+		</antcall>-->
+
+	</target>
+
+	<target name="gen-crud">
+		<lower string="${moduleName}" to="moduleNameLower" />
+		<lower string="${parentModuleName}" to="parentModuleNameLower" />
+
+		<!-- -->
+
+		<gen dialectName="${dialectName}" driverClassName="${driverClassName}" url="${url}" user="${user}" password="${password}" templatePrimaryDir="${templatePrimaryDir}" tableTypes="TABLE">
+
+			<packageConfig javaDir="${javaDestDir}" jspDir="${jspDestDir}" jsDir="${jsDestDir}" sqlDir="${sqlDestDir}" tableName="${tableName}" entityClass="${entityClass}" basePackage="${basePackage}" moduleName="${moduleName}">
+
+				<!-- View -->
+				<fileConfig fileType="jsp" templateName="list.view.ftl" name="${moduleName}.jsp" outputSubFolder="${parentModuleNameLower}">
+					<param key="baseUrl" value="${baseUrl}" />
+					<param key="parentModuleName" value="${parentModuleName}" />
+					<param key="subModuleCode" value="${subModuleCode}" />
+				</fileConfig>
+
+			</packageConfig>
+
+		</gen>
+	</target>
+
+	<!-- Utils function -->
+	<scriptdef language="javascript" name="lower">
+	    <attribute name="string" />
+	    <attribute name="to" />
+
+	    project.setProperty( attributes.get( "to" ),
+	                         attributes.get( "string" ).toLowerCase() );
+	</scriptdef>
+
+</project>

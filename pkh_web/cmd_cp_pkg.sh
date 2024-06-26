@@ -1,0 +1,1 @@
+rsync -avz ./packages/ ./vendor

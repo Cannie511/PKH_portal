@@ -1,0 +1,131 @@
+<section class="content-header">
+    <h1>Tạo đơn đặt hàng<small></small></h1>
+    <ol class="breadcrumb">
+        <li><a ui-sref="app.landing"><i class="fa fa-dashboard"></i><span translate="BREADCRUMBS_HOME"></span></a></li>
+        <li class="active">Tạo đơn đặt hàng</li>
+    </ol>
+</section>
+<section class="content cus0110">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Thông tin đơn đặt hàng</h3>
+                    <div class="box-tools pull-right">
+                        <div uib-dropdown class="btn-group">
+                            <!-- <a ui-sref="app.crm0210" class="btn btn-success btn-xs"><i class="fa fa-plus"></i>&nbsp;{{'COM_BTN_NEW' | translate}}</a> -->
+                            <!-- <button type="button" uib-dropdown-toggle class="btn btn-success btn-xs" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="caret"></span>
+                            </button>
+                            <ul uib-dropdown-menu>
+                                <li><a ui-sref="a">a</a></li>
+                                <li><a ui-sref="b">b</a></li>
+                                <li><a ui-sref="c">c</a></li>
+                                <li><a ui-sref="d">d</a></li>
+                            </ul> -->
+                        </div>
+                        <!-- <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button> -->
+                        <!-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button> -->
+                    </div>
+                </div>
+                <!-- <div class="box-body form">
+                    <form role="form" ng-submit="vm.search()">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6 m-b-xs">
+                                <div class="form-group">
+                                    <label>Mã đơn hàng</label>
+                                    <input type="text" ng-model="vm.m.filter.store_order_code" class="form-control"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary btn-sm btn-width-default">
+                                    <i class="fa fa-search fa-fw"></i>
+                                    <span translate="COM_BTN_SEARCH"></span>
+                                </button>
+                                <button type="button" class="btn btn-default btn-sm btn-width-default" ng-click="vm.resetFilter()">
+                                    <i class="fa fa-eraser fa-fw"></i>
+                                    <span translate="COM_BTN_RESET"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div> -->
+                <div class="box-body">
+                    <div class="table-responsive" ng-if="vm.m.mode == 'EDIT'">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <td>Hình ảnh</td>
+                                    <td>Mã SP</td>
+                                    <td>Tên SP</td>
+                                    <td>Đóng thùng (cái)</td>
+                                    <td>Đơn giá</td>
+                                    <td>Số lượng (thùng)</td>
+                                </tr>
+                            </thead>
+                            <tbody ng-repeat="proCat in vm.m.data">
+                                <tr class="header">
+                                    <td colspan="6">{{proCat.code}} {{proCat.name}}</td>
+                                </tr>
+                                <tr ng-repeat="pro in proCat.items" ng-if="pro.selling_price > 0">
+                                    <td>
+                                        <img ng-if="pro.noImage == 0" class="img-thumb" class="img-responsive" ng-src="/img/product/{{pro.product_code}}.png" />
+                                        <img ng-if="pro.noImage == 1" class="img-thumb" class="img-responsive" ng-src="/img/product/WT0000.png" />
+                                    </td>
+                                    <td>{{pro.product_code}}</td>
+                                    <td>{{pro.name}}</td>
+                                    <td>{{pro.standard_packing}}</td>
+                                    <td>{{pro.selling_price | currency: '': 0}}</td>
+                                    <td>
+                                        <input type="text" ng-model="pro.qty" class="form-control" style="width: 100px"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-responsive" ng-if="vm.m.mode == 'CONFIRM'">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <td>Hình ảnh</td>
+                                    <td>Mã SP</td>
+                                    <td>Tên SP</td>
+                                    <td>Đóng thùng (cái)</td>
+                                    <td>Đơn giá</td>
+                                    <td>Số lượng (thùng)</td>
+                                    <td>Thành tiền</td>
+                                </tr>
+                            </thead>
+                            <tbody ng-repeat="proCat in vm.m.data">
+                                <!-- <tr class="header">
+                                    <td colspan="7">{{proCat.code}} {{proCat.name}}</td>
+                                </tr> -->
+                                <tr ng-repeat="pro in proCat.items" ng-if="pro.qty > 0">
+                                    <td>
+                                        <img ng-if="pro.noImage == 0" class="img-thumb" class="img-responsive" ng-src="/img/product/{{pro.product_code}}.png" />
+                                        <img ng-if="pro.noImage == 1" class="img-thumb" class="img-responsive" ng-src="/img/product/WT0000.png" />
+                                    </td>
+                                    <td>{{pro.product_code}}</td>
+                                    <td>{{pro.name}}</td>
+                                    <td>{{pro.standard_packing}}</td>
+                                    <td>{{pro.selling_price | currency: '': 0}}</td>
+                                    <td>{{pro.qty}}</td>
+                                    <td>{{pro.standard_packing * pro.qty * pro.selling_price  | currency: '': 0 }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="box-footer text-right">
+                    <!-- <a ui-sref="app.crm0300" class="btn btn-default"><i class="fa fa-angle-double-left"></i> Back</a> -->
+                    <button ng-if="vm.m.mode == 'EDIT'" type="button" class="btn btn-primary" ng-click="vm.confirm()">Xác nhận</button>
+                    <button ng-if="vm.m.mode == 'CONFIRM'" type="button" class="btn btn-default" ng-click="vm.back()">Trở về</button>&nbsp;
+                    <button ng-if="vm.m.mode == 'CONFIRM'" type="button" class="btn btn-primary" ng-click="vm.order()">Đặt hàng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

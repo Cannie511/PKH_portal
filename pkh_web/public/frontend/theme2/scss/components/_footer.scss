@@ -1,0 +1,229 @@
+.list-partner {
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+
+    img {
+        max-height: 100px;
+        margin: 10px 20px 20px 20px;
+    }
+}
+
+#pageFooter {
+    margin-top: 24px;
+
+    color: #fff;
+
+    a {
+        color: #fff;
+
+        &:hover {
+            text-decoration: none;
+            font-weight: bold;
+        }
+    }
+
+    .footer-header-text {
+        color: #fff;
+        width: 100%;
+        display: block;
+        border-bottom: 2px solid #fff;
+        padding-bottom: 3px;
+        font-weight: bold;
+    }
+
+    .content-container {
+        background-color: $base-color;
+        padding-top: 25px;
+    }
+
+    .content-box {
+        // padding: 5px 0px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+
+        font-size: 15px;
+    }
+
+    .list-product-type {
+        li {
+            padding: 5px 0px;
+        }
+
+        // a {
+        //     color: #fff;
+
+        //     &:hover {
+        //         text-decoration: none;
+        //         font-weight: bold;
+        //     }
+        // }
+    }
+
+    .list-link-type {
+        li {
+            padding: 3px 0px;
+        }
+
+        // a {
+        //     color: #fff;
+
+        //     &:hover {
+        //         text-decoration: none;
+        //         font-weight: bold;
+        //     }
+        // }
+    }
+
+
+    .qr-header {
+        visibility: hidden;
+    }
+
+    .sitemap-container {
+        padding-left: 148px;
+        width: 100%;
+    }
+
+    .social-container {
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .copyright-container {
+        margin-top: 10px;
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    // .copyright {
+    //     font-weight: bold;
+    // }
+
+    .logo-footer-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo-footer {
+        align-self: flex-end;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}
+
+#footer-phone-box {
+    width: 100%;
+    color: #fff;
+    // background-color: #000;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    a {
+        color: #fff;
+        font-size: 24px;
+
+        width: 80%;
+        max-width: 640px;
+        background-color: #000;
+        display: block;
+        position: relative;
+        margin-bottom: -24px;
+        // margin-left: 10%;
+        line-height: 48px;
+        // max-width: 640px;
+    }
+
+    // .logo-footer {
+
+    // }
+
+    
+}
+
+#qrcode {
+    width:142px;
+    height:142px;
+    background-color: #fff;
+    padding: 5px;
+    display: inline-block;
+    position: absolute;
+    // margin-top: 42px;
+    margin-top: 5px;
+}
+
+// @media only screen and (max-width: 600px) {
+
+// }
+
+// #phone-box-container {
+//     // position: relative;
+
+//     // position: absolute;
+//     // margin: -20px auto 20px auto;
+//     // margin-top: -20px;
+//     font-size: x-large;
+// }
+
+// #footer-phone-box {
+//     width: 80%;
+    
+//     background-color: #000;
+//     color: #fff;
+
+//     margin: 0 auto;
+//     // margin-top: -20px;
+//     text-align: center;
+
+//     a {
+//         color: #fff;
+
+//         &:hover {
+//             color: $link-hover-color;
+//             text-decoration: none;
+//         }
+//     }
+// }
+
+// .footer-box-2 {
+//     background-color: $base-color;
+//     position: absolute;
+//     width: 100%;
+//     margin-top: -18px;
+//     z-index: -1;
+//     padding-top: 30px;
+
+//     .box-site-map {
+//         width: 100%;
+//         padding-left: 146px;
+//     }
+// }
+
+// .copyright {
+//     text-align: center;
+//     font-size: large;
+//     color: #fff;
+//     margin-top: 5px;
+
+//     a {
+//         color: #fff;
+
+//         &:hover {
+//             text-decoration: none;
+//         }
+//     }
+// }
+
+// #footer-qr-box {
+//     width: 138px;
+//     height: 138px;
+//     background-color: #fff;
+//     position: absolute;
+//     padding: 5px;
+//     margin-top: 40px;
+// }

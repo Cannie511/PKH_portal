@@ -1,0 +1,78 @@
+var elixir  = require('laravel-elixir')
+
+require('laravel-elixir-config')
+var config = Elixir.config;
+
+require('./tasks/concatScripts.task.js')
+require('laravel-elixir-karma')
+require('./tasks/angular.task.js')
+require('./tasks/bower.task.js')
+require('./tasks/ngHtml2Js.task.js')
+
+var webpackConfig = require('./webpack.config.js')
+var webpackConfigCustomer = require('./webpack_customer.config.js')
+
+if (!elixir.config.production) {
+  //require('./tasks/phpcs.task.js')
+}
+
+/*
+ |--------------------------------------------------------------------------
+ | Elixir Asset Management
+ |--------------------------------------------------------------------------
+ |
+ | Elixir provides a clean, fluent API for defining some basic Gulp tasks
+ | for your Laravel application. By default, we are compiling the Sass
+ | file for our application, as well as publishing vendor resources.
+ |
+ */
+
+elixir(function (mix) {
+  var jsOutputFolder = config.js.outputFolder
+  var cssOutputFolder = config.css.outputFolder
+  var fontsOutputFolder = config.fonts.outputFolder
+  var buildPath = config.buildPath
+
+  var assets = [
+      'public/js/final.js',
+      'public/css/final.css'
+    ],
+    scripts = [
+      './public/js/vendor.js',
+      './public/js/partials.js',
+      './public/js/app.js',
+      './public/dist/js/app.js'
+    ],
+    styles = [
+      './public/css/vendor.css',
+      './public/css/app.css'
+    ],
+    karmaJsDir = [
+      jsOutputFolder + '/vendor.js',
+      'node_modules/angular-mocks/angular-mocks.js',
+      'node_modules/ng-describe/dist/ng-describe.js',
+      jsOutputFolder + '/partials.js',
+      jsOutputFolder + '/app.js',
+      'tests/angular/**/*.spec.js'
+  ]
+
+   mix
+    .bower()
+    .angular('./angular/')
+    .ngHtml2Js('./angular/**/*.html')
+    .concatScripts(scripts, 'final.js')
+    .sass('./angular/**/*.scss', 'public/css')
+    .styles(styles, './public/css/final.css')
+    // theme 2
+    .sass('./public/frontend/theme2/scss/*.scss', 'public/frontend/theme2/css/theme.css')    
+    // .version(assets)
+    // .browserSync({
+    //   proxy: 'phankhangco.local'
+    // })
+    // .karma({
+    //   jsDir: karmaJsDir
+    // })
+
+  mix
+    .copy(fontsOutputFolder, buildPath + '/fonts')
+})

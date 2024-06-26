@@ -1,0 +1,98 @@
+body {
+    margin: 0px;
+    font-family: $main-font-family;
+}
+
+.btn-detail {
+    min-width: 200px;
+    border-radius: 0;
+    border-color: #000;
+    color: #000;
+
+    &:hover {
+        background-color: $base-color;
+        color: #fff;
+        border-color: $base-color;
+    }
+}
+
+.btn-detail-2x {
+    min-width: 380px;
+    border-width: 2px;
+}
+
+
+
+a {
+    color: $base-color;
+
+    &:hover {
+        color: $base-color;
+    }
+}
+
+.base-text-color {
+    color: $base-color;
+}
+
+.sub-header {
+    text-align: center;
+    position: relative;
+    
+    .sub-header-text {
+        width: 400px;
+        display: inline-block;
+        font-size: 28px;
+        line-height: 80px;
+        font-weight: bold;
+        border-top: 1px solid #333;
+        border-bottom: 1px solid #333;
+    }
+
+    .sub-title-logo {
+        display: block;
+        position: absolute;
+        left: 50%;
+        bottom: -10px;
+        margin-left: -20px;
+    }
+}
+
+#breadcrumb {
+    background-color: #fff;
+    padding: 14px 0px;
+
+    li {
+        margin-right: 5px;
+    }
+}
+
+.breadcrumb {
+    background-color: white;
+}
+
+@media only screen and (max-width: 400px) {
+    .btn-detail-2x {
+        min-width: 250px;
+        border-width: 2px;
+    }
+
+    .sub-header {
+        .sub-header-text {
+            width: 90%;
+        }
+    }
+}
+
+#zalo-box{
+    bottom: 80px !important;
+    right: 20px !important;
+}
+
+.text-upercase {
+    text-transform: uppercase;
+}
+
+.mt5 {
+    margin-top: 5px;
+}

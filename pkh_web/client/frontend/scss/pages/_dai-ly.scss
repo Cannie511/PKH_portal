@@ -1,0 +1,19 @@
+@import "../_variable";
+
+#pageDaiLy {
+
+	.area {
+		color: #666;
+		margin: 0px 0px 20px 0px;
+
+		h4 {
+			//margin: 0px;
+			margin-bottom: 5px;
+		    //padding: 0px;
+		    //line-height: 30px;
+		    color: $main-color;
+		    //border-bottom: 2px solid $main-color;
+		}
+	}
+	
+}

@@ -1,0 +1,105 @@
+@import "../_variable";
+
+
+footer {
+    /*border-top: 3px solid #30add1;
+    margin-top: 10px;
+    font-size: 13px;
+    padding-top: 10px;
+    color: #ddd;
+    background-color: #464646;*/
+
+    font-size: 13px;
+    padding-top: 10px;
+    color: #ddd;
+    background-color: #f6f6f6;
+    color: #666;
+
+    // .social{
+    //     margin-bottom:10px;
+    // }
+
+    // .social a, .social a:visited, .social a:hover{
+    //     color:#fff;
+    //     text-decoration:none;
+    // }
+
+    // .social i{
+    //     display:inline-block;
+    //     height:30px;
+    //     width:30px;
+    //     font-size:15px;
+    //     text-align:center;
+    //     line-height:30px;
+    //     -webkit-transition:background 1s ease;
+    //     -moz-transition:background 1s ease;
+    //     -o-transition:background 1s ease;
+    //     transition:background 1s ease;
+    //     border-radius:30px;
+    // }
+
+    // .social i:hover{
+    //     -webkit-transition:background 1s ease;
+    //     -moz-transition:background 1s ease;
+    //     -o-transition:background 1s ease;
+    //     transition:background 1s ease;
+    // }
+
+    ul.list-news {
+        
+        li {
+            a {
+                
+            }
+        }
+
+    }
+    
+
+}
+
+.social-links{
+    margin-top: 20px;
+    padding:20px 0px 10px 0px;
+    color: #fff;
+    line-height: 30px;
+    background: #1ba1e2;
+}
+
+.social-links a, .social-links a:visited, .social-links a:hover{
+    font-size: 15px;
+    margin: 0px 15px;
+    color: #fff;
+    font-weight: 400;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.social-links i{
+    position: relative;
+    display: inline-block;
+    top: -2px;
+    width: 25px;
+    height:25px;
+    line-height:25px;
+    text-align: center;
+    margin-right:5px;
+    background: #178ec7;
+}
+
+.social-links span{
+    font-size: 20px !important;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+// .facebook { background: #1e78ae !important; }
+// .twitter { background: #1ba1e2 !important; }
+// .google-plus { background: #f22d0c !important; }
+// .linkedin { background: #2d93cf !important; }
+// .pinterest { background:    #dd1617 !important; }
+
+// .facebook:hover, .twitter:hover,
+// .google-plus:hover, .linkedin:hover,
+// .pinterest:hover { background: #333 !important; }

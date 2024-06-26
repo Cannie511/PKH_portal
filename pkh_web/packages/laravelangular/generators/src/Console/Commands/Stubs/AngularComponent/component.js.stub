@@ -1,0 +1,120 @@
+class {{StudlyName}}Controller{
+    constructor($scope, $state, $compile, $log, AclService, API, UtilsService, $stateParams, ClientService, RouteService) {
+        'ngInject'
+
+        this.$scope = $scope;
+        this.$state = $state;
+        this.$compile = $compile;
+        this.$log = $log;
+        this.AclService = AclService;
+        this.can = AclService.can;
+        this.API = API;
+        this.UtilsService = UtilsService;
+        this.ClientService = ClientService;
+        this.$stateParams = $stateParams;
+        this.RouteService = RouteService;
+
+        this.m = {
+            init: {},
+            form: {
+                changed_date: moment(new Date())
+            },
+            dateOptions: {
+                format: 'YYYY-MM-DD'
+            }
+        }
+        // THIS IS DEFAULT TEMPLATE
+    }
+
+    $onInit(){
+        this.load();
+    }
+
+    load(id) {
+        let param = { id: id };
+        {{StudlyName}}
+        {{name}}
+        this.API.service('load', this.API.all('{{name}}'))
+            .post(param)
+            .then((response) => {
+                this.m.form = response.data.data;
+            });
+
+    }
+    validate(model, form) {
+        //if( model.start_date == null || model.start_date == undefined ) {
+        //    this.ClientService.warning("Vui lòng nhập Ngày bắt đầu");
+        //    return false;
+        //}
+
+        return true;
+    }
+
+    save(isValid, form) {
+        if(this.validate(this.m.form, form)) {
+            let param = angular.copy(this.m.form);
+            //param.start_date = this.UtilsService.momentToStringDate(param.start_date);
+            //param.end_date = this.UtilsService.momentToStringDate(param.end_date);
+            //param.id = parseInt(this.m.contract_id);
+            //param.employee_id = parseInt(this.m.employee_id);
+
+            let service = this.API.service('save', this.API.all('{{name}}'));
+            service.post(param)
+                .then((response) => {
+                    let result = response.data.data;
+                    if( result.rtnCd == true ) {
+                        this.ClientService.success(result.msg);
+                        //this.RouteService.goState('app.{{name}}', {id: this.m.id});
+                    } else {
+                        this.ClientService.error(result.msg);
+                    }
+                }, (response) => {
+                    this.m.errors = response.data.errors;
+                });
+        }
+    }
+
+    // delete() {
+    //     if( this.m.contract_id > 0) {
+    //         swal({
+    //             title: 'Are you sure?',
+    //             text: 'Do you want to delete this contract',
+    //             type: 'warning',
+    //             showCancelButton: true,
+    //             confirmButtonColor: '#DD6B55',
+    //             confirmButtonText: 'Yes, delete it!',
+    //             closeOnConfirm: false,
+    //             showLoaderOnConfirm: true,
+    //             html: false
+    //         }, () => {
+    //             let API = this.API
+    //             let searchService = API.service('delete', API.all('hrm0716'));
+    //             let param = {
+    //                     id: this.m.contract_id
+    //                 }
+
+    //             searchService.post(param)
+    //                 .then((response) => {
+    //                     swal({
+    //                         title: 'Reset!',
+    //                         text: 'Contract has been reset.',
+    //                         type: 'success',
+    //                         confirmButtonText: 'OK',
+    //                         closeOnConfirm: true
+    //                     }, () => {
+    //                         //$state.reload()
+    //                         this.RouteService.goState('app.hrm0715', {id: this.m.employee_id});
+    //                     })
+    //                 });
+    //         })   
+    //     }
+    // }
+}
+
+export const {{StudlyName}}Component = {
+    //templateUrl: './views/app/components/{{name}}/{{name}}.component.html',
+    templateUrl: '/views/admin.{{name}}',
+    controller: {{StudlyName}}Controller,
+    controllerAs: 'vm',
+    bindings: {}
+}

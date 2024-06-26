@@ -1,0 +1,68 @@
+.list-reset {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.list-2col {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    li {
+        width: 49%;
+        display: inline-block;
+    }
+}
+
+.list-1col {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    li {
+        width: 100%;
+        display: inline-block;
+    }
+}
+
+.mt-5 {
+    margin-top: 5px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.pt-5 {
+    padding-top:5px;
+}
+
+.pb-5 {
+    padding-bottom:5px;
+}
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+.margin-auto {
+    margin: 0 auto;
+}

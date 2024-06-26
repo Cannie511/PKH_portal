@@ -1,0 +1,50 @@
+.dataTables_filter {
+    float: right
+}
+
+.dataTables_filter input {
+    margin: 0px 5px 0px 5px;
+}
+
+.dataTables_paginate {
+    float: right
+}
+
+.dataTables_paginate .pagination {
+    margin: 0px
+}
+
+#main-content {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+
+.product-list {
+    .img-thumb {
+        max-width: 100px;
+        max-height: 100px;
+    }
+}
+
+.form-group .chosen-container {
+    width: 100% !important;
+    margin-bottom: 1rem;
+}
+
+.pagination {
+    margin: 0px;
+}
+
+.treeview-menu .divider {
+    border-bottom: 1px solid lighten(#2c3b41, 10%); // #33434a 
+    margin-left: 15px !important;
+}
+
+.thumb-img-list-item {
+    max-height: 80px;
+    max-width: 80px;
+}
+
+.no-border-radius {
+    border-radius: 0px !important;
+}

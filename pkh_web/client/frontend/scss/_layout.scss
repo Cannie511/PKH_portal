@@ -1,0 +1,34 @@
+@import "_variable";
+
+body {
+	padding: 0px;
+	margin: 0px;
+}
+
+#main {
+	min-height: 500px;
+}
+
+h4.title {
+	background: #fafafa;
+    border-left: 2px solid $main-color;
+    padding: 10px 0px 10px 10px;
+}
+
+.img-news {
+	max-width: 400px;
+	max-height: 400px;
+}
+
+.img-news-center {
+	margin: 5px auto;
+}
+
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+	display: none !important;
+}

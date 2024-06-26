@@ -1,0 +1,51 @@
+<?php
+
+namespace App\Console\Commands;
+
+use Illuminate\Console\Command;
+use Carbon\Carbon;
+use Log;
+
+use App\Services\{{StudlyName}}Service;
+
+class {{StudlyName}}Command extends BaseCommand
+{
+    /**
+     * Description
+     *
+     * @var string
+     */
+    protected $signature = '{{UpperCaseName}} {--store_ids=} {--limit=}';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Get location of store';
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return mixed
+     */
+    public function handle({{StudlyName}}Service ${{name}}Service)
+    {
+        //$storeIds = $this->getArrayOption("store_ids", []);
+        //$limit = $this->getIntOption("limit", 100);
+        
+        //Log::info("Get location of store: ");
+
+        //${{name}}Service->updateLocation($storeIds, $limit);
+    }
+}

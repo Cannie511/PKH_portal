@@ -1,0 +1,19 @@
+{
+	"_LANG": "en",
+
+	"COM_BTN_NEW" : "Add New",
+	"COM_BTN_UPDATE" : "Update",
+	"COM_BTN_BACK" : "Back",
+
+	"COM_LABEL_MODULE_SUB_TITLE" : "{{name}} management",
+
+	"MODEL_SUPPLIER": "Supplier",
+
+	"MSG_I000001" : "{{name}} has been created.",
+	"MSG_I000001" : "{{name}} has been updated.",
+
+	"MSG_E000001" : "Input data is incorrect.",
+
+	"SIDEBAR_HEADER_01": "Quản lý bán hàng",
+	"SIDEBAR_CRM0110": "Danh sách sản phẩm"
+}

@@ -1,0 +1,42 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+use App\Models\BaseTableTrait;
+
+class CreateMstWarehouseProduct extends Migration
+{
+    use BaseTableTrait;
+
+    const TABLE_NAME = "mst_warehouse_product";
+    
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        echo(' - Cretate table ' . self::TABLE_NAME . PHP_EOL);
+        Schema::create(self::TABLE_NAME, function (Blueprint $table) {
+            $table->integer('warehouse_id');
+            $table->integer('product_id');
+            $table->integer('qty');
+
+            $table->primary(['warehouse_id', 'product_id'], self::TABLE_NAME . "_pk");
+
+            $this->addRecordHeader($table);
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists(self::TABLE_NAME);
+    }
+}

@@ -1,0 +1,30 @@
+<?php 
+
+namespace App\Services;
+
+use DB;
+use Log;
+use Carbon\Carbon;
+
+/**
+ * {{StudlyName}}Service class
+ */
+class {{StudlyName}}Service extends BaseService {
+
+	/**
+     * Select list
+     *
+     * @param [type] $params
+     * @return void
+     */
+	public function selectList($param) {
+        $sqlParam = array();
+		$sql = "";
+
+        $result = array();
+        //$result =  $this->pagination($sql, $sqlParam, $param);
+
+        return $result;
+	}
+
+}

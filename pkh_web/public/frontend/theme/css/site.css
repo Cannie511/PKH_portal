@@ -1,0 +1,57 @@
+.logo {
+    height: 50px;
+}
+
+.logo1 {
+    display: inline-block;
+    height: 50px;
+}
+
+.logo2 {
+    display: inline-block;
+    height: 40px;
+}
+
+.contact-header {
+    text-align: right;
+    font-size: 13px;
+    height: 40px;
+    vertical-align: middle;
+    line-height: 40px;
+    color: #56534e;
+}
+
+.contact-header li {
+    display: inline-block;
+}
+
+.contact-header li .fa {
+    font-size: 16px;
+}
+
+.contact-header li,
+.contact-header a {
+    color: #ec1a5b;
+}
+
+.list-news {
+    font-size: 14px;
+    text-align: left;
+    line-height: 20px;
+}
+
+.list-news li {
+    padding-top: 3px;
+}
+
+.list-news a {
+    color: #54371e;
+}
+
+.list-news a:hover {
+    color: #cb8d57;
+}
+
+.menu__inline li a {
+    text-align: center;
+}

@@ -1,0 +1,93 @@
+<?php 
+
+namespace App\Services;
+
+use DB;
+use Log;
+use Carbon\Carbon;
+
+use App\Models\{{modelClass}};
+
+/**
+ * {{StudlyName}}Service class
+ */
+class {{StudlyName}}Service extends BaseService {
+
+	/**
+     * Select list
+     *
+     * @param [type] $params
+     * @return void
+     */
+	public function selectList($param) {
+        $sqlParam = array();
+        $sql = "{{tableName}}";
+        
+        // $sql .= $this->andWhereDateBetween($param, 'fromDate','toDate', 'a.changed_date', $sqlParam );
+        // $sql .= $this->andWhereString($param, 'product_code', 'f.product_code', $sqlParam );
+        // $sql .= $this->andWhereString($param, 'order_code', 'd.store_order_code', $sqlParam );
+        // $sql .= $this->andWhereString($param, 'store_name', 'e.name', $sqlParam );
+        // $sql .= $this->andWhereString($param, 'change_type', 'a.warehouse_change_type', $sqlParam, true);
+        // $sql .= $this->andWhereInt($param, 'branch_id', 'a.branch_id', $sqlParam );
+
+        // $sql .= " 
+        //     order by
+        //     a.created_at desc
+        // ";
+
+        $result = [];
+        if( isset($param['export']) && $param['export'] == true ) {
+            $result = DB::select(DB::raw($sql), $sqlParam);
+        } else {
+            $result = $this->pagination($sql, $sqlParam, $param);
+        }
+
+        return $result;
+	}
+
+    // public function saveContract($param) {
+
+    //     $entity = null;
+    //     if( $param["id"] == 0) {
+    //         $entity = new TrnEmployeeContract();
+    //     } else {
+    //         $entity = TrnEmployeeContract::find($param["id"]);
+
+    //         if( !isset($employee)) {
+    //             return [
+    //                 "rtnCd" => false,
+    //                 "msg"   => "Nhân viên không tồn tại",
+    //             ];
+    //         }
+    //     }
+    //     $user = $this->logonUser();
+
+    //     $entity->employee_id = $param["employee_id"];
+    //     $entity->contract_no = $param["contract_no"];
+    //     $entity->title = $param["title"];
+    //     $entity->start_date = $param["start_date"];
+    //     $entity->end_date = $param["end_date"];
+    //     $entity->salary = $param["salary"];
+    //     $entity->contract_type = $param["contract_type"];
+    //     $entity->notes = $param["notes"];
+        
+    //     $this->updateRecordHeader($entity, $user, $param["id"] == 0);
+
+    //     $entity->save();
+
+    //     return [
+    //         "rtnCd" => true,
+    //         "msg"   => "Cập nhật thành công",
+    //     ];
+    // }
+
+    // function deleteContract($id) {
+    //     TrnEmployeeContract::where('id', $id)->delete();
+    //     return [
+    //         "rtnCd" => true,
+    //         "msg"   => "Xóa thành công",
+    //     ];
+    // }
+
+
+}

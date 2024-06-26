@@ -1,0 +1,90 @@
+%!Adobe-FontList 1.16
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:MyriadPro-Regular
+FamilyName:Myriad Pro
+StyleName:Regular
+FullName:Myriad Pro
+MenuName:Myriad Pro
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:D:\home\phankhang\docs\Design 2019\Font\MyriadPro-Regular.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+FileLength:97072
+FileModTime:1570934612
+WeightClass:400
+WidthClass:5
+AngleClass:0
+DesignSize:110
+NameArray:0,Mac,4,Myriad Pro
+NameArray:0,Win,1,Myriad Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:SFUFuturaBook
+FamilyName:SFU Futura
+StyleName: Book
+FullName:SFU Futura  Book
+MenuName:SFU Futura
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:D:\home\phankhang\docs\Design 2019\Font\SFUFuturaBook.TTF
+DataFormat:sfntData
+FileLength:80244
+FileModTime:1570934612
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,SFU Futura  Book
+NameArray:0,Win,1,SFU Futura
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:SFUFuturaLight
+FamilyName:SFU Futura
+StyleName: Light
+FullName:SFU Futura  Light
+MenuName:SFU Futura
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:D:\home\phankhang\docs\Design 2019\Font\SFUFuturaLight.TTF
+DataFormat:sfntData
+FileLength:77904
+FileModTime:1570934612
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,SFU Futura  Light
+NameArray:0,Win,1,SFU Futura
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:SFUFutura
+FamilyName:SFU Futura
+StyleName:Regular
+FullName:SFU Futura
+MenuName:SFU Futura
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:D:\home\phankhang\docs\Design 2019\Font\SFUFuturaRegular.TTF
+DataFormat:sfntData
+FileLength:76928
+FileModTime:1570934612
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,SFU Futura
+NameArray:0,Win,1,SFU Futura
+%EndFont
+

@@ -1,0 +1,96 @@
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use Auth;
+use Illuminate\Http\Request;
+use Input;
+use Validator;
+use Log;
+use Carbon\Carbon;
+
+use App\Services\{{StudlyName}}Service;
+use App\Services\DownloadService;
+
+/**
+ * {{StudlyName}}Controller
+ */
+class {{StudlyName}}Controller extends AdminBaseController
+{    
+    private ${{name}}Service;
+
+    public function __construct({{StudlyName}}Service ${{name}}Service, DownloadService $downloadService){
+        $this->{{name}}Service = ${{name}}Service;
+        $this->downloadService = $downloadService;
+        $this->middleware('permission:screen.{{name}}');
+    }
+
+    /**
+     * Load init data
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function postInitData(Request $request) {
+        // $param = $request->all();
+        // $listEmployee = $this->employeeService->getDropdownEmployee();
+        // $result = [
+        //     'listEmployee' => $listEmployee
+        // ];
+        // return response()->success($result);
+        return response()->success([]);
+    }
+
+    /**
+     * Load data
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function postLoad(Request $request) {
+        $param = $request->all();
+        $data = $this->{{name}}Service->selectById($param['id']);
+        $result = [
+            'data' => $data
+        ];
+        return response()->success($result);
+    }
+
+    /**
+     * Save entity
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function postSave(Request $request) {
+
+        $this->middleware('permission:screen.{{name}}.save');
+        $this->validate($request, [
+            'id'            => 'required|numeric|min:0',
+            'employee_id'            => 'required|numeric|min:0',
+            'num_days'   => 'required|numeric|min:0|max:20',
+            'expired_date'    => 'required|date|date_format:Y-m-d'
+        ]);
+
+        $param = $request->all();
+        $data = $this->{{name}}Service->saveEntity($param);
+
+        $result = [
+            'data' => $data
+        ];
+        return response()->success($result);
+    }
+
+    // public function postDelete(Request $request) {
+
+    //     $this->middleware('permission:screen.{{name}}.delete');
+    //     $param = $request->all();
+    //     $data = $this->{{name}}Service->deleteEntity($param["id"]);
+
+    //     $result = [
+    //         'data' => $data
+    //     ];
+    //     return response()->success($result);
+    // }
+
+}

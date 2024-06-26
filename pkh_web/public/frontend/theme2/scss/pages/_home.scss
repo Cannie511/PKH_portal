@@ -1,0 +1,52 @@
+#news-carousel {
+    margin-bottom: 10px;
+    
+    .carousel-indicators {
+        bottom: -30px;
+        &> li {
+            background-color: $base-color;
+        }
+    }
+}
+
+.img-new-home {
+    max-width: 340px;
+    max-height: 240px;
+    display: block;
+    margin: 0 auto;
+}
+
+// .list-top-product {
+
+// }
+
+.top-product-container, .product-container{
+    display: flex;
+    flex-flow: row;
+    align-content: space-around;
+    flex-wrap: wrap;
+    // overflow-x: auto;
+    align-items: flex-end;
+    justify-content: space-around;
+
+    .product-item {
+        margin-right: 10px;
+        text-align: center;
+
+        .header-text {
+            color: $base-color;
+            text-align: center;
+            width: 196px;
+        }
+
+        img {
+            max-width: 180px;
+            max-height: 180px;
+        }
+
+        img {
+            max-width: 180px;
+            max-height: 180px;
+        }
+    }
+}

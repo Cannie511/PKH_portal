@@ -1,0 +1,3 @@
+<i ng-init="orderBy = columnName" ng-if="orderBy == null || (orderBy != null && orderBy != columnName)" class="fa fa-sort"></i>
+<i ng-if="orderBy == columnName && orderDirection == 'asc' " class="fa fa-sort-asc"></i>
+<i ng-if="orderBy == columnName && orderDirection == 'desc' " class="fa fa-sort-desc"></i> 

@@ -1,0 +1,60 @@
+<header class="main-header">
+  <a href="/" class="logo">
+    <span class="logo-mini"><b>PK</b>H</span>
+    <span class="logo-lg"><b>PKH</b>Portal</span>
+  </a>
+  <nav class="navbar navbar-static-top">
+    <a href="javascript:void(0)" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+      <span class="sr-only">Toggle navigation</span>
+    </a>
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+          <li class="dropdown" uib-dropdown>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle>
+                <i class="fa fa-link"></i>
+            </a>
+            <ul class="dropdown-menu" uib-dropdown-menu>
+              <li><a ui-sref='app.cus0110'><i class="fa fa-cart-plus fa-fw"></i>Tạo đơn hàng</a></li>
+            </ul>
+          </li>
+        
+        <li class="dropdown user user-menu" uib-dropdown>
+          <a href="" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle>
+            <img src="{{vm.userData.avatar}}" class="user-image" alt="User Image" onError="this.src='/img/avatar.png'">
+            <span class="hidden-xs">{{vm.userData.name | capitalize}}</span>
+          </a>
+          <ul class="dropdown-menu" uib-dropdown-menu>
+            <li class="user-header">
+              <img src="{{vm.userData.avatar}}" class="img-circle" alt="User Image" onError="this.src='/img/avatar.png'">
+              <p>
+                {{vm.userData.name | capitalize}}
+                <small>Member since {{vm.userData.created_at | datemillis |date:'MMMM yyyy' }}</small>
+              </p>
+            </li>
+            <!-- <li class="user-body">
+              <div class="row">
+                <div class="col-xs-4 text-center">
+                  <a href="#">Followers</a>
+                </div>
+                <div class="col-xs-4 text-center">
+                  <a href="#">Sales</a>
+                </div>
+                <div class="col-xs-4 text-center">
+                  <a href="#">Friends</a>
+                </div>
+              </div>
+            </li> -->
+            <li class="user-footer">
+              <div class="pull-left">
+                <a ui-sref="app.profile" class="btn btn-default btn-flat">Profile</a>
+              </div>
+              <div class="pull-right">
+                <a ui-sref="app.logout" class="btn btn-default btn-flat">Sign out</a>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

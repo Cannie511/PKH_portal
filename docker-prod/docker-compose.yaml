@@ -1,0 +1,29 @@
+version: '3'
+services:
+  #build:
+  #  build: .
+  #  image: "phankhang/portal"
+  phuochoang:
+    #build: .
+    image: "phankhang/portal"
+    restart: always
+    volumes:
+      - /home/sysadmin_pkh/app-prod/node/phuochoang:/app
+    command: ["sh","-c","/app/entrypoint.sh"]
+    ports:
+      - 9001:80
+    logging:
+      options:
+        max-size: "50m"
+  thuanhung:
+    #build: .
+    image: "phankhang/portal"
+    restart: always
+    volumes:
+      - /home/sysadmin_pkh/app-prod/node/thuanhung:/app
+    command: ["sh","-c","/app/entrypoint.sh"]
+    ports:
+      - 9002:80
+    logging:
+      options:
+        max-size: "50m"

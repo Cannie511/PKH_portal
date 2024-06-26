@@ -1,0 +1,51 @@
+{
+    "_LANG": "en",
+
+    "COM_BTN_NEW": "Thêm mới",
+    "COM_BTN_UPDATE": "Cập nhật",
+    "COM_BTN_BACK": "Trở về",
+    "COM_BTN_SEARCH": "Tìm kiếm",
+    "COM_BTN_RESET": "Làm lại",
+    "COM_BTN_EDIT": "Chỉnh sửa",
+    "COM_BTN_ASSIGN": "Phân công",
+    "COM_BTN_CANCEL": "Hủy bỏ",
+    "COM_BTN_DELETE": "Xóa",
+
+    "COM_LABEL_MODULE_SUB_TITLE": "{{name}} management",
+    "COM_LABEL_AREA1": "Tỉnh/TP",
+    "COM_LABEL_AREA2": "Quận/Huyện",
+    "COM_LABEL_DEALER": "Đại lý",
+    "COM_LABEL_STORE": "Cửa hàng",
+    "COM_LABEL_KEYWORD": "Từ khóa",
+
+    "MODEL_SUPPLIER": "Supplier",
+
+    "MSG_I000001": "{{name}} has been created.",
+    "MSG_I000002": "{{name}} has been updated.",
+    "MSG_I000003": "Cập nhật thành công.",
+
+    "MSG_E000001": "Input data is incorrect.",
+
+    "SIDEBAR_HEADER_01": "Quản lý bán hàng",
+    "SIDEBAR_CRM0130": "Sản phẩm",
+    "SIDEBAR_CRM0200": "Đơn đặt hàng",
+    "SIDEBAR_CRM0300": "Cửa hàng",
+    "SIDEBAR_CMS0100": "Thiết lập",
+    "SIDEBAR_CRM0400": "Phiếu xuất hàng",
+
+    "BREADCRUMBS_HOME": "Trang chủ",
+
+    "CRM0130_LABEL_SUPPLIER_NAME": "Nhà cung cấp",
+    "CRM0130_LABEL_PRODUCT_CAT_NAME": "Loại sản phẩm",
+    "CRM0130_LABEL_PRODUCT_CODE": "Mã SP",
+    "CRM0130_LABEL_PRODUCT_NAME": "Tên SP",
+    "CRM0130_LABEL_STOCK_CODE": "Mã NSX",
+    "CRM0130_LABEL_PRICE": "Giá",
+    "CRM0130_LABEL_REMAIN": "Tồn kho",
+    "CRM0130_LABEL_ORDERING": "Đang đặt",
+
+    "CRM0200_TITLE": "Danh sách đơn hàng",
+
+    "CRM0300_TITLE": "Danh sách cửa hàng",
+    "CRM0400_TITLE": "Phiều xuất hàng"
+}

@@ -1,0 +1,127 @@
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use Auth;
+use Illuminate\Http\Request;
+use Input;
+use Validator;
+use Log;
+use Carbon\Carbon;
+
+use App\Services\{{StudlyName}}Service;
+use App\Services\DownloadService;
+
+/**
+ * {{StudlyName}}Controller
+ */
+class {{StudlyName}}Controller extends AdminBaseController
+{    
+    private ${{name}}Service;
+
+    public function __construct({{StudlyName}}Service ${{name}}Service, DownloadService $downloadService){
+        $this->{{name}}Service = ${{name}}Service;
+        $this->downloadService = $downloadService;
+        $this->middleware('permission:screen.{{name}}');
+    }
+
+    /**
+     * Load data
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function postLoad(Request $request) {
+        $param = $request->all();
+        $data = $this->{{name}}Service->load($param);
+        $result = [
+            'data' => $data
+        ];
+        return response()->success($result);
+    }
+
+    // /**
+    //  * Search
+    //  *
+    //  * @param Request $request
+    //  * @return void
+    //  */
+    // public function postSearch(Request $request) {
+    //     $param = $request->all();
+    //     $data = $this->{{name}}Service->selectList($param);
+
+    //     $result = [
+    //         'data' => $data
+    //     ];
+    //     return response()->success($result);
+    // }
+
+    // /**
+    //  * Sample action
+    //  *
+    //  * @param Request $request
+    //  * @return void
+    //  */
+    // public function postSample(Request $request) {
+    //     $this->requirePermission('screen.{{name}}.sample');
+
+    //     $data = $this->{{name}}Service->selectList($param);
+    //     $result = [
+    //         'data' => $data
+    //     ];
+    //     return response()->success($result);
+    // }
+
+    // /**
+    //  * Download Excel
+    //  *
+    //  * @param Request $request
+    //  * @return void
+    //  */
+    // public function postDownload(Request $request) {
+    //     $this->requirePermission('screen.{{name}}.download');
+    //     $param = $request->all();
+	//     $param['export'] = true;
+    //     $data = $this->{{name}}Service->selectList($param);
+    //     $paramDownload = [
+    //         "data" => $data,
+    //         "file_name" => "XuatNhapVatPham",
+    //         "view" => "{{name}}-list"
+    //     ];
+    //     $result = $this->downloadService->downloadExcelFile($paramDownload);
+    //     return response()->success($result);
+    // }
+
+    // public function postSave(Request $request) {
+
+    //     $this->middleware('permission:screen.{{name}}.save');
+    //     $this->validate($request, [
+    //         'id'            => 'required||numeric|min:0',
+    //         'contract_no'   => 'required',
+    //         'start_date'    => 'required|date|date_format:Y-m-d',
+    //         'end_date'      => 'required|date|date_format:Y-m-d',
+    //     ]);
+
+    //     $param = $request->all();
+    //     $data = $this->{{name}}Service->saveContract($param);
+
+    //     $result = [
+    //         'data' => $data
+    //     ];
+    //     return response()->success($result);
+    // }
+
+
+    // public function postDelete(Request $request) {
+
+    //     $this->middleware('permission:screen.{{name}}.delete');
+    //     $param = $request->all();
+    //     $data = $this->{{name}}Service->deleteContract($param["id"]);
+
+    //     $result = [
+    //         'data' => $data
+    //     ];
+    //     return response()->success($result);
+    // }
+
+}
