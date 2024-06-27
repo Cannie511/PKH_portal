@@ -16,71 +16,19 @@
                         <div class="row">
                             <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                    <label for="title">Name</label>
+                                    <label for="title">Tên đại lý:</label>
                                     <input type="text" class="form-control" id="title" ng-model="vm.m.filter.name" />
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="title">Mã hàng:</label>
+                                    <input type="text" class="form-control" id="title" ng-model="vm.m.filter.product_code" />
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-2 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                    <label>Level of Sales</label>
-                                    <select class="form-control"
-                                        placeholder-text-single="'Chọn level'"
-                                        ng-model="vm.m.filter.level_sales"
-                                        >
-                                        <option value="">All</option>
-                                        <option value='1'>level 1</option>
-                                        <option value='2'>level 2</option>
-                                        <option value='3'>level 3</option>
-                                        <option value='4'>level 4</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                    <label>Level of Retention</label>
-                                    <select class="form-control"
-                                        placeholder-text-single="'Chọn level'"
-                                        ng-model="vm.m.filter.level_retention"
-                                        >
-                                        <option value="">All</option>
-                                        <option value='1'>level 1</option>
-                                        <option value='2'>level 2</option>
-                                        <option value='3'>level 3</option>
-                                        <option value='4'>level 4</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                    <label>Level of Dept</label>
-                                    <select class="form-control"
-                                        placeholder-text-single="'Chọn level'"
-                                        ng-model="vm.m.filter.level_dept"
-                                        >
-                                        <option value="">All</option>
-                                        <option value='0'>level 0</option>
-                                        <option value='2'>level 2</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                    <label>Level of Payment History</label>
-                                    <select class="form-control"
-                                        placeholder-text-single="'Chọn level'"
-                                        ng-model="vm.m.filter.level_payment_history"
-                                        >
-                                        <option value="">All</option>
-                                        <option value='1'>level 1</option>
-                                        <option value='2'>level 2</option>
-                                        <option value='3'>level 3</option>
-                                        <option value='4'>level 4</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-sm-6 col-xs-12">
+                            <!-- <div class="col-md-2 col-sm-6 col-xs-12">
                                 <div class="form-group">
                                     <label>Level of Order Frequency</label>
                                     <select class="form-control"
@@ -94,20 +42,20 @@
                                         <option value='4'>level 4</option>
                                     </select>
                                 </div>
+                            </div> -->
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary btn-sm btn-width-default">
+                                    <i class="fa fa-search fa-fw"></i>
+                                    <span translate="COM_BTN_SEARCH"></span>
+                                </button>
+                                <button type="button" class="btn btn-default btn-sm btn-width-default" ng-click="vm.resetFilter()">
+                                    <i class="fa fa-eraser fa-fw"></i>
+                                    <span translate="COM_BTN_RESET"></span>
+                                </button>
                             </div>
                         </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <button type="submit" class="btn btn-primary btn-sm btn-width-default">
-                                        <i class="fa fa-search fa-fw"></i>
-                                        <span translate="COM_BTN_SEARCH"></span>
-                                    </button>
-                                    <button type="button" class="btn btn-default btn-sm btn-width-default" ng-click="vm.resetFilter()">
-                                        <i class="fa fa-eraser fa-fw"></i>
-                                        <span translate="COM_BTN_RESET"></span>
-                                    </button>
-                                </div>
-                            </div>
                     </form>
                 </div>
                 <div class="box-body">
@@ -122,8 +70,8 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat='item in vm.m.data.data.data'>
-                                    <td>{{$index + vm . m . data . data . from}}</td>
+                                <tr ng-repeat='item in vm.m.data.data'>
+                                    <td>{{$index + vm . m . data . from }}</td>
                                     <th class="sticky-top">
                                         {{item . store_name}}
                                         <br><small><i>{{item . address}}</i></small>
@@ -136,17 +84,16 @@
                             </tbody>
                         </table>
                     </div>
-                    
                     <div class="row">
                         <div class="col-md-6 col-sm-12 text-left">
-                            <p class="form-control-static">{{vm.m.data.from}} - {{vm.m.data.to}} / {{vm.m.data.total}}</p>                            
+                            <p class="form-control-static">{{vm . m . data . from}} - {{vm . m . data . to}} / {{vm . m . data . total}}</p>                            
                         </div>
                         <div class="col-md-6 col-sm-12 text-right">
                             <uib-pagination 
-                                total-items="vm.m.data.data.total"
-                                ng-model="vm.m.data.data.current_page"
-                                items-per-page="vm.m.data.data.per_page"
-                                ng-change="vm.doSearch(vm.m.data.data.current_page)"
+                                total-items="vm.m.data.total"
+                                ng-model="vm.m.data.current_page"
+                                items-per-page="vm.m.data.per_page"
+                                ng-change="vm.doSearch(vm.m.data.current_page)"
                                 class="pagination pagination-sm m-t-none m-b-none">
                             </uib-pagination>
                         </div>

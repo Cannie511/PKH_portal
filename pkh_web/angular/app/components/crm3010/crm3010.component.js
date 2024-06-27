@@ -42,16 +42,15 @@ class Crm3010Controller {
     }
 
     doSearch(page) {
-        // Get list 
         let searchService = this.API.service('search', this.API.all('crm3010'));
         let param = angular.copy(this.m.filter);
         param.page = page;
         sessionStorage.crm3010 = angular.toJson(param);
-        //this.$log.info('param', param);
+        this.$log.info('param', param['name']);
         searchService.post(param)
         .then((response) => {
             this.$log.info("check data plain: ",response.plain().data);
-            this.m.data = response.plain().data
+            this.m.data = response.plain().data;
             // this.$log.info("check data search: ", this.m.data);
             // this.$log.info('model: ',param);
             // this.$log.info('this quarter: ', this.m.quarter);

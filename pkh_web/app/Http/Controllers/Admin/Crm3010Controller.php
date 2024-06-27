@@ -30,10 +30,11 @@ class Crm3010Controller extends AdminBaseController
         $param = $request->all();
         $data = $this->crm3010Service->selectList($param);
         // $avgSale = $this->crm3010Service->getAverageSalePerYear($param); 
-        $result = [
-            "data"=>$data,
-            // "avg_sale"=> $avgSale
-        ];
+        // $result = [
+        //     $data,
+        //     // "avg_sale"=> $avgSale
+        // ];
+        $result = $data;
         return response()->success($result);
     }
 }   

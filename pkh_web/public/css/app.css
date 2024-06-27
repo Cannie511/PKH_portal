@@ -241,330 +241,6 @@ th.sortable .fa-sort {
   color: #ccc;
 }
 
-
-
-
-
-
-.cms0210 .img-preview {
-  max-width: 240px;
-  max-height: 240px;
-}
-
-.cms0210 .image-preview-list-small {
-  max-width: 168px;
-  max-height: 168px;
-}
-
-
-
-
-
-
-
-
-
-
-
-.crm0210 .form-horizontal .form-group {
-  margin-bottom: 0px;
-}
-
-.crm0210 .form-horizontal .form-control-static {
-  min-height: 0px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-.crm0210 .form-horizontal label {
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-
-
-
-
-
-.crm0300-menu .btn-app {
-  min-width: 100px;
-}
-
-
-
-
-
-
-
-
-
-
-
-.crm0410 .form-horizontal .form-group {
-  margin-bottom: 0px;
-}
-
-.crm0410 .form-horizontal .form-control-static {
-  min-height: 0px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-.crm0410 .form-horizontal label {
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.crm0914 .progress {
-  margin-top: 0px;
-}
-
-
-
-#crm1000 pre {
-  border: none;
-  background: transparent;
-  font-family: monospace;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#crm2510 #imgPreview img {
-  max-height: 240px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.das0100 canvas {
-  width: 100% !important;
-  max-width: 800px;
-  height: auto !important;
-}
-
-.das0100 .top-news {
-  font-size: 12px;
-}
-
-.das0100 .not-read {
-  font-weight: bold;
-}
-
-.ForgotPassword-input {
-  margin-bottom: 0;
-}
-
-.hrm0100 .fc-content {
-  white-space: normal !important;
-}
-
-
-
-
-
-.bg-weekend {
-  background: #f2dede !important;
-}
-
-.bg-holiday {
-  background: #ff9898 !important;
-}
-
-.hrm0141 .tr-head {
-  background-color: #ecf0f5;
-}
-
-.hrm0141 .table-wrap {
-  position: relative;
-}
-
-.hrm0141 .table-scroll thead tr:nth-child(2) th {
-  top: 35px;
-}
-
-.hrm0141 .table-scroll .freeze-col-2 {
-  position: sticky;
-  left: 34px;
-  z-index: 2;
-  background: #ecf0f5;
-}
-
-.hrm0150 .custom-marker {
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(128, 128, 128, 0.2);
-  margin-top: 24px;
-  padding: 2px;
-}
-
-
-
-.hrm0153 .btn-checkin, .hrm0153 .btn-checkout {
-  height: 100px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.hrm1020 .not-read {
-  font-weight: bold;
-}
-
-
-
-
-.hrm1111 .freeze-col-2 {
-  left: 38 px;
-}
-
-.hrm1111 .freeze-row-2 {
-  top: 35px;
-}
-
-.hrm1111 .chosen-container-single {
-  width: 250px !important;
-}
-
-
-
-
-
-
-@media (max-width: 767px) {
-  .skin-blue .main-header .navbar .dropdown-menu li a {
-    color: #333;
-  }
-}
-
-.main-header .sidebar-toggle,
-.main-header .sidebar-toggle:before {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-}
-
-
-.ResetPassword-input {
-  margin-bottom: 0;
-}
-
-.btn-github:hover {
-  color: #fff;
-}
-
-.btn-facebook:hover {
-  color: #fff;
-}
-
-.btn-google:hover {
-  color: #fff;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .Footer {
   text-align: center;
   background-color: #F6F9FA;
@@ -879,6 +555,330 @@ Make sure to remove this when you modify this demo
   margin-top: 80px;
   margin-bottom: 80px;
 }
+
+
+
+
+
+
+.cms0210 .img-preview {
+  max-width: 240px;
+  max-height: 240px;
+}
+
+.cms0210 .image-preview-list-small {
+  max-width: 168px;
+  max-height: 168px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.crm0210 .form-horizontal .form-group {
+  margin-bottom: 0px;
+}
+
+.crm0210 .form-horizontal .form-control-static {
+  min-height: 0px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.crm0210 .form-horizontal label {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+
+
+
+
+
+.crm0300-menu .btn-app {
+  min-width: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.crm0410 .form-horizontal .form-group {
+  margin-bottom: 0px;
+}
+
+.crm0410 .form-horizontal .form-control-static {
+  min-height: 0px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.crm0410 .form-horizontal label {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.crm0914 .progress {
+  margin-top: 0px;
+}
+
+
+
+#crm1000 pre {
+  border: none;
+  background: transparent;
+  font-family: monospace;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#crm2510 #imgPreview img {
+  max-height: 240px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.das0100 canvas {
+  width: 100% !important;
+  max-width: 800px;
+  height: auto !important;
+}
+
+.das0100 .top-news {
+  font-size: 12px;
+}
+
+.das0100 .not-read {
+  font-weight: bold;
+}
+
+.hrm0100 .fc-content {
+  white-space: normal !important;
+}
+
+.ForgotPassword-input {
+  margin-bottom: 0;
+}
+
+
+
+
+
+.bg-weekend {
+  background: #f2dede !important;
+}
+
+.bg-holiday {
+  background: #ff9898 !important;
+}
+
+.hrm0141 .tr-head {
+  background-color: #ecf0f5;
+}
+
+.hrm0141 .table-wrap {
+  position: relative;
+}
+
+.hrm0141 .table-scroll thead tr:nth-child(2) th {
+  top: 35px;
+}
+
+.hrm0141 .table-scroll .freeze-col-2 {
+  position: sticky;
+  left: 34px;
+  z-index: 2;
+  background: #ecf0f5;
+}
+
+.hrm0150 .custom-marker {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  margin-top: 24px;
+  padding: 2px;
+}
+
+
+
+.hrm0153 .btn-checkin, .hrm0153 .btn-checkout {
+  height: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hrm1020 .not-read {
+  font-weight: bold;
+}
+
+
+
+
+.hrm1111 .freeze-col-2 {
+  left: 38 px;
+}
+
+.hrm1111 .freeze-row-2 {
+  top: 35px;
+}
+
+.hrm1111 .chosen-container-single {
+  width: 250px !important;
+}
+
+
+
+
+.btn-github:hover {
+  color: #fff;
+}
+
+.btn-facebook:hover {
+  color: #fff;
+}
+
+.btn-google:hover {
+  color: #fff;
+}
+
+
+@media (max-width: 767px) {
+  .skin-blue .main-header .navbar .dropdown-menu li a {
+    color: #333;
+  }
+}
+
+.main-header .sidebar-toggle,
+.main-header .sidebar-toggle:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+
+.ResetPassword-input {
+  margin-bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*# sourceMappingURL=app.css.map */

@@ -97,9 +97,11 @@ class Crm3000Service extends BaseService
         // $sql .= $this->andWhereInt($param, 'level_order_frequency', 'main_query.level_order_frequency', $sqlParam);
         // return $this->pagination($sql, $sqlParam, $param);
         $sqlParam = array();
-        $sql = "SELECT a.store_id, a.name,a.address, SUM(b.total_with_discount) total_sale from mst_store a join trn_store_order b on a.store_id = b.store_id
-            where year(order_date) = 2021
-            group by a.store_id, a.name";
+        $sql = "SELECT a.store_id, a.name, a.address, SUM(b.total_with_discount) as total_sale from mst_store a join trn_store_order b on a.store_id = b.store_id
+            where year(order_date) = 2021";
+        $sql .= $this->andWhereString($param, 'name', 'a.name', $sqlParam);
+        $sql .= " group by a.store_id, a.name";
+        
         return $this->pagination($sql, $sqlParam, $param);   
     }
     public function getAvgSales($param){

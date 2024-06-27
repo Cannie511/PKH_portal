@@ -1836,12 +1836,11 @@
 	        value: function doSearch(page) {
 	            var _this = this;
 
-	            // Get list 
 	            var searchService = this.API.service('search', this.API.all('crm3010'));
 	            var param = angular.copy(this.m.filter);
 	            param.page = page;
 	            sessionStorage.crm3010 = angular.toJson(param);
-	            //this.$log.info('param', param);
+	            this.$log.info('param', param['name']);
 	            searchService.post(param).then(function (response) {
 	                _this.$log.info("check data plain: ", response.plain().data);
 	                _this.m.data = response.plain().data;
@@ -1943,11 +1942,11 @@
 	            var param = angular.copy(this.m.filter);
 	            param.page = page;
 	            sessionStorage.crm3000 = angular.toJson(param);
-	            //this.$log.info('param', param);
+	            this.$log.info('param', param);
 	            searchService.post(param).then(function (response) {
 	                _this.$log.info("check data plain: ", response.plain().data);
 	                _this.m.data = response.plain().data;
-	                // this.$log.info("check data search: ", this.m.data);
+	                //this.$log.info("check data search: ", this.m.data);
 	                // this.$log.info('model: ',param);
 	                // this.$log.info('this quarter: ', this.m.quarter);
 	                // this.$log.info('this year: ', this.m.year);

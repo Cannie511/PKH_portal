@@ -310,9 +310,7 @@ class BaseService
                 $sql .= " and lower($columnField) like ? ";
                 $sqlParam[] = '%' . strtolower($param[$fieldName]) . '%';
             }
-
         }
-
         return $sql;
     }
 

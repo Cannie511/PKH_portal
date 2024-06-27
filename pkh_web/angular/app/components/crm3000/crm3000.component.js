@@ -53,12 +53,12 @@ class Crm3000Controller {
         let param = angular.copy(this.m.filter);
         param.page = page;
         sessionStorage.crm3000 = angular.toJson(param);
-        //this.$log.info('param', param);
+        this.$log.info('param', param);
         searchService.post(param)
         .then((response) => {
             this.$log.info("check data plain: ",response.plain().data);
-            this.m.data = response.plain().data
-            // this.$log.info("check data search: ", this.m.data);
+            this.m.data = response.plain().data;
+            //this.$log.info("check data search: ", this.m.data);
             // this.$log.info('model: ',param);
             // this.$log.info('this quarter: ', this.m.quarter);
             // this.$log.info('this year: ', this.m.year);

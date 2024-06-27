@@ -32,7 +32,7 @@ class Crm2900Service extends BaseService
         $sql .= $this->andWhereString($param, 'name', 'a.name', $sqlParam);
         // $sql .= $this->andWhereString($param, 'display_name', 'a.display_name', $sqlParam);
         // $sql .= $this->andWhereString($param, 'notes', 'a.notes', $sqlParam);
-
+        
         $sql .= "
             order by 
             a.created_at desc
