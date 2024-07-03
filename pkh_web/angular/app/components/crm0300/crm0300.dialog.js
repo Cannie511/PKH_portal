@@ -6,16 +6,14 @@ export class Crm0300DialogController {
         this.$log = $log;
         this.DialogService = DialogService;
         this.$uibModalInstance = $uibModalInstance;
-        //his.$log.info('dialog param', param);
+        this.$log.info('dialog param', param);
         this.m = {
             item: param.item,
             salesman: param.salesman,
             chosenSale: -1
         }
         this.m.chosenSale = this.m.item.salesman_id;
-
     }
-
 
     cancel() {
         let obj = {

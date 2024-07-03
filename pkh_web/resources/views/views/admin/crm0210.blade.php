@@ -11,8 +11,6 @@
         
         <div class="col-md-9" >
             <div class="box box-info">  
-         
-
                 <div class="box-body">
                     <div class="table-responsive" ng-if="vm.m.orderDetail">
                         <table class="table table-striped">

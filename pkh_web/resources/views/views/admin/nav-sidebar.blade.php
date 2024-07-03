@@ -87,7 +87,7 @@
         <ul class="treeview-menu">
           <!-- <li ng-if="vm.can('screen.crm0130')"><a ui-sref='app.crm0130'><i class="fa fa-book fa-fw"></i> <span>Sản phẩm</span></a></li> -->
           <!-- <li ng-if="vm.can('screen.crm0140')"><a ui-sref='app.crm0140'><i class="fa fa-book fa-fw"></i> <span>Bảng báo giá</span></a></li> -->
-          <li ng-if="vm.can('screen.crm0300')"><a ui-sref='app.crm0300'><i class="fa fa-bank fa-fw"></i> <span>Cửa hàng</span></a></li>
+          <li ng-if="vm.can('screen.crm0300')"><a ui-sref='app.crm0300'><i class="fa fa-bank fa-fw"></i><span>Cửa hàng</span></a></li>
           <!-- <li ng-if="vm.can('screen.crm0301')"><a ui-sref='app.crm0301'><i class="fa fa-bank fa-fw"></i> <span>Bản đồ cửa hàng</span></a></li> -->
           <!-- <li ng-if="vm.can('screen.crm0350')"><a ui-sref='app.crm0350'><i class="fa fa-bank fa-fw"></i> <span>Chành xe</span></a></li> -->
           <!-- <li ng-if="vm.can('screen.crm0340')"><a ui-sref='app.crm0340'><i class="fa fa-sitemap fa-fw"></i> <span>Phân công cửa hàng</span></a></li> -->

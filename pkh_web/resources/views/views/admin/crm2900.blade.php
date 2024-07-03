@@ -1,9 +1,9 @@
 <section class="content-header">
     <h1>Danh sách Warehouse <small></small></h1>
-    <!-- <ol class="breadcrumb">
+    <ol class="breadcrumb">
         <li><a ui-sref="app.landing"><i class="fa fa-dashboard"></i><span translate="BREADCRUMBS_HOME"></span></a></li>
         <li class="active">Lịch nghỉ nghep</li>
-    </ol> -->
+    </ol>
 </section>
 <section class="content">
     <div class="row">
@@ -26,9 +26,7 @@
                                     <input type="text" class="form-control" id="title" ng-model="vm.m.filter.name" />
                                 </div>
                             </div>
-                           
                         </div>
-                        
                         <div class="row">
                             <div class="col-md-12">
                                 <button type="submit" class="btn btn-primary btn-sm btn-width-default">

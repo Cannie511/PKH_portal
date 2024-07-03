@@ -1933,20 +1933,45 @@
 	            };
 	        }
 	    }, {
+	        key: 'getTotalScore',
+	        value: function getTotalScore(sale, retention, order_frequency, payment_history) {
+	            sale = Number(sale);
+	            retention = Number(retention);
+	            order_frequency = Number(order_frequency);
+	            var sale_score = 0;
+	            var retention_score = 0;
+	            var order_frequency_score = 0;
+	            var payment_score = 0;
+	            var total_score = 0;
+
+	            if (sale > +this.m.data.avg_sale) {
+	                sale_score = 25;
+	            } else sale_score = 10;
+
+	            if (retention >= 3) {
+	                retention_score = 25;
+	            } else retention_score = 10;
+
+	            if (order_frequency >= this.m.data.avg_OD) order_frequency_score = 25;else order_frequency_score = 10;
+
+	            if (payment_history) payment_score = 25;else payment_score = 15;
+	            total_score = sale_score + retention_score + order_frequency_score + payment_score;
+	            return total_score;
+	        }
+	    }, {
 	        key: 'doSearch',
 	        value: function doSearch(page) {
 	            var _this = this;
 
-	            // Get list 
 	            var searchService = this.API.service('search', this.API.all('crm3000'));
 	            var param = angular.copy(this.m.filter);
 	            param.page = page;
 	            sessionStorage.crm3000 = angular.toJson(param);
 	            this.$log.info('param', param);
 	            searchService.post(param).then(function (response) {
-	                _this.$log.info("check data plain: ", response.plain().data);
+	                //this.$log.info("check data plain: ",response.plain().data);
 	                _this.m.data = response.plain().data;
-	                //this.$log.info("check data search: ", this.m.data);
+	                _this.$log.info("check data search: ", _this.m.data);
 	                // this.$log.info('model: ',param);
 	                // this.$log.info('this quarter: ', this.m.quarter);
 	                // this.$log.info('this year: ', this.m.year);
@@ -29661,7 +29686,6 @@
 
 	            var $log = this.$log;
 
-	            // Get list product 
 	            var searchService = this.API.service('search', this.API.all('crm0300'));
 	            var param = angular.copy(this.m.filter);
 
@@ -29678,6 +29702,7 @@
 
 	            searchService.post(param).then(function (response) {
 	                var data = response.plain().data;
+	                _this2.$log.info("check data search:", data);
 	                var now = moment(new Date());
 	                data.data.forEach(function (item) {
 	                    if (item.review_expired_date && now.isAfter(item.review_expired_date)) {
@@ -29686,7 +29711,6 @@
 	                        item.is_review_valid = true;
 	                    }
 	                });
-
 	                _this2.m.data = data;
 	            });
 	        }
@@ -29707,11 +29731,8 @@
 	                    param: param
 	                }
 	            };
-
 	            var DialogClose = this.DialogService.open('crm0300_dialog', modalOption);
-
 	            DialogClose.result.then(function (data) {
-
 	                var paramUpdate = {
 	                    salesman_id: data.params.chosenSale,
 	                    store_id: item.store_id
@@ -29730,11 +29751,13 @@
 	            var crm0710 = this.can('screen.crm0710');
 	            var crm1630 = this.can('screen.crm1630');
 	            var crm1210 = this.can('screen.crm1210');
+	            var crm3010 = this.can("screen.crm3010");
 	            var param = {
 	                item: item,
 	                crm0710: crm0710,
 	                crm1630: crm1630,
-	                crm1210: crm1210
+	                crm1210: crm1210,
+	                crm3010: crm3010
 	            };
 	            modalOption = {
 	                size: 'dialog-768',
@@ -29743,7 +29766,7 @@
 	                    param: param
 	                }
 	            };
-
+	            this.$log.info("check data search: ", param.item);
 	            this.DialogService.open('crm0300_menu', modalOption);
 	        }
 	    }, {
@@ -29811,7 +29834,7 @@
 	        this.$log = $log;
 	        this.DialogService = DialogService;
 	        this.$uibModalInstance = $uibModalInstance;
-	        //his.$log.info('dialog param', param);
+	        this.$log.info('dialog param', param);
 	        this.m = {
 	            item: param.item,
 	            salesman: param.salesman,
@@ -29863,7 +29886,8 @@
 	            item: param.item,
 	            crm0710: param.crm0710,
 	            crm1630: param.crm1630,
-	            crm1210: param.crm1210
+	            crm1210: param.crm1210,
+	            crm3010: param.crm3010
 	        };
 	    }
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Services\Crm3000Service;
 use Illuminate\Http\Request;
 use App\Services\AreaService;
 use App\Services\Crm0300Service;
@@ -26,6 +27,10 @@ class Crm0300Controller extends AdminBaseController
     /**
      * @var mixed
      */
+    protected $crm3000Service;
+    /**
+     * @var mixed
+     */
     protected $areaService;
 
     /**
@@ -42,6 +47,8 @@ class Crm0300Controller extends AdminBaseController
         ,
         Crm0300Service $crm0300Service
         ,
+        Crm3000Service $crm3000Service
+        ,
         AreaService $areaService
         ,
         DownloadService $downloadService
@@ -49,11 +56,12 @@ class Crm0300Controller extends AdminBaseController
     ) {
         $this->salesmanService = $salesmanService;
         $this->crm0300Service  = $crm0300Service;
+        $this->crm3000Service  = $crm3000Service;
         $this->rpt0511Service  = $rpt0511Service;
         $this->areaService     = $areaService;
         $this->downloadService = $downloadService;
         //$this->middleware( 'role.sale' );
-        $this->middleware('permission:screen.crm0300');
+        //$this->middleware('permission:screen.crm0300');
     }
 
     /**
@@ -69,7 +77,6 @@ class Crm0300Controller extends AdminBaseController
         $listArea1     = $this->areaService->selectListArea1();
         $listArea2     = $this->areaService->selectListArea2();
         $list          = $this->salesmanService->selectDropdown();
-
         $result = [
             'listSalesman'  => $listSalesman,
             'listAreaGroup' => $listAreaGroup,
@@ -91,7 +98,9 @@ class Crm0300Controller extends AdminBaseController
         $param            = $request->all();
         $param["sale_id"] = $this->getRoleSaleMan();
         $list             = $this->crm0300Service->selectStoreList($param);
-
+        foreach($list as $v){
+            $v->scorecard = $this->crm3000Service->getTotalScore($param, $v->store_id);
+        }
         return response()->success($list);
     }
 

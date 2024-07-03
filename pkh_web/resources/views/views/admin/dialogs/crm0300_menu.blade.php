@@ -1,24 +1,32 @@
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="vm.cancel()"><span aria-hidden="true">&times;</span></button>
     <div class="modal-title">
-        <h4>{{vm.m.item.name}}</h4>
+        <h4>{{vm . m . item . name}}</h4>
     </div> 
 </div>
 <div class="modal-header">
     <div class="row">
         <div class="col-md-6 col-sm-12">
-            <small>{{vm.m.item.address}}</small>
+            <small>{{vm . m . item . address}}</small>
         </div>
         <div class="col-md-6 col-sm-12">
-            <small>Phụ trách hiện tại: {{vm.m.item.salesman_name}}</small>
+            <small>Phụ trách hiện tại: {{vm . m . item . salesman_name}}</small>
         </div>
     </div>
     <div class="row">
         <div class="col-md-6 col-sm-12">
-            <small>Khu vực: {{vm.m.item.area1_name}} - <i>{{vm.m.item.area2_name}}</i></small>
+            <small>Khu vực: {{vm . m . item . area1_name}} - <i>{{vm . m . item . area2_name}}</i></small>
         </div>
         <div class="col-md-6 col-sm-12">
-            <small>Liên hệ: {{vm.m.item.contact_tel}} -  {{vm.m.item.contact_mobile1}}</small>
+            <small>Liên hệ: {{vm . m . item . contact_tel}} -  {{vm . m . item . contact_mobile1}}</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <small>Ngày sinh: 01 - 01 - 1999</i></small>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <small>Điểm tích lũy: {{vm . m . item . scorecard}}</small>
         </div>
     </div>
 </div>
@@ -29,12 +37,12 @@
     <a class="btn btn-app" ui-sref='app.crm0210({store_id: vm.m.item.store_id}) ' ng-click="vm.cancel()" placement="top" uib-tooltip="Nhập đơn hàng (xuất cho khách)">
         <i class="fa fa-shopping-cart"></i> Đơn hàng
     </a>
-    <!-- <a class="btn btn-app" ui-sref='app.crm0210({store_id: vm.m.item.store_id, order_type: 2})' ng-click="vm.cancel()" placement="top" uib-tooltip="Nhập đơn hàng bảo hành (xuất cho khách)">
+    <a class="btn btn-app" ui-sref='app.crm0210({store_id: vm.m.item.store_id, order_type: 2})' ng-click="vm.cancel()" placement="top" uib-tooltip="Nhập đơn hàng bảo hành (xuất cho khách)">
         <i class="fa fa-caret-square-left"></i> Đơn bảo hành
     </a>
     <a class="btn btn-app" ui-sref='app.crm0210({store_id: vm.m.item.store_id, order_type: 3})' ng-click="vm.cancel()" placement="top" uib-tooltip="Nhập đơn hàng mẫu (xuất cho khách)">
         <i class="fa fa-vial"></i> Đơn hàng mẫu
-    </a> -->
+    </a>
     <!-- <a class="btn btn-app" ui-sref='app.crm0710({store_id: vm.m.item.store_id})' ng-click="vm.cancel()"  placement="top" uib-tooltip="Nhập thanh toán">
         <i class="fa fa-money-bill-alt"></i> Thanh toán
     </a>

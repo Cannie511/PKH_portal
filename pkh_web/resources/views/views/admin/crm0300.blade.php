@@ -205,8 +205,8 @@
                                         {{item.area1_name}}<br/>
                                         <i>{{item.area2_name}}</i>
                                     </td>
-                                    <!--<td>{{item.area2_name}}</td>-->
-                                    <!--<td>{{item.dealer_name}}</td>-->
+                                    <!-- <td>{{item.area2_name}}</td> -->
+                                    <!-- <td>{{item.dealer_name}}</td> -->
                                     <td>
                                         <a ui-sref='app.crm2600({store_id: item.store_id})'> #{{item.store_id}}</a>
                                         &nbsp;-&nbsp;{{item.name}}

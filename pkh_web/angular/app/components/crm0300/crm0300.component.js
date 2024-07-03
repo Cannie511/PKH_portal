@@ -3,7 +3,6 @@ import { Crm0300MenuDialogController } from './crm0300_menu.dialog';
 class Crm0300Controller {
     constructor($scope, $state, $compile, DTOptionsBuilder, DTColumnBuilder, API, $log, UtilsService, AclService, DialogService, ClientService) {
         'ngInject'
-
         this.API = API;
         this.$scope = $scope;
         this.$state = $state;
@@ -81,7 +80,6 @@ class Crm0300Controller {
     doSearch(page) {
         let $log = this.$log;
 
-        // Get list product 
         let searchService = this.API.service('search', this.API.all('crm0300'));
         let param = angular.copy(this.m.filter);
 
@@ -99,6 +97,7 @@ class Crm0300Controller {
         searchService.post(param)
             .then((response) => {
                 let data = response.plain().data;
+                this.$log.info("check data search:", data);
                 let now = moment(new Date());
                 data.data.forEach(item => {
                     if (item.review_expired_date && now.isAfter(item.review_expired_date)) {
@@ -107,7 +106,6 @@ class Crm0300Controller {
                         item.is_review_valid = true;
                     }
                 });
-
                 this.m.data = data;
             });
     }
@@ -127,11 +125,8 @@ class Crm0300Controller {
                 param: param
             }
         };
-
         let DialogClose = this.DialogService.open('crm0300_dialog', modalOption);
-
         DialogClose.result.then(function(data) {
-
             let paramUpdate = {
                 salesman_id: data.params.chosenSale,
                 store_id: item.store_id
@@ -139,10 +134,9 @@ class Crm0300Controller {
             // Get list product 
             let updateService = that.API.service('update-sale', that.API.all('crm0300'));
             updateService.post(paramUpdate)
-                .then((response) => {
-                    that.init();
-                });
-
+            .then((response) => {
+                that.init();
+            });
         });
     }
 
@@ -151,11 +145,13 @@ class Crm0300Controller {
         let crm0710 = this.can('screen.crm0710');
         let crm1630 = this.can('screen.crm1630');
         let crm1210 = this.can('screen.crm1210');
+        let crm3010 = this.can("screen.crm3010");
         let param = {
             item: item,
             crm0710: crm0710,
             crm1630: crm1630,
-            crm1210: crm1210
+            crm1210: crm1210,
+            crm3010: crm3010
         };
         modalOption = {
             size: 'dialog-768',
@@ -164,7 +160,7 @@ class Crm0300Controller {
                 param: param
             }
         };
-
+        this.$log.info("check data search: ", param.item);
         this.DialogService.open('crm0300_menu', modalOption);
     }
 
@@ -173,10 +169,10 @@ class Crm0300Controller {
         let service = this.API.service('download', this.API.all('crm0300'));
         param.down = 1;
         service.post(param)
-            .then((response) => {
-                this.$log.info(response.data);
-                this.ClientService.downloadFileOneTime(response.data.file);
-            });
+        .then((response) => {
+            this.$log.info(response.data);
+            this.ClientService.downloadFileOneTime(response.data.file);
+        });
     }
 
     updateZalo() {

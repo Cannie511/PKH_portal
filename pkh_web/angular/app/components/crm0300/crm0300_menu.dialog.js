@@ -11,11 +11,10 @@ export class Crm0300MenuDialogController {
             item: param.item,
             crm0710: param.crm0710,
             crm1630: param.crm1630,
-            crm1210: param.crm1210
+            crm1210: param.crm1210,
+            crm3010: param.crm3010
         }
     }
-
-
     cancel() {
         this.DialogService.close();
     }

@@ -29,11 +29,6 @@ class Crm3010Controller extends AdminBaseController
     public function postSearch(Request $request){
         $param = $request->all();
         $data = $this->crm3010Service->selectList($param);
-        // $avgSale = $this->crm3010Service->getAverageSalePerYear($param); 
-        // $result = [
-        //     $data,
-        //     // "avg_sale"=> $avgSale
-        // ];
         $result = $data;
         return response()->success($result);
     }
