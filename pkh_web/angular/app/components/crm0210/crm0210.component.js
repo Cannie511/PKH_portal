@@ -23,7 +23,6 @@ class Crm0210Controller {
         this.m.test = [0, 0]; //test form of supplier and rate
         this.m.store_order_id = $stateParams.store_order_id;
         this.m.store_id = $stateParams.store_id;
-        this.$log.info('check init');
         this.loadInitData();
     }
 
@@ -33,36 +32,35 @@ class Crm0210Controller {
         this.m.order.notes = null;
         let $log = this.$log;
         let param = {
-
                 store_order_id: this.m.store_order_id,
                 store_id : this.m.store_id
             }
             //$log.info('supplier_id', this.m.supplier_order_id);
+        this.m.store_id = param.store_id;
             //param.supplier_order_id = this.m.supplier_order_id;
-        let initService = this.API.service('load-init', this.API.all('crm0210'));
+        let initService = this.API.service("search-product", this.API.all("crm0210"));
         initService.post(param)
-            .then((response) => {
-                this.m.init = response.data;
-                //$log.info('ahihi', this.m.init.order);
-                if (response.data.store != null) {
-                    this.m.store = response.data.store;
-                }
-               
-                if (this.m.store_order_id != null) {
-                    this.m.orderDetail = this.m.init.orderDetail;
-                    this.m.order = this.m.init.order;
-                    this.m.order.total = this.m.init.order[0].total;
-                    this.m.order.discount = this.m.init.order[0].discount;
-                    this.m.order.total_with_discount = this.m.init.order[0].total_with_discount;
-                }
-
-            });
+        .then((response) => {
+            this.m.init = response.data;
+            //$log.info('ahihi', this.m.init.order);
+            if (response.data.store != null) {
+                this.m.store = response.data.store;
+            }
+            if (this.m.store_order_id != null) {
+                this.m.orderDetail = this.m.init.orderDetail;
+                this.m.order = this.m.init.order;
+                this.m.order.total = this.m.init.order[0].total;
+                this.m.order.discount = this.m.init.order[0].discount;
+                this.m.order.total_with_discount = this.m.init.order[0].total_with_discount;
+            }
+            this.$log.info("check data search: ", this.m);
+        });
     }
 
     searchProduct() {
         let $log = this.$log;
 
-        //$log.info(this.m);
+        //this.$log.info(this.m);
 
         // Get list product 
         let searchService = this.API.service('search-product', this.API.all('crm0210'));
@@ -84,7 +82,6 @@ class Crm0210Controller {
                         value.hide = hide;
                     });
                 }
-
                 this.m.productList = list;
                 // $log.debug('this.m.list', this.m.productList);
             });

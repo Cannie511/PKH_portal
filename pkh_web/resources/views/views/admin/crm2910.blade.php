@@ -12,14 +12,9 @@
             <div class="box box-info">
                 <div class="box-header with-border">
                     <h3 class="box-title">Thông tin warehouse</h3>
-                   
-                 
                 </div>
                 <form class="form-horizontal" name="form" ng-submit="vm.save()" >
                     <div class="box-body">
-                       
-                        
-                       
                         <div class="form-group" >
                             <label class="col-sm-2 control-label required">Name</label>
                             <div class="col-sm-10">
@@ -51,7 +46,6 @@
                             <button type="submit" class="btn btn-primary pull-right" translate="COM_BTN_NEW" ng-if="!vm.m.warehouse_id" >Thêm mới</button>
                             <button type="submit" class="btn btn-primary pull-right" translate="COM_BTN_UPDATE" ng-if="vm.m.warehouse_id">Cập nhật</button>
                         </div>
-
                     </div> 
                 </form>
             </div>

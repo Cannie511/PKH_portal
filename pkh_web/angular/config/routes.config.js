@@ -836,6 +836,20 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
         //Đánh giá đại lý
         .state("app.crm3000", getStateDefinition("crm3000"))
         .state("app.crm3010", getStateDefinition("crm3010"))
+        //lịch sử điểm
+        .state(
+            "app.crm3020",
+            getStateDefinition("crm3020", {
+                params: { alerts: null, warehouse_id: null },
+            })
+        )
+        .state(
+            "app.crm3021",
+            getStateDefinition("crm3020", {
+                url: "/crm3020/{store_id:int}",
+                params: { alerts: null, store_id: null },
+            })
+        )
         /**
          * HRM: Human resouce management
          */

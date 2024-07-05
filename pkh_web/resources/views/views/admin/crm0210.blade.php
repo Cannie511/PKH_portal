@@ -158,10 +158,73 @@
                                     <td class = "text-left">{{item.product_name}}</td>
                                     <td>{{item.pakaging}}</td>
                                     <td>{{item.selling_price | currency: '': 0}}</td>
-                                   
-                                    
                                     <td>Còn lại</td>
                                     <td>Tồn kho</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+
+             <div class="box box-info collapsed-box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Sản phẩm chưa đặt</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                        <!-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button> -->
+                    </div>
+                </div>
+                <div class="box-body form" style="display: none">
+                    <form role="form" ng-submit="vm.searchProduct()">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6 m-b-xs">
+                                <div class="form-group">
+                                    <label>Mã SP</label>
+                                    <input type="text" ng-model="vm.m.filter.product_code" class="form-control"/>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 m-b-xs">
+                                <div class="form-group">
+                                    <label>Tên sản phẩm</label>
+                                    <input type="text" ng-model="vm.m.filter.product_name" class="form-control"/>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary btn-sm btn-width-default">
+                                    <i class="fa fa-search fa-fw"></i>
+                                    <span translate="COM_BTN_SEARCH"></span>
+                                </button>
+                                <button type="button" class="btn btn-default btn-sm btn-width-default" ng-click="vm.resetFilter()">
+                                    <i class="fa fa-eraser fa-fw"></i>
+                                    <span translate="COM_BTN_RESET"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="box-body" style="display: none">
+                    <div class="table-responsive" ng-if="vm.m.init">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <td> </td>
+                                    <td>Mã SP</td>
+                                    <td>Tên SP</td>
+                                    <td>Chiết khấu</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat='item in vm.m.init.list_not_buy.data' ng-if="item.hide != true">
+                                    <td><button class="btn btn-primary btn-sm" ng-click="vm.addProduct(item)"><i class="fa fa-plus-circle"></i></button></td>
+                                    <td>{{item.product_code}}</td>
+                                    <td class = "text-left">{{item.product_name}}</td>
+                                    <td>0.05</td>
                                 </tr>
                             </tbody>
                         </table>

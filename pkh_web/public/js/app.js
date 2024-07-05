@@ -58,9 +58,9 @@
 
 	__webpack_require__(26);
 
-	__webpack_require__(226);
+	__webpack_require__(227);
 
-	__webpack_require__(231);
+	__webpack_require__(232);
 
 /***/ }),
 /* 1 */
@@ -858,6 +858,13 @@
 	    }))
 	    //Đánh giá đại lý
 	    .state("app.crm3000", getStateDefinition("crm3000")).state("app.crm3010", getStateDefinition("crm3010"))
+	    //lịch sử điểm
+	    .state("app.crm3020", getStateDefinition("crm3020", {
+	        params: { alerts: null, warehouse_id: null }
+	    })).state("app.crm3021", getStateDefinition("crm3020", {
+	        url: "/crm3020/{store_id:int}",
+	        params: { alerts: null, store_id: null }
+	    }))
 	    /**
 	     * HRM: Human resouce management
 	     */
@@ -1765,7 +1772,9 @@
 
 	var _loginForm = __webpack_require__(225);
 
-	angular.module("app.components").component("crm3010", _crm.Crm3010Component).component("crm3000", _crm2.Crm3000Component).component("crm2520", _crm3.Crm2520Component).component("crm2521", _crm4.Crm2521Component).component("crm2910", _crm5.Crm2910Component).component("crm2900", _crm6.Crm2900Component).component("cms0400", _cms.Cms0400Component).component("cms0300", _cms2.Cms0300Component).component("rpt0519", _rpt.Rpt0519Component).component("crm0751", _crm7.Crm0751Component).component("crm0750", _crm8.Crm0750Component).component("crm2820", _crm9.Crm2820Component).component("crm2810", _crm10.Crm2810Component).component("crm2800", _crm11.Crm2800Component).component("hrm1112", _hrm.Hrm1112Component).component("hrm1130", _hrm2.Hrm1130Component).component("hrm1120", _hrm3.Hrm1120Component).component("hrm1111", _hrm4.Hrm1111Component).component("hrm1110", _hrm5.Hrm1110Component).component("hrm1100", _hrm6.Hrm1100Component).component("hrm1021", _hrm7.Hrm1021Component).component("hrm1020", _hrm8.Hrm1020Component).component("hrm1010", _hrm9.Hrm1010Component).component("hrm1000", _hrm10.Hrm1000Component).component("hrm0910", _hrm11.Hrm0910Component).component("hrm0900", _hrm12.Hrm0900Component).component("hrm0810", _hrm13.Hrm0810Component).component("hrm0800", _hrm14.Hrm0800Component).component("crm0915", _crm12.Crm0915Component).component("crm0914", _crm13.Crm0914Component).component("hrm0154", _hrm15.Hrm0154Component).component("hrm0153", _hrm16.Hrm0153Component).component("tmp9999", _tmp.Tmp9999Component).component("hrm0716", _hrm17.Hrm0716Component).component("hrm0715", _hrm18.Hrm0715Component).component("hrm0714", _hrm19.Hrm0714Component).component("hrm0713", _hrm20.Hrm0713Component).component("hrm0712", _hrm21.Hrm0712Component).component("hrm0711", _hrm22.Hrm0711Component).component("hrm0600", _hrm23.Hrm0600Component).component("hrm0510", _hrm24.Hrm0510Component).component("hrm0500", _hrm25.Hrm0500Component).component("hrm0410", _hrm26.Hrm0410Component).component("hrm0400", _hrm27.Hrm0400Component).component("hrm0710", _hrm28.Hrm0710Component).component("hrm0700", _hrm29.Hrm0700Component).component("crm2710", _crm14.Crm2710Component).component("crm2700", _crm15.Crm2700Component).component("crm0510", _crm16.Crm0510Component).component("crm0500", _crm17.Crm0500Component).component("crm2610", _crm18.Crm2610Component).component("crm2602", _crm19.Crm2602Component).component("crm2601", _crm20.Crm2601Component).component("crm2600", _crm21.Crm2600Component).component("rpt0518", _rpt2.Rpt0518Component).component("hrm0310", _hrm30.Hrm0310Component).component("hrm0300", _hrm31.Hrm0300Component).component("adm0500", _adm.Adm0500Component).component("mobile", _mobile.MobileComponent).component("crm2550", _crm22.Crm2550Component).component("crm2540", _crm23.Crm2540Component).component("crm2530", _crm24.Crm2530Component).component("crm2510", _crm25.Crm2510Component).component("crm2500", _crm26.Crm2500Component).component("crm0301", _crm27.Crm0301Component).component("hrm0152", _hrm32.Hrm0152Component).component("hrm0151", _hrm33.Hrm0151Component).component("hrm0150", _hrm34.Hrm0150Component).component("hrm0141", _hrm35.Hrm0141Component).component("crm2400", _crm28.Crm2400Component).component("rpt0517", _rpt3.Rpt0517Component).component("crm0351", _crm29.Crm0351Component).component("crm0350", _crm30.Crm0350Component).component("crm2330", _crm31.Crm2330Component).component("crm2320", _crm32.Crm2320Component).component("crm2310", _crm33.Crm2310Component).component("crm2300", _crm34.Crm2300Component).component("crm2110", _crm35.Crm2110Component).component("crm2100", _crm36.Crm2100Component).component("crm2010", _crm37.Crm2010Component).component("crm2000", _crm38.Crm2000Component).component("crm1930", _crm39.Crm1930Component).component("crm1921", _crm40.Crm1921Component).component("crm1920", _crm41.Crm1920Component).component("crm1900", _crm42.Crm1900Component).component("crm0121", _crm43.Crm0121Component).component("crm0120", _crm44.Crm0120Component).component("crm0250", _crm45.Crm0250Component).component("rpt0516", _rpt4.Rpt0516Component).component("crm1831", _crm46.Crm1831Component).component("crm1830", _crm47.Crm1830Component).component("crm1821", _crm48.Crm1821Component).component("crm1820", _crm49.Crm1820Component).component("crm1811", _crm50.Crm1811Component).component("crm1810", _crm51.Crm1810Component).component("rpt0515", _rpt5.Rpt0515Component).component("crm1710", _crm52.Crm1710Component).component("crm1700", _crm53.Crm1700Component).component("crm0740", _crm54.Crm0740Component).component("crm1630", _crm55.Crm1630Component).component("crm1640", _crm56.Crm1640Component).component("crm1650", _crm57.Crm1650Component).component("crm0240", _crm58.Crm0240Component).component("cms0220", _cms3.Cms0220Component).component("crm1620", _crm64.Crm1620Component).component("crm0340", _crm65.Crm0340Component).component("hrm0140", _hrm37.Hrm0140Component).component("crm0141", _crm66.Crm0141Component).component("crm0720", _crm67.Crm0720Component).component("crm1610", _crm68.Crm1610Component).component("crm1600", _crm69.Crm1600Component).component("crm1510", _crm70.Crm1510Component).component("crm1500", _crm71.Crm1500Component).component("crm1310", _crm72.Crm1310Component).component("crm1300", _crm73.Crm1300Component).component("crm0913", _crm59.Crm0913Component).component("crm0321", _crm60.Crm0321Component).component("crm0140", _crm61.Crm0140Component).component("adm0110", _adm2.Adm0110Component).component("crm0231", _crm63.Crm0231Component).component("crm0230", _crm62.Crm0230Component).component("hrm0130", _hrm36.Hrm0130Component).component("crm1110", _crm74.Crm1110Component).component("crm0810", _crm82.Crm0810Component).component("crm0800", _crm83.Crm0800Component).component("crm1200", _crm80.Crm1200Component).component("crm1210", _crm81.Crm1210Component).component("adm0400", _adm3.Adm0400Component).component("crm0912", _crm75.Crm0912Component).component("rpt0514", _rpt6.Rpt0514Component).component("rpt0510", _rpt7.Rpt0510Component).component("rpt0513", _rpt8.Rpt0513Component).component("rpt0512", _rpt9.Rpt0512Component).component("rpt0511", _rpt10.Rpt0511Component).component("cms0210", _cms4.Cms0210Component).component("cms0200", _cms5.Cms0200Component).component("crm0911", _crm76.Crm0911Component).component("crm0330", _crm77.Crm0330Component).component("rpt0310", _rpt11.Rpt0310Component).component("crm0920", _crm78.Crm0920Component).component("crm0910", _crm79.Crm0910Component).component("crm0331", _crm84.Crm0331Component).component("crm0220", _crm85.Crm0220Component).component("crm0320", _crm86.Crm0320Component).component("crm1100", _crm87.Crm1100Component).component("crm1010", _crm88.Crm1010Component).component("rpt0200", _rpt12.Rpt0200Component).component("rpt0100", _rpt13.Rpt0100Component).component("crm0700", _crm89.Crm0700Component).component("crm0710", _crm90.Crm0710Component).component("crm0900", _crm91.Crm0900Component).component("crm1000", _crm92.Crm1000Component).component("crm0110", _crm93.Crm0110Component).component("crm0100", _crm94.Crm0100Component).component("hrm0210", _hrm38.Hrm0210Component).component("hrm0200", _hrm39.Hrm0200Component).component("hrm0120", _hrm40.Hrm0120Component).component("hrm0100", _hrm41.Hrm0100Component).component("hrm0110", _hrm42.Hrm0110Component).component("crm0410", _crm95.Crm0410Component).component("crm0400", _crm96.Crm0400Component).component("cms0100", _cms6.Cms0100Component).component("crm0310", _crm27.Crm0301Component).component("crm0300", _crm97.Crm0300Component).component("crm0210", _crm98.Crm0210Component).component("crm0200", _crm99.Crm0200Component).component("crm0130", _crm100.Crm0130Component).component("supplierEdit", _supplier_edit.SupplierEditComponent).component("supplierAdd", _supplier_add.SupplierAddComponent).component("supplierLists", _supplier_lists.SupplierListsComponent).component("userProfile", _userProfile.UserProfileComponent).component("userVerification", _userVerification.UserVerificationComponent).component("userEdit", _userEdit.UserEditComponent).component("userPermissionsEdit", _userPermissionsEdit.UserPermissionsEditComponent).component("userPermissionsAdd", _userPermissionsAdd.UserPermissionsAddComponent).component("userPermissions", _userPermissions.UserPermissionsComponent).component("userRolesEdit", _userRolesEdit.UserRolesEditComponent).component("userRolesAdd", _userRolesAdd.UserRolesAddComponent).component("userRoles", _userRoles.UserRolesComponent).component("userLists", _userLists.UserListsComponent).component("dashboard", _dashboard.DashboardComponent).component("navSidebar", _navSidebar.NavSidebarComponent).component("navHeader", _navHeader.NavHeaderComponent).component("loginLoader", _loginLoader.LoginLoaderComponent).component("resetPassword", _resetPassword.ResetPasswordComponent).component("forgotPassword", _forgotPassword.ForgotPasswordComponent).component("loginForm", _loginForm.LoginFormComponent);
+	var _crm101 = __webpack_require__(226);
+
+	angular.module("app.components").component("crm3020", _crm101.Crm3020Component).component("crm3010", _crm.Crm3010Component).component("crm3000", _crm2.Crm3000Component).component("crm2520", _crm3.Crm2520Component).component("crm2521", _crm4.Crm2521Component).component("crm2910", _crm5.Crm2910Component).component("crm2900", _crm6.Crm2900Component).component("cms0400", _cms.Cms0400Component).component("cms0300", _cms2.Cms0300Component).component("rpt0519", _rpt.Rpt0519Component).component("crm0751", _crm7.Crm0751Component).component("crm0750", _crm8.Crm0750Component).component("crm2820", _crm9.Crm2820Component).component("crm2810", _crm10.Crm2810Component).component("crm2800", _crm11.Crm2800Component).component("hrm1112", _hrm.Hrm1112Component).component("hrm1130", _hrm2.Hrm1130Component).component("hrm1120", _hrm3.Hrm1120Component).component("hrm1111", _hrm4.Hrm1111Component).component("hrm1110", _hrm5.Hrm1110Component).component("hrm1100", _hrm6.Hrm1100Component).component("hrm1021", _hrm7.Hrm1021Component).component("hrm1020", _hrm8.Hrm1020Component).component("hrm1010", _hrm9.Hrm1010Component).component("hrm1000", _hrm10.Hrm1000Component).component("hrm0910", _hrm11.Hrm0910Component).component("hrm0900", _hrm12.Hrm0900Component).component("hrm0810", _hrm13.Hrm0810Component).component("hrm0800", _hrm14.Hrm0800Component).component("crm0915", _crm12.Crm0915Component).component("crm0914", _crm13.Crm0914Component).component("hrm0154", _hrm15.Hrm0154Component).component("hrm0153", _hrm16.Hrm0153Component).component("tmp9999", _tmp.Tmp9999Component).component("hrm0716", _hrm17.Hrm0716Component).component("hrm0715", _hrm18.Hrm0715Component).component("hrm0714", _hrm19.Hrm0714Component).component("hrm0713", _hrm20.Hrm0713Component).component("hrm0712", _hrm21.Hrm0712Component).component("hrm0711", _hrm22.Hrm0711Component).component("hrm0600", _hrm23.Hrm0600Component).component("hrm0510", _hrm24.Hrm0510Component).component("hrm0500", _hrm25.Hrm0500Component).component("hrm0410", _hrm26.Hrm0410Component).component("hrm0400", _hrm27.Hrm0400Component).component("hrm0710", _hrm28.Hrm0710Component).component("hrm0700", _hrm29.Hrm0700Component).component("crm2710", _crm14.Crm2710Component).component("crm2700", _crm15.Crm2700Component).component("crm0510", _crm16.Crm0510Component).component("crm0500", _crm17.Crm0500Component).component("crm2610", _crm18.Crm2610Component).component("crm2602", _crm19.Crm2602Component).component("crm2601", _crm20.Crm2601Component).component("crm2600", _crm21.Crm2600Component).component("rpt0518", _rpt2.Rpt0518Component).component("hrm0310", _hrm30.Hrm0310Component).component("hrm0300", _hrm31.Hrm0300Component).component("adm0500", _adm.Adm0500Component).component("mobile", _mobile.MobileComponent).component("crm2550", _crm22.Crm2550Component).component("crm2540", _crm23.Crm2540Component).component("crm2530", _crm24.Crm2530Component).component("crm2510", _crm25.Crm2510Component).component("crm2500", _crm26.Crm2500Component).component("crm0301", _crm27.Crm0301Component).component("hrm0152", _hrm32.Hrm0152Component).component("hrm0151", _hrm33.Hrm0151Component).component("hrm0150", _hrm34.Hrm0150Component).component("hrm0141", _hrm35.Hrm0141Component).component("crm2400", _crm28.Crm2400Component).component("rpt0517", _rpt3.Rpt0517Component).component("crm0351", _crm29.Crm0351Component).component("crm0350", _crm30.Crm0350Component).component("crm2330", _crm31.Crm2330Component).component("crm2320", _crm32.Crm2320Component).component("crm2310", _crm33.Crm2310Component).component("crm2300", _crm34.Crm2300Component).component("crm2110", _crm35.Crm2110Component).component("crm2100", _crm36.Crm2100Component).component("crm2010", _crm37.Crm2010Component).component("crm2000", _crm38.Crm2000Component).component("crm1930", _crm39.Crm1930Component).component("crm1921", _crm40.Crm1921Component).component("crm1920", _crm41.Crm1920Component).component("crm1900", _crm42.Crm1900Component).component("crm0121", _crm43.Crm0121Component).component("crm0120", _crm44.Crm0120Component).component("crm0250", _crm45.Crm0250Component).component("rpt0516", _rpt4.Rpt0516Component).component("crm1831", _crm46.Crm1831Component).component("crm1830", _crm47.Crm1830Component).component("crm1821", _crm48.Crm1821Component).component("crm1820", _crm49.Crm1820Component).component("crm1811", _crm50.Crm1811Component).component("crm1810", _crm51.Crm1810Component).component("rpt0515", _rpt5.Rpt0515Component).component("crm1710", _crm52.Crm1710Component).component("crm1700", _crm53.Crm1700Component).component("crm0740", _crm54.Crm0740Component).component("crm1630", _crm55.Crm1630Component).component("crm1640", _crm56.Crm1640Component).component("crm1650", _crm57.Crm1650Component).component("crm0240", _crm58.Crm0240Component).component("cms0220", _cms3.Cms0220Component).component("crm1620", _crm64.Crm1620Component).component("crm0340", _crm65.Crm0340Component).component("hrm0140", _hrm37.Hrm0140Component).component("crm0141", _crm66.Crm0141Component).component("crm0720", _crm67.Crm0720Component).component("crm1610", _crm68.Crm1610Component).component("crm1600", _crm69.Crm1600Component).component("crm1510", _crm70.Crm1510Component).component("crm1500", _crm71.Crm1500Component).component("crm1310", _crm72.Crm1310Component).component("crm1300", _crm73.Crm1300Component).component("crm0913", _crm59.Crm0913Component).component("crm0321", _crm60.Crm0321Component).component("crm0140", _crm61.Crm0140Component).component("adm0110", _adm2.Adm0110Component).component("crm0231", _crm63.Crm0231Component).component("crm0230", _crm62.Crm0230Component).component("hrm0130", _hrm36.Hrm0130Component).component("crm1110", _crm74.Crm1110Component).component("crm0810", _crm82.Crm0810Component).component("crm0800", _crm83.Crm0800Component).component("crm1200", _crm80.Crm1200Component).component("crm1210", _crm81.Crm1210Component).component("adm0400", _adm3.Adm0400Component).component("crm0912", _crm75.Crm0912Component).component("rpt0514", _rpt6.Rpt0514Component).component("rpt0510", _rpt7.Rpt0510Component).component("rpt0513", _rpt8.Rpt0513Component).component("rpt0512", _rpt9.Rpt0512Component).component("rpt0511", _rpt10.Rpt0511Component).component("cms0210", _cms4.Cms0210Component).component("cms0200", _cms5.Cms0200Component).component("crm0911", _crm76.Crm0911Component).component("crm0330", _crm77.Crm0330Component).component("rpt0310", _rpt11.Rpt0310Component).component("crm0920", _crm78.Crm0920Component).component("crm0910", _crm79.Crm0910Component).component("crm0331", _crm84.Crm0331Component).component("crm0220", _crm85.Crm0220Component).component("crm0320", _crm86.Crm0320Component).component("crm1100", _crm87.Crm1100Component).component("crm1010", _crm88.Crm1010Component).component("rpt0200", _rpt12.Rpt0200Component).component("rpt0100", _rpt13.Rpt0100Component).component("crm0700", _crm89.Crm0700Component).component("crm0710", _crm90.Crm0710Component).component("crm0900", _crm91.Crm0900Component).component("crm1000", _crm92.Crm1000Component).component("crm0110", _crm93.Crm0110Component).component("crm0100", _crm94.Crm0100Component).component("hrm0210", _hrm38.Hrm0210Component).component("hrm0200", _hrm39.Hrm0200Component).component("hrm0120", _hrm40.Hrm0120Component).component("hrm0100", _hrm41.Hrm0100Component).component("hrm0110", _hrm42.Hrm0110Component).component("crm0410", _crm95.Crm0410Component).component("crm0400", _crm96.Crm0400Component).component("cms0100", _cms6.Cms0100Component).component("crm0310", _crm27.Crm0301Component).component("crm0300", _crm97.Crm0300Component).component("crm0210", _crm98.Crm0210Component).component("crm0200", _crm99.Crm0200Component).component("crm0130", _crm100.Crm0130Component).component("supplierEdit", _supplier_edit.SupplierEditComponent).component("supplierAdd", _supplier_add.SupplierAddComponent).component("supplierLists", _supplier_lists.SupplierListsComponent).component("userProfile", _userProfile.UserProfileComponent).component("userVerification", _userVerification.UserVerificationComponent).component("userEdit", _userEdit.UserEditComponent).component("userPermissionsEdit", _userPermissionsEdit.UserPermissionsEditComponent).component("userPermissionsAdd", _userPermissionsAdd.UserPermissionsAddComponent).component("userPermissions", _userPermissions.UserPermissionsComponent).component("userRolesEdit", _userRolesEdit.UserRolesEditComponent).component("userRolesAdd", _userRolesAdd.UserRolesAddComponent).component("userRoles", _userRoles.UserRolesComponent).component("userLists", _userLists.UserListsComponent).component("dashboard", _dashboard.DashboardComponent).component("navSidebar", _navSidebar.NavSidebarComponent).component("navHeader", _navHeader.NavHeaderComponent).component("loginLoader", _loginLoader.LoginLoaderComponent).component("resetPassword", _resetPassword.ResetPasswordComponent).component("forgotPassword", _forgotPassword.ForgotPasswordComponent).component("loginForm", _loginForm.LoginFormComponent);
 
 /***/ }),
 /* 27 */
@@ -2242,8 +2251,6 @@
 	    _createClass(Crm2910Controller, [{
 	        key: '$onInit',
 	        value: function $onInit() {
-
-	            //this.$log.info('ahihi', this.m);
 	            this.loadInit();
 	        }
 	    }, {
@@ -2273,7 +2280,6 @@
 	                return;
 	            }
 	            that.m.isSaving = true;
-
 	            var param = angular.copy(that.m.form);
 	            param.warehouse_id = that.m.warehouse_id;
 	            that.$log.info('param: 1', param);
@@ -29895,6 +29901,7 @@
 	        key: 'cancel',
 	        value: function cancel() {
 	            this.DialogService.close();
+	            //this.$log.info("store_id", this.m.item);
 	        }
 	    }]);
 
@@ -29905,7 +29912,7 @@
 /* 203 */
 /***/ (function(module, exports) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -29941,31 +29948,29 @@
 	        this.m.test = [0, 0]; //test form of supplier and rate
 	        this.m.store_order_id = $stateParams.store_order_id;
 	        this.m.store_id = $stateParams.store_id;
-	        this.$log.info('check init');
 	        this.loadInitData();
 	    }
 
 	    _createClass(Crm0210Controller, [{
-	        key: 'loadInitData',
+	        key: "loadInitData",
 	        value: function loadInitData() {
 	            var _this = this;
 
 	            this.m.order.notes = null;
 	            var $log = this.$log;
 	            var param = {
-
 	                store_order_id: this.m.store_order_id,
 	                store_id: this.m.store_id
 	                //$log.info('supplier_id', this.m.supplier_order_id);
-	                //param.supplier_order_id = this.m.supplier_order_id;
-	            };var initService = this.API.service('load-init', this.API.all('crm0210'));
+	            };this.m.store_id = param.store_id;
+	            //param.supplier_order_id = this.m.supplier_order_id;
+	            var initService = this.API.service("search-product", this.API.all("crm0210"));
 	            initService.post(param).then(function (response) {
 	                _this.m.init = response.data;
 	                //$log.info('ahihi', this.m.init.order);
 	                if (response.data.store != null) {
 	                    _this.m.store = response.data.store;
 	                }
-
 	                if (_this.m.store_order_id != null) {
 	                    _this.m.orderDetail = _this.m.init.orderDetail;
 	                    _this.m.order = _this.m.init.order;
@@ -29973,16 +29978,17 @@
 	                    _this.m.order.discount = _this.m.init.order[0].discount;
 	                    _this.m.order.total_with_discount = _this.m.init.order[0].total_with_discount;
 	                }
+	                _this.$log.info("check data search: ", _this.m);
 	            });
 	        }
 	    }, {
-	        key: 'searchProduct',
+	        key: "searchProduct",
 	        value: function searchProduct() {
 	            var _this2 = this;
 
 	            var $log = this.$log;
 
-	            //$log.info(this.m);
+	            //this.$log.info(this.m);
 
 	            // Get list product 
 	            var searchService = this.API.service('search-product', this.API.all('crm0210'));
@@ -30003,13 +30009,12 @@
 	                        value.hide = hide;
 	                    });
 	                }
-
 	                _this2.m.productList = list;
 	                // $log.debug('this.m.list', this.m.productList);
 	            });
 	        }
 	    }, {
-	        key: 'addProduct',
+	        key: "addProduct",
 	        value: function addProduct(product) {
 	            if (this.m.orderDetail == null) {
 	                this.m.orderDetail = [];
@@ -30036,7 +30041,7 @@
 	            this.calcOrderTotal();
 	        }
 	    }, {
-	        key: 'calcOrderTotal',
+	        key: "calcOrderTotal",
 	        value: function calcOrderTotal() {
 	            if (this.m.order == null) return;
 	            var total = 0;
@@ -30054,12 +30059,12 @@
 	            //show tổng thể tích và tiền vốn
 	        }
 	    }, {
-	        key: 'roundUp',
+	        key: "roundUp",
 	        value: function roundUp(number) {
 	            return Math.ceil(number);
 	        }
 	    }, {
-	        key: 'checkValidForm',
+	        key: "checkValidForm",
 	        value: function checkValidForm() {
 
 	            var oke = true;
@@ -30078,7 +30083,7 @@
 	            return oke;
 	        }
 	    }, {
-	        key: 'clickSave',
+	        key: "clickSave",
 	        value: function clickSave() {
 	            var _this3 = this;
 
@@ -30122,7 +30127,7 @@
 	            });
 	        }
 	    }, {
-	        key: 'removeProduct',
+	        key: "removeProduct",
 	        value: function removeProduct(product) {
 	            var index = this.m.orderDetail.indexOf(product);
 	            if (index >= 0) {
@@ -30138,7 +30143,7 @@
 	            this.calcOrderTotal();
 	        }
 	    }, {
-	        key: 'clickPrintCheck',
+	        key: "clickPrintCheck",
 	        value: function clickPrintCheck() {
 	            var _this4 = this;
 
@@ -30160,7 +30165,7 @@
 	            });
 	        }
 	    }, {
-	        key: 'clickCreateExport',
+	        key: "clickCreateExport",
 	        value: function clickCreateExport() {
 	            var that = this;
 	            swal({
@@ -30182,7 +30187,7 @@
 	            });
 	        }
 	    }, {
-	        key: '$onInit',
+	        key: "$onInit",
 	        value: function $onInit() {}
 	    }]);
 
@@ -32644,22 +32649,89 @@
 
 /***/ }),
 /* 226 */
+/***/ (function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var Crm3020Controller = function () {
+	    Crm3020Controller.$inject = ["$scope", "$state", "$log", "API", "UtilsService", "ClientService", "$stateParams", "RouteService", "AclService"];
+	    function Crm3020Controller($scope, $state, $log, API, UtilsService, ClientService, $stateParams, RouteService, AclService) {
+	        "ngInject";
+
+	        _classCallCheck(this, Crm3020Controller);
+
+	        this.$state = $state;
+	        this.$log = $log;
+	        this.API = API;
+	        this.UtilsService = UtilsService;
+	        this.ClientService = ClientService;
+	        this.RouteService = RouteService;
+	        this.can = AclService.can;
+	        this.m = {
+	            data: {},
+	            init: {}
+	        };
+	        this.m.store_id = $stateParams.store_id;
+	        this.m.isSaving = false;
+	    }
+
+	    _createClass(Crm3020Controller, [{
+	        key: "$onInit",
+	        value: function $onInit() {
+	            this.loadInit();
+	        }
+	    }, {
+	        key: "loadInit",
+	        value: function loadInit() {
+	            var _this = this;
+
+	            var param = {
+	                store_id: this.m.store_id
+	            };
+	            var searchService = this.API.service("search", this.API.all("crm3020"));
+	            searchService.post(param).then(function (response) {
+	                _this.$log.info("m init: ", response.data.data);
+	                _this.m.data = response.data.data;
+	            });
+	        }
+	    }]);
+
+	    return Crm3020Controller;
+	}();
+
+	var Crm3020Component = exports.Crm3020Component = {
+	    templateUrl: "/views/admin.crm3020",
+	    controller: Crm3020Controller,
+	    controllerAs: "vm",
+	    bindings: {}
+	};
+
+/***/ }),
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _fkColSortable = __webpack_require__(227);
+	var _fkColSortable = __webpack_require__(228);
 
-	var _routeBodyclass = __webpack_require__(228);
+	var _routeBodyclass = __webpack_require__(229);
 
-	var _passwordVerify = __webpack_require__(229);
+	var _passwordVerify = __webpack_require__(230);
 
-	var _amchart = __webpack_require__(230);
+	var _amchart = __webpack_require__(231);
 
 	angular.module('app.components').directive('routeBodyclass', _routeBodyclass.RouteBodyClassComponent).directive('passwordVerify', _passwordVerify.PasswordVerifyClassComponent).directive('fkColSortable', _fkColSortable.FkColSortableComponent).directive('amchart', _amchart.AmchartDirective);
 
 /***/ }),
-/* 227 */
+/* 228 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -32684,7 +32756,7 @@
 	var FkColSortableComponent = exports.FkColSortableComponent = fkColSortable;
 
 /***/ }),
-/* 228 */
+/* 229 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -32720,7 +32792,7 @@
 	var RouteBodyClassComponent = exports.RouteBodyClassComponent = routeBodyClass;
 
 /***/ }),
-/* 229 */
+/* 230 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -32765,7 +32837,7 @@
 	var PasswordVerifyClassComponent = exports.PasswordVerifyClassComponent = passwordVerifyClass;
 
 /***/ }),
-/* 230 */
+/* 231 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -33148,24 +33220,24 @@
 	}
 
 /***/ }),
-/* 231 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _dialog = __webpack_require__(232);
+	var _dialog = __webpack_require__(233);
 
-	var _Client = __webpack_require__(233);
+	var _Client = __webpack_require__(234);
 
-	var _Utils = __webpack_require__(234);
+	var _Utils = __webpack_require__(235);
 
-	var _Route = __webpack_require__(235);
+	var _Route = __webpack_require__(236);
 
-	var _context = __webpack_require__(236);
+	var _context = __webpack_require__(237);
 
-	var _API = __webpack_require__(237);
+	var _API = __webpack_require__(238);
 
-	var _chart = __webpack_require__(238);
+	var _chart = __webpack_require__(239);
 
 	// import { StoreDialogController } from './dialogs/store_dialog/store_dialog.dialog'
 
@@ -33173,7 +33245,7 @@
 	// .controller('StoreDialogController', StoreDialogController)
 
 /***/ }),
-/* 232 */
+/* 233 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -33307,7 +33379,7 @@
 	}();
 
 /***/ }),
-/* 233 */
+/* 234 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -33474,7 +33546,7 @@
 	}();
 
 /***/ }),
-/* 234 */
+/* 235 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -33559,7 +33631,7 @@
 	}();
 
 /***/ }),
-/* 235 */
+/* 236 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -33607,7 +33679,7 @@
 	}();
 
 /***/ }),
-/* 236 */
+/* 237 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -33659,7 +33731,7 @@
 	}();
 
 /***/ }),
-/* 237 */
+/* 238 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -33714,7 +33786,7 @@
 	}];
 
 /***/ }),
-/* 238 */
+/* 239 */
 /***/ (function(module, exports) {
 
 	'use strict';

@@ -60,6 +60,10 @@
                                     <th>#</th>
                                     <th>STT.</th>
                                     <th>Tên đại lý</th>
+                                    <th>Tiêu chí</th>
+                                    <th></th>
+                                    <th></th>
+
                                     <th>Tổng điểm dự kiến quý {{vm.m.quarter}}/{{vm.m.year}}</th>
                                 </tr>
                             </thead>
@@ -72,16 +76,16 @@
                                             <i class="fa fa-ellipsis-v"></i>
                                           </button>
                                           <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-body">
-                                            <li role="menuitem"><a ui-sref='app.crm3010'>Lịch sử điểm</a></li>
+                                            <li role="menuitem"><a ui-sref='app.crm3021({store_id: item.store_id})'>Lịch sử điểm</a></li>
                                           </ul>
                                         </div>
                                     </td>
                                     <td>{{$index+ vm.m.data.data.from}}</td>
                                     <td>
-                                        {{item.name}}
-                                        <br>
+                                        {{item.name}}<br>
                                         <small><i>{{item.address}}</i></small>
-                                        <br>
+                                    </td>
+                                    <td>
                                         <small><i>1. Doanh số 2024: <b>{{item.total_sale|currency:'':0}} (+{{+item.total_sale < +vm.m.data.avg_sale ? 10:25}})</b></i></small>
                                         <br>
                                         <small><i>2. Thâm niên: <b>{{item.retention}} năm (+{{+item.retention >=3 ? 25:10}})</b></i></small>
@@ -90,6 +94,8 @@
                                         <br>
                                         <small><i>4. Thời gian công nợ: <b>{{item.payment ? "Không có công nợ":"Có công nợ"}} (+{{+item.payment ? 25:15}})</b></i></small>
                                     </td>
+                                    <td></td>
+                                    <td></td>
                                     <td>{{ vm.getTotalScore(item.total_sale, item.retention, item.order_frequency, item.payment) }}</td>
                                 </tr>
                             </tbody>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Services\Crm3010Service;
 use Auth;
 use Illuminate\Http\Request;
 use App\Services\OrderService;
@@ -20,6 +21,7 @@ class Crm0210Controller extends AdminBaseController
      * @var mixed
      */
     private $crm0210Service;
+    private $crm3010Service;
     /**
      * @var mixed
      */
@@ -44,9 +46,11 @@ class Crm0210Controller extends AdminBaseController
         ProductService $productService,
         Crm0210Service $crm0210Service,
         DownloadService $downloadService,
-        SupplierService $supplierService
+        SupplierService $supplierService,
+        Crm3010Service $crm3010Service
     ) {
         $this->crm0210Service  = $crm0210Service;
+        $this->crm3010Service  = $crm3010Service;
         $this->productService  = $productService;
         $this->orderService    = $orderService;
         $this->downloadService = $downloadService;
@@ -59,11 +63,13 @@ class Crm0210Controller extends AdminBaseController
      */
     public function postSearchProduct(Request $request)
     {
+        $param = $request->all();
         // Load product list
-        $productList = $this->crm0210Service->selectProductListForOrder($request->all());
-
+        //$productList = $this->crm0210Service->selectProductListForOrder($request->all());
+        $productNotBuy = $this->crm3010Service->getProductNotBuy($param);
         $result = [
-            'list' => $productList,
+            //'list' => $productList,
+            'list_not_buy'=> $productNotBuy
         ];
 
         return response()->success($result);
@@ -97,6 +103,7 @@ class Crm0210Controller extends AdminBaseController
     {
         $storeOrderId = intVal($request->get('store_order_id', 0));
         $store_id     = intVal($request->get('store_id', 0));
+
         $orderDetail     = [];
         $store           = [];
         $order           = [];
@@ -106,7 +113,7 @@ class Crm0210Controller extends AdminBaseController
             $orderDetail = $this->crm0210Service->selectOrderDetail($storeOrderId);
            // $supplier  = $this->crm0210Service->selectExactSupplier($supplierOrderId);
             $order       = $this->crm0210Service->selectOrder($storeOrderId);
-           
+
             
         }
         $store     = $this->crm0210Service->selectExactSupplier($store_id);

@@ -17,8 +17,6 @@ class Crm2910Controller{
     }
 
     $onInit() {
-     
-        //this.$log.info('ahihi', this.m);
         this.loadInit();
     }
     loadInit() {
@@ -44,8 +42,6 @@ class Crm2910Controller{
             return;
         }
         that.m.isSaving = true;
-       
-
         let param = angular.copy(that.m.form);
         param.warehouse_id = that.m.warehouse_id;
         that.$log.info('param: 1',param);

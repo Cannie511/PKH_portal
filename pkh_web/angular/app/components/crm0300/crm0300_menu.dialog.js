@@ -17,5 +17,6 @@ export class Crm0300MenuDialogController {
     }
     cancel() {
         this.DialogService.close();
+        //this.$log.info("store_id", this.m.item);
     }
 }

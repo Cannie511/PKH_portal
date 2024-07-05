@@ -184,9 +184,11 @@ import { LoginLoaderComponent } from './app/components/login-loader/login-loader
 import { ResetPasswordComponent } from './app/components/reset-password/reset-password.component'
 import { ForgotPasswordComponent } from './app/components/forgot-password/forgot-password.component'
 import { LoginFormComponent } from './app/components/login-form/login-form.component'
+import { Crm3020Component } from "./app/components/crm3020/crm3020.component";
 
 angular
     .module("app.components")
+    .component("crm3020", Crm3020Component)
     .component("crm3010", Crm3010Component)
     .component("crm3000", Crm3000Component)
     .component("crm2520", Crm2520Component)

@@ -31,9 +31,11 @@
     </div>
 </div>
 <div class="modal-body crm0300-menu">
-
     <div><h4>Bán hàng</h4></div>
-
+    <a class="btn btn-app" ui-sref='app.crm3021({store_id: vm.m.item.store_id}) ' ng-click="vm.cancel()" placement="top"
+        uib-tooltip="Lịch sử cập nhật điểm">
+        <i class="fa fa-clock"></i> Lịch sử điểm
+    </a>
     <a class="btn btn-app" ui-sref='app.crm0210({store_id: vm.m.item.store_id}) ' ng-click="vm.cancel()" placement="top" uib-tooltip="Nhập đơn hàng (xuất cho khách)">
         <i class="fa fa-shopping-cart"></i> Đơn hàng
     </a>

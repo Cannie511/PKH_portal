@@ -52,19 +52,15 @@ class Crm0210Service extends BaseService
             $listOrderDetail[] = $orderDetail;
 
         
-                    $whChange                        = new TrnWarehouseChange();
-                    $whChange->warehouse_change_type = 2;
-                    $whChange->changed_date      = Carbon::today();
-                    $whChange->product_id            = $productID;
-                    $whChange->amount                = $item['amount'];
-                    $this->updateRecordHeader($whChange, $user, true);
-                    DB::transaction(function () use ($whChange) {
-                        $whChange->save();
-                    });
-                
-
-            
-
+                $whChange                        = new TrnWarehouseChange();
+                $whChange->warehouse_change_type = 2;
+                $whChange->changed_date      = Carbon::today();
+                $whChange->product_id            = $productID;
+                $whChange->amount                = $item['amount'];
+                $this->updateRecordHeader($whChange, $user, true);
+                DB::transaction(function () use ($whChange) {
+                    $whChange->save();
+                });
 
         }
 
