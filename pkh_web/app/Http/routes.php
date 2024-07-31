@@ -48,6 +48,8 @@ function routeForFrontend() {
     Route::get('/don-hang', ['uses' => 'OrderStatusController@index']);
     Route::get('/{slug}', ['uses' => 'Page2Controller@show']);
 
+    // seach 4001
+    Route::post('/crm4001/searchByStoreName',  ['uses' =>'Crm4001Controller@postSearchByStoreName']);
     // Route::get('/{slug}', ['uses' => 'PageController@show']);
 }
 
@@ -133,7 +135,6 @@ $api->group($apiGroupSeeting, function ($api) {
     $api->put('users/me', 'Admin\UserController@putMe');
 
     $api->post('logout', '\App\Http\Controllers\Auth\AuthController@postLogout');
-
     $api->controller('suppliers', 'Admin\SupplierController');
 
     $api->controller('crm0510', 'Admin\Crm0510Controller'); // Customer service
@@ -233,6 +234,8 @@ $api->group($apiGroupSeeting, function ($api) {
     $api->controller('crm2900', 'Admin\Crm2900Controller'); 
     $api->controller('crm2910', 'Admin\Crm2910Controller');
     $api->controller('crm3000', 'Admin\Crm3000Controller'); // Đánh giá cửa hàng
+    $api->controller('crm4001', 'Admin\Crm4001Controller');
+    $api->controller('crm4002', 'Admin\Crm4002Controller');
     $api->controller('crm3010', 'Admin\Crm3010Controller'); //Mã chưa mua
     $api->controller('crm3020', 'Admin\Crm3020Controller');
     
@@ -305,7 +308,7 @@ $api->group($apiGroupSeeting, function ($api) {
 
     // $api->controller('comments', 'Admin\CommentController');
     $api->get('comments', 'Admin\CommentController@list');
-
+    
     // TODO: for test
     $api->controller('tmp9999', 'Admin\Tmp9999Controller');
 });
@@ -391,4 +394,6 @@ $api->group($apiMobileGroupWareAuth, function ($api) {
     // Common
     $api->get('sp/master', 'Mobile\MasterController@index');
     $api->get('sp/setting', 'Mobile\SettingController@index');
+    
+
 });
