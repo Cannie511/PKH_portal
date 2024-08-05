@@ -793,4 +793,37 @@ class BaseService
 
     }
 
+// Test hàm phần trang 12row
+public function pagination12R(
+    $sql,
+    $sqlParam,
+    $rawParam
+) {
+    // Count item
+    $sqlCount = "select count(1) count from (" . $sql . ") temp";
+    $count    = DB::select(DB::raw($sqlCount), $sqlParam)[0]->count;
+
+    // Select page
+    $currentPage = 1;
+
+    if (isset($rawParam['page'])) {
+        $currentPageVal = intval($rawParam['page']);
+        if ($currentPageVal > 0) {
+            $currentPage = $currentPageVal;
+        }
+    }
+
+    $perPage = 10; // Số hàng trên mỗi trang, thay đổi tại đây
+
+    $offset = ($currentPage - 1) * $perPage;
+
+    $sql .= " limit $perPage offset $offset ";
+    $data = DB::select(DB::raw($sql), $sqlParam);
+
+    $paginator = new LengthAwarePaginator($data, $count, $perPage, $currentPage);
+
+    return $paginator;
+}
+
+
 }
