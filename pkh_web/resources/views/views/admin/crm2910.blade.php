@@ -38,7 +38,6 @@
                                 </div>
                             </div>
                         </div>
-                       
                     </div>
                     <div class="box-footer">
                         <a ui-sref="app.crm2900" class="btn btn-default"><i class="fa fa-angle-double-left"></i> Back</a>

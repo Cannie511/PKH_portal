@@ -277,6 +277,54 @@ th.sortable .fa-sort {
   margin-bottom: 80px;
 }
 
+.dataTables_filter {
+  float: right;
+}
+
+.dataTables_filter input {
+  margin: 0px 5px 0px 5px;
+}
+
+.dataTables_paginate {
+  float: right;
+}
+
+.dataTables_paginate .pagination {
+  margin: 0px;
+}
+
+#main-content {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+}
+
+.product-list .img-thumb {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.form-group .chosen-container {
+  width: 100% !important;
+  margin-bottom: 1rem;
+}
+
+.pagination {
+  margin: 0px;
+}
+
+.treeview-menu .divider {
+  border-bottom: 1px solid #41575f;
+  margin-left: 15px !important;
+}
+
+.thumb-img-list-item {
+  max-height: 80px;
+  max-width: 80px;
+}
+
+.no-border-radius {
+  border-radius: 0px !important;
+}
 
 .Landing {
   height: 100%;
@@ -486,54 +534,6 @@ Make sure to remove this when you modify this demo
   }
 }
 
-.dataTables_filter {
-  float: right;
-}
-
-.dataTables_filter input {
-  margin: 0px 5px 0px 5px;
-}
-
-.dataTables_paginate {
-  float: right;
-}
-
-.dataTables_paginate .pagination {
-  margin: 0px;
-}
-
-#main-content {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 12px;
-}
-
-.product-list .img-thumb {
-  max-width: 100px;
-  max-height: 100px;
-}
-
-.form-group .chosen-container {
-  width: 100% !important;
-  margin-bottom: 1rem;
-}
-
-.pagination {
-  margin: 0px;
-}
-
-.treeview-menu .divider {
-  border-bottom: 1px solid #41575f;
-  margin-left: 15px !important;
-}
-
-.thumb-img-list-item {
-  max-height: 80px;
-  max-width: 80px;
-}
-
-.no-border-radius {
-  border-radius: 0px !important;
-}
 
 .Login-formContainer {
   margin-top: 80px;
@@ -580,7 +580,6 @@ Make sure to remove this when you modify this demo
 
 
 
-
 .crm0210 .form-horizontal .form-group {
   margin-bottom: 0px;
 }
@@ -595,6 +594,7 @@ Make sure to remove this when you modify this demo
   padding-top: 2px;
   padding-bottom: 2px;
 }
+
 
 
 
@@ -645,10 +645,10 @@ Make sure to remove this when you modify this demo
 
 
 
+
 .crm0914 .progress {
   margin-top: 0px;
 }
-
 
 
 #crm1000 pre {
@@ -713,6 +713,7 @@ Make sure to remove this when you modify this demo
 
 
 
+
 .das0100 canvas {
   width: 100% !important;
   max-width: 800px;
@@ -727,7 +728,6 @@ Make sure to remove this when you modify this demo
   font-weight: bold;
 }
 
-
 .ForgotPassword-input {
   margin-bottom: 0;
 }
@@ -735,7 +735,6 @@ Make sure to remove this when you modify this demo
 .hrm0100 .fc-content {
   white-space: normal !important;
 }
-
 
 
 
@@ -766,6 +765,7 @@ Make sure to remove this when you modify this demo
   z-index: 2;
   background: #ecf0f5;
 }
+
 
 .hrm0150 .custom-marker {
   background: rgba(255, 255, 255, 0.5);
@@ -825,7 +825,6 @@ Make sure to remove this when you modify this demo
 
 
 
-
 .btn-github:hover {
   color: #fff;
 }
@@ -837,6 +836,7 @@ Make sure to remove this when you modify this demo
 .btn-google:hover {
   color: #fff;
 }
+
 
 
 @media (max-width: 767px) {

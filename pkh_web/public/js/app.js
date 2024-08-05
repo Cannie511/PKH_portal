@@ -32698,7 +32698,7 @@
 	            };
 	            var searchService = this.API.service("search", this.API.all("crm3020"));
 	            searchService.post(param).then(function (response) {
-	                _this.$log.info("m init: ", response.data.data);
+	                _this.$log.info("m init: ", response.data);
 	                _this.m.data = response.data.data;
 	            });
 	        }

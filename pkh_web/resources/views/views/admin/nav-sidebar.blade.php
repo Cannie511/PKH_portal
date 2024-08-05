@@ -281,7 +281,7 @@
          <li class="active"><a ui-sref='app.crm3000'><i class="fa fa-store"></i><span>Đại Lý</span></a></li>
         </ul>
         <ul class="treeview-menu">
-          <li class="active"><a ui-sref='app.crm3010'><i class="fa fa-cart-plus"></i></i><span>Mã hàng chưa mua</span></a></li>
+          <li class="active"><a ui-sref='app.crm0231'><i class="fa fa-cart-plus"></i></i><span>Mã hàng chưa mua</span></a></li>
         </ul>
       </li>
     </ul>

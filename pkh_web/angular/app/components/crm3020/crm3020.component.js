@@ -35,7 +35,7 @@ class Crm3020Controller {
         };
         let searchService = this.API.service("search", this.API.all("crm3020"));
         searchService.post(param).then((response) => {
-            this.$log.info("m init: ", response.data.data);
+            this.$log.info("m init: ", response.data);
             this.m.data = response.data.data;
         });
     }

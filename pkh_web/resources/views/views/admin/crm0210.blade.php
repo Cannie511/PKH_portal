@@ -168,7 +168,7 @@
                 
             </div>
 
-             <div class="box box-info collapsed-box">
+            <div class="box box-info collapsed-box">
                 <div class="box-header with-border">
                     <h3 class="box-title">Sản phẩm chưa đặt</h3>
                     <div class="box-tools pull-right">
