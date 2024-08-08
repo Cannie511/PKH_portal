@@ -835,6 +835,7 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
         )
         //Đánh giá đại lý
         .state("app.crm3000", getStateDefinition("crm3000"))
+        .state("app.crm4000", getStateDefinition("crm4000"))
         .state("app.crm3010", getStateDefinition("crm3010"))
         //lịch sử điểm
         .state(

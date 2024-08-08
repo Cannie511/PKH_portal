@@ -88,6 +88,7 @@
                                     <td>
                                         <small><i>1. Doanh số 2024: <b>{{item.total_sale|currency:'':0}} (+{{+item.total_sale < +vm.m.data.avg_sale ? 10:25}})</b></i></small>
                                         <br>
+                                        
                                         <small><i>2. Thâm niên: <b>{{item.retention}} năm (+{{+item.retention >=3 ? 25:10}})</b></i></small>
                                         <br>
                                         <small><i>3. Tần suất đặt hàng: <b>{{+item.order_frequency}} đơn (+{{+item.order_frequency >=vm.m.data.avg_OD ? 25:10}})</b></i></small>

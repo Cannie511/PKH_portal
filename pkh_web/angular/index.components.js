@@ -1,3 +1,5 @@
+import {OazaloComponent} from './app/components/oazalo/oazalo.component';
+import {Crm4000Component} from './app/components/crm4000/crm4000.component';
 import { Crm3010Component } from "./app/components/crm3010/crm3010.component";
 import {Crm3000Component} from './app/components/crm3000/crm3000.component';
 import {Crm2520Component} from './app/components/crm2520/crm2520.component';
@@ -188,6 +190,7 @@ import { Crm3020Component } from "./app/components/crm3020/crm3020.component";
 
 angular
     .module("app.components")
+    .component("crm4000", Crm4000Component)
     .component("crm3020", Crm3020Component)
     .component("crm3010", Crm3010Component)
     .component("crm3000", Crm3000Component)

@@ -241,42 +241,6 @@ th.sortable .fa-sort {
   color: #ccc;
 }
 
-.Footer {
-  text-align: center;
-  background-color: #F6F9FA;
-  border-top: 1px solid #E9F0F3;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  color: #888888;
-  font-weight: 300;
-}
-
-.Footer-text {
-  padding-top: 10px;
-  opacity: 0.8;
-  color: #888888;
-}
-
-.Footer-link {
-  text-decoration: none;
-  color: #888888 !important;
-  font-weight: 400;
-}
-
-.Footer-link:hover {
-  text-decoration: underline;
-}
-
-.Footer-logo {
-  width: 49px;
-  height: 46px;
-}
-
-.ForgotPassword-formContainer {
-  margin-top: 80px;
-  margin-bottom: 80px;
-}
-
 
 .Landing {
   height: 100%;
@@ -486,6 +450,42 @@ Make sure to remove this when you modify this demo
   }
 }
 
+.Footer {
+  text-align: center;
+  background-color: #F6F9FA;
+  border-top: 1px solid #E9F0F3;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  color: #888888;
+  font-weight: 300;
+}
+
+.Footer-text {
+  padding-top: 10px;
+  opacity: 0.8;
+  color: #888888;
+}
+
+.Footer-link {
+  text-decoration: none;
+  color: #888888 !important;
+  font-weight: 400;
+}
+
+.Footer-link:hover {
+  text-decoration: underline;
+}
+
+.Footer-logo {
+  width: 49px;
+  height: 46px;
+}
+
+.ForgotPassword-formContainer {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
 .dataTables_filter {
   float: right;
 }
@@ -540,13 +540,13 @@ Make sure to remove this when you modify this demo
   margin-bottom: 80px;
 }
 
-
-.Register-formContainer {
+.ResetPassword-formContainer {
   margin-top: 80px;
   margin-bottom: 80px;
 }
 
-.ResetPassword-formContainer {
+
+.Register-formContainer {
   margin-top: 80px;
   margin-bottom: 80px;
 }
@@ -555,6 +555,9 @@ Make sure to remove this when you modify this demo
   margin-top: 80px;
   margin-bottom: 80px;
 }
+
+
+
 
 
 
@@ -570,8 +573,6 @@ Make sure to remove this when you modify this demo
   max-width: 168px;
   max-height: 168px;
 }
-
-
 
 
 
@@ -601,10 +602,10 @@ Make sure to remove this when you modify this demo
 
 
 
+
 .crm0300-menu .btn-app {
   min-width: 100px;
 }
-
 
 
 
@@ -629,7 +630,6 @@ Make sure to remove this when you modify this demo
   padding-top: 2px;
   padding-bottom: 2px;
 }
-
 
 
 
@@ -692,10 +692,12 @@ Make sure to remove this when you modify this demo
 
 
 
-
 #crm2510 #imgPreview img {
   max-height: 240px;
 }
+
+
+
 
 
 
@@ -727,13 +729,12 @@ Make sure to remove this when you modify this demo
   font-weight: bold;
 }
 
+.hrm0100 .fc-content {
+  white-space: normal !important;
+}
 
 .ForgotPassword-input {
   margin-bottom: 0;
-}
-
-.hrm0100 .fc-content {
-  white-space: normal !important;
 }
 
 
@@ -775,10 +776,11 @@ Make sure to remove this when you modify this demo
 }
 
 
-
 .hrm0153 .btn-checkin, .hrm0153 .btn-checkout {
   height: 100px;
 }
+
+
 
 
 
@@ -824,8 +826,6 @@ Make sure to remove this when you modify this demo
 
 
 
-
-
 .btn-github:hover {
   color: #fff;
 }
@@ -839,6 +839,7 @@ Make sure to remove this when you modify this demo
 }
 
 
+
 @media (max-width: 767px) {
   .skin-blue .main-header .navbar .dropdown-menu li a {
     color: #333;
@@ -850,6 +851,7 @@ Make sure to remove this when you modify this demo
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
 }
+
 
 
 .ResetPassword-input {
