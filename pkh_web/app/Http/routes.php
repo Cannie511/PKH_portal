@@ -136,7 +136,7 @@ $api->group($apiGroupSeeting, function ($api) {
 
     $api->controller('suppliers', 'Admin\SupplierController');
 
-    $api->controller('oaZalo', 'Admin\OaZaloController');
+   
 
     $api->controller('crm0510', 'Admin\Crm0510Controller'); // Customer service
     $api->controller('crm0500', 'Admin\Crm0500Controller'); // Customer service

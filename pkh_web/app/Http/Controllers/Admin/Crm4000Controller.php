@@ -68,8 +68,7 @@ class Crm4000Controller extends AdminBaseController
             $param['address'],        
             $param['payments'],       
             $param['date'],           
-            $param['payment_id'],
-            $param['total_score_card']      
+            $param['payment_id'], 
         );
 
         // tempalte thanh toán + thông báo điểm 
