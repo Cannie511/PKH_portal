@@ -1,4 +1,4 @@
-import {OazaloComponent} from './app/components/oazalo/oazalo.component';
+
 import {Crm4000Component} from './app/components/crm4000/crm4000.component';
 import { Crm3010Component } from "./app/components/crm3010/crm3010.component";
 import {Crm3000Component} from './app/components/crm3000/crm3000.component';

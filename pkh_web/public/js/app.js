@@ -58,9 +58,9 @@
 
 	__webpack_require__(26);
 
-	__webpack_require__(229);
+	__webpack_require__(230);
 
-	__webpack_require__(234);
+	__webpack_require__(235);
 
 /***/ }),
 /* 1 */
@@ -857,9 +857,7 @@
 	        params: { alerts: null, warehouse_id: null }
 	    }))
 	    //Đánh giá đại lý
-
-	    .state("app.crm3000", getStateDefinition("crm3000")).state("app.crm4000", getStateDefinition("crm4000")).state("app.crm4001", getStateDefinition("crm4001")).state("app.crm4002", getStateDefinition("crm4002")).state("app.crm3010", getStateDefinition("crm3010"))
-
+	    .state("app.crm3000", getStateDefinition("crm3000")).state("app.crm4001", getStateDefinition("crm4001")).state("app.crm4002", getStateDefinition("crm4002")).state("app.crm4000", getStateDefinition("crm4000")).state("app.crm3010", getStateDefinition("crm3010"))
 	    //lịch sử điểm
 	    .state("app.crm3020", getStateDefinition("crm3020", {
 	        params: { alerts: null, warehouse_id: null }
@@ -1402,332 +1400,229 @@
 
 	'use strict';
 
-	var _oazalo = __webpack_require__(27);
+	var _crm = __webpack_require__(27);
 
-	var _crm = __webpack_require__(28);
+	var _crm2 = __webpack_require__(28);
 
-	var _crm2 = __webpack_require__(29);
+	var _crm3 = __webpack_require__(29);
 
-	var _crm3 = __webpack_require__(30);
+	var _crm4 = __webpack_require__(30);
 
-	var _crm4 = __webpack_require__(31);
+	var _crm5 = __webpack_require__(31);
 
-	var _crm5 = __webpack_require__(32);
-
+	var _crm6 = __webpack_require__(32);
 
 	var _crm7 = __webpack_require__(33);
 
 	var _crm8 = __webpack_require__(34);
 
-	var _crm6 = __webpack_require__(33);
+	var _crm9 = __webpack_require__(35);
 
-	var _crm7 = __webpack_require__(34);
+	var _cms = __webpack_require__(36);
 
+	var _cms2 = __webpack_require__(37);
 
-	var _cms = __webpack_require__(35);
-
-	var _cms2 = __webpack_require__(36);
-
-	var _rpt = __webpack_require__(37);
-
-	var _crm8 = __webpack_require__(38);
-
-
-	var _crm9 = __webpack_require__(38);
-
+	var _rpt = __webpack_require__(38);
 
 	var _crm10 = __webpack_require__(39);
 
-
-	var _crm11 = __webpack_require__(42);
-
+	var _crm11 = __webpack_require__(40);
 
 	var _crm12 = __webpack_require__(42);
 
 	var _crm13 = __webpack_require__(43);
 
-	var _hrm = __webpack_require__(44);
+	var _crm14 = __webpack_require__(44);
 
-	var _hrm2 = __webpack_require__(45);
+	var _hrm = __webpack_require__(45);
 
-	var _hrm3 = __webpack_require__(46);
+	var _hrm2 = __webpack_require__(46);
 
-	var _hrm4 = __webpack_require__(47);
+	var _hrm3 = __webpack_require__(47);
 
-	var _hrm5 = __webpack_require__(48);
+	var _hrm4 = __webpack_require__(48);
 
-	var _hrm6 = __webpack_require__(49);
+	var _hrm5 = __webpack_require__(49);
 
-	var _hrm7 = __webpack_require__(50);
+	var _hrm6 = __webpack_require__(50);
 
-	var _hrm8 = __webpack_require__(51);
+	var _hrm7 = __webpack_require__(51);
 
-	var _hrm9 = __webpack_require__(52);
+	var _hrm8 = __webpack_require__(52);
 
-	var _hrm10 = __webpack_require__(53);
+	var _hrm9 = __webpack_require__(53);
 
-	var _hrm11 = __webpack_require__(54);
+	var _hrm10 = __webpack_require__(54);
 
-	var _hrm12 = __webpack_require__(55);
+	var _hrm11 = __webpack_require__(55);
 
-	var _hrm13 = __webpack_require__(56);
+	var _hrm12 = __webpack_require__(56);
 
-	var _hrm14 = __webpack_require__(57);
+	var _hrm13 = __webpack_require__(57);
 
-	var _crm14 = __webpack_require__(58);
+	var _hrm14 = __webpack_require__(58);
 
 	var _crm15 = __webpack_require__(59);
 
-	var _hrm15 = __webpack_require__(60);
+	var _crm16 = __webpack_require__(60);
 
-	var _hrm16 = __webpack_require__(61);
+	var _hrm15 = __webpack_require__(61);
 
-	var _tmp = __webpack_require__(62);
+	var _hrm16 = __webpack_require__(62);
 
-	var _hrm17 = __webpack_require__(63);
+	var _tmp = __webpack_require__(63);
 
-	var _hrm18 = __webpack_require__(64);
+	var _hrm17 = __webpack_require__(64);
 
-	var _hrm19 = __webpack_require__(65);
+	var _hrm18 = __webpack_require__(65);
 
-	var _hrm20 = __webpack_require__(66);
+	var _hrm19 = __webpack_require__(66);
 
-	var _hrm21 = __webpack_require__(67);
+	var _hrm20 = __webpack_require__(67);
 
-	var _hrm22 = __webpack_require__(68);
+	var _hrm21 = __webpack_require__(68);
 
-	var _hrm23 = __webpack_require__(69);
+	var _hrm22 = __webpack_require__(69);
 
-	var _hrm24 = __webpack_require__(70);
+	var _hrm23 = __webpack_require__(70);
 
-	var _hrm25 = __webpack_require__(71);
+	var _hrm24 = __webpack_require__(71);
 
-	var _hrm26 = __webpack_require__(72);
+	var _hrm25 = __webpack_require__(72);
 
-	var _hrm27 = __webpack_require__(73);
+	var _hrm26 = __webpack_require__(73);
 
-	var _hrm28 = __webpack_require__(74);
+	var _hrm27 = __webpack_require__(74);
 
-	var _hrm29 = __webpack_require__(75);
+	var _hrm28 = __webpack_require__(75);
 
-	var _crm12 = __webpack_require__(43);
+	var _hrm29 = __webpack_require__(76);
 
-	var _hrm = __webpack_require__(44);
-
-	var _hrm2 = __webpack_require__(45);
-
-	var _hrm3 = __webpack_require__(46);
-
-	var _hrm4 = __webpack_require__(47);
-
-	var _hrm5 = __webpack_require__(48);
-
-	var _hrm6 = __webpack_require__(49);
-
-	var _hrm7 = __webpack_require__(50);
-
-	var _hrm8 = __webpack_require__(51);
-
-	var _hrm9 = __webpack_require__(52);
-
-	var _hrm10 = __webpack_require__(53);
-
-	var _hrm11 = __webpack_require__(54);
-
-	var _hrm12 = __webpack_require__(55);
-
-	var _hrm13 = __webpack_require__(56);
-
-	var _hrm14 = __webpack_require__(57);
-
-	var _crm13 = __webpack_require__(58);
-
-	var _crm14 = __webpack_require__(59);
-
-	var _hrm15 = __webpack_require__(60);
-
-	var _hrm16 = __webpack_require__(61);
-
-	var _tmp = __webpack_require__(62);
-
-	var _hrm17 = __webpack_require__(63);
-
-	var _hrm18 = __webpack_require__(64);
-
-	var _hrm19 = __webpack_require__(65);
-
-	var _hrm20 = __webpack_require__(66);
-
-	var _hrm21 = __webpack_require__(67);
-
-	var _hrm22 = __webpack_require__(68);
-
-	var _hrm23 = __webpack_require__(69);
-
-	var _hrm24 = __webpack_require__(70);
-
-	var _hrm25 = __webpack_require__(71);
-
-	var _hrm26 = __webpack_require__(72);
-
-	var _hrm27 = __webpack_require__(73);
-
-	var _hrm28 = __webpack_require__(74);
-
-	var _hrm29 = __webpack_require__(75);
-
-	var _crm15 = __webpack_require__(76);
-
-
-	var _crm16 = __webpack_require__(77);
-
-	var _crm17 = __webpack_require__(78);
+	var _crm17 = __webpack_require__(77);
 
 	var _crm18 = __webpack_require__(78);
 
 	var _crm19 = __webpack_require__(79);
 
+	var _crm20 = __webpack_require__(80);
 
-	var _crm20 = __webpack_require__(82);
+	var _crm21 = __webpack_require__(82);
 
-	var _crm21 = __webpack_require__(83);
+	var _crm22 = __webpack_require__(83);
 
+	var _crm23 = __webpack_require__(84);
 
-	var _crm22 = __webpack_require__(84);
+	var _crm24 = __webpack_require__(85);
 
-	var _rpt2 = __webpack_require__(85);
+	var _rpt2 = __webpack_require__(86);
 
-	var _hrm30 = __webpack_require__(87);
+	var _hrm30 = __webpack_require__(88);
 
-	var _hrm31 = __webpack_require__(88);
+	var _hrm31 = __webpack_require__(89);
 
-	var _adm = __webpack_require__(92);
+	var _adm = __webpack_require__(93);
 
-	var _mobile = __webpack_require__(93);
+	var _mobile = __webpack_require__(94);
 
-	var _crm23 = __webpack_require__(94);
+	var _crm25 = __webpack_require__(95);
 
+	var _crm26 = __webpack_require__(96);
 
-	var _crm24 = __webpack_require__(95);
-
-	var _crm25 = __webpack_require__(96);
-
-	var _crm26 = __webpack_require__(97);
-
-	var _crm27 = __webpack_require__(98);
-
+	var _crm27 = __webpack_require__(97);
 
 	var _crm28 = __webpack_require__(98);
 
 	var _crm29 = __webpack_require__(99);
 
-	var _hrm32 = __webpack_require__(100);
+	var _crm30 = __webpack_require__(100);
 
-	var _hrm33 = __webpack_require__(101);
+	var _hrm32 = __webpack_require__(101);
 
-	var _hrm34 = __webpack_require__(102);
+	var _hrm33 = __webpack_require__(102);
 
+	var _hrm34 = __webpack_require__(103);
 
-	var _hrm35 = __webpack_require__(103);
+	var _hrm35 = __webpack_require__(104);
 
-	var _crm30 = __webpack_require__(104);
+	var _crm31 = __webpack_require__(105);
 
-	var _rpt3 = __webpack_require__(105);
+	var _rpt3 = __webpack_require__(106);
 
-	var _crm30 = __webpack_require__(106);
+	var _crm32 = __webpack_require__(107);
 
-	var _crm31 = __webpack_require__(107);
+	var _crm33 = __webpack_require__(108);
 
-	var _crm32 = __webpack_require__(108);
+	var _crm34 = __webpack_require__(109);
 
-	var _crm33 = __webpack_require__(109);
+	var _crm35 = __webpack_require__(110);
 
-	var _crm34 = __webpack_require__(110);
+	var _crm36 = __webpack_require__(111);
 
-	var _crm35 = __webpack_require__(111);
+	var _crm37 = __webpack_require__(112);
 
-	var _crm36 = __webpack_require__(112);
+	var _crm38 = __webpack_require__(113);
 
-	var _crm37 = __webpack_require__(113);
+	var _crm39 = __webpack_require__(114);
 
-	var _crm38 = __webpack_require__(114);
+	var _crm40 = __webpack_require__(115);
 
-	var _crm39 = __webpack_require__(115);
+	var _crm41 = __webpack_require__(116);
 
-	var _crm40 = __webpack_require__(116);
+	var _crm42 = __webpack_require__(117);
 
-	var _crm41 = __webpack_require__(117);
+	var _crm43 = __webpack_require__(118);
 
-	var _crm42 = __webpack_require__(118);
+	var _crm44 = __webpack_require__(119);
 
-	var _crm43 = __webpack_require__(119);
-
-	var _crm44 = __webpack_require__(120);
+	var _crm45 = __webpack_require__(120);
 
 	var _crm46 = __webpack_require__(121);
 
-	var _crm45 = __webpack_require__(121);
-
-
 	var _crm47 = __webpack_require__(122);
 
-	var _rpt4 = __webpack_require__(123);
+	var _crm48 = __webpack_require__(123);
 
-	var _crm47 = __webpack_require__(124);
+	var _rpt4 = __webpack_require__(124);
 
-	var _crm48 = __webpack_require__(125);
+	var _crm49 = __webpack_require__(125);
 
-	var _crm49 = __webpack_require__(126);
+	var _crm50 = __webpack_require__(126);
 
-	var _crm50 = __webpack_require__(127);
-
+	var _crm51 = __webpack_require__(127);
 
 	var _crm52 = __webpack_require__(128);
 
-	var _crm51 = __webpack_require__(128);
-
-
 	var _crm53 = __webpack_require__(129);
 
-	var _rpt5 = __webpack_require__(130);
+	var _crm54 = __webpack_require__(130);
 
-	var _crm53 = __webpack_require__(131);
+	var _rpt5 = __webpack_require__(131);
 
-	var _crm54 = __webpack_require__(132);
+	var _crm55 = __webpack_require__(132);
 
-	var _crm55 = __webpack_require__(133);
+	var _crm56 = __webpack_require__(133);
 
-	var _crm56 = __webpack_require__(134);
+	var _crm57 = __webpack_require__(134);
 
-	var _crm57 = __webpack_require__(135);
-
+	var _crm58 = __webpack_require__(135);
 
 	var _crm59 = __webpack_require__(136);
 
-	var _crm58 = __webpack_require__(136);
-
-
 	var _crm60 = __webpack_require__(137);
 
-	var _cms3 = __webpack_require__(138);
+	var _crm61 = __webpack_require__(138);
 
-
-	var _crm60 = __webpack_require__(139);
-
-
-	var _crm61 = __webpack_require__(139);
-
+	var _cms3 = __webpack_require__(139);
 
 	var _crm62 = __webpack_require__(140);
 
-	var _crm63 = __webpack_require__(142);
+	var _crm63 = __webpack_require__(141);
 
-	var _adm2 = __webpack_require__(143);
+	var _crm64 = __webpack_require__(143);
 
-	var _hrm36 = __webpack_require__(144);
+	var _adm2 = __webpack_require__(144);
 
-
-	var _crm64 = __webpack_require__(146);
+	var _hrm36 = __webpack_require__(145);
 
 	var _crm65 = __webpack_require__(146);
 
@@ -1735,23 +1630,19 @@
 
 	var _crm67 = __webpack_require__(148);
 
-	var _hrm37 = __webpack_require__(149);
+	var _crm68 = __webpack_require__(149);
 
-
-	var _crm68 = __webpack_require__(150);
-
+	var _hrm37 = __webpack_require__(150);
 
 	var _crm69 = __webpack_require__(151);
 
+	var _crm70 = __webpack_require__(152);
 
-	var _crm70 = __webpack_require__(154);
+	var _crm71 = __webpack_require__(154);
 
-	var _crm71 = __webpack_require__(155);
+	var _crm72 = __webpack_require__(155);
 
-	var _crm72 = __webpack_require__(156);
-
-	var _crm73 = __webpack_require__(157);
-
+	var _crm73 = __webpack_require__(156);
 
 	var _crm74 = __webpack_require__(157);
 
@@ -1759,181 +1650,140 @@
 
 	var _crm76 = __webpack_require__(159);
 
-	var _adm3 = __webpack_require__(160);
+	var _crm77 = __webpack_require__(160);
 
-	var _crm77 = __webpack_require__(161);
+	var _adm3 = __webpack_require__(161);
 
-	var _rpt6 = __webpack_require__(162);
+	var _crm78 = __webpack_require__(162);
 
-	var _rpt7 = __webpack_require__(163);
+	var _rpt6 = __webpack_require__(163);
 
-	var _rpt8 = __webpack_require__(164);
+	var _rpt7 = __webpack_require__(164);
 
-	var _rpt9 = __webpack_require__(165);
+	var _rpt8 = __webpack_require__(165);
 
-	var _rpt10 = __webpack_require__(166);
+	var _rpt9 = __webpack_require__(166);
 
-	var _cms4 = __webpack_require__(167);
+	var _rpt10 = __webpack_require__(167);
 
-	var _cms5 = __webpack_require__(168);
+	var _cms4 = __webpack_require__(168);
 
-	var _crm78 = __webpack_require__(169);
+	var _cms5 = __webpack_require__(169);
 
 	var _crm79 = __webpack_require__(170);
 
-	var _rpt11 = __webpack_require__(171);
+	var _crm80 = __webpack_require__(171);
 
-	var _crm79 = __webpack_require__(172);
+	var _rpt11 = __webpack_require__(172);
 
-	var _crm80 = __webpack_require__(173);
+	var _crm81 = __webpack_require__(173);
 
-	var _crm81 = __webpack_require__(174);
+	var _crm82 = __webpack_require__(174);
 
-	var _crm82 = __webpack_require__(175);
+	var _crm83 = __webpack_require__(175);
 
-	var _crm83 = __webpack_require__(176);
+	var _crm84 = __webpack_require__(176);
 
-	var _crm84 = __webpack_require__(177);
+	var _crm85 = __webpack_require__(177);
 
-	var _crm85 = __webpack_require__(178);
+	var _crm86 = __webpack_require__(178);
 
-	var _crm86 = __webpack_require__(179);
+	var _crm87 = __webpack_require__(179);
 
-	var _crm87 = __webpack_require__(180);
-
+	var _crm88 = __webpack_require__(180);
 
 	var _crm89 = __webpack_require__(181);
 
 	var _crm90 = __webpack_require__(182);
 
-	var _rpt12 = __webpack_require__(183);
+	var _crm91 = __webpack_require__(183);
 
+	var _rpt12 = __webpack_require__(184);
 
-	var _rpt13 = __webpack_require__(184);
+	var _rpt13 = __webpack_require__(185);
 
+	var _crm92 = __webpack_require__(186);
 
-	var _crm91 = __webpack_require__(185);
+	var _crm93 = __webpack_require__(188);
 
-
-	var _crm92 = __webpack_require__(188);
-
-	var _crm93 = __webpack_require__(189);
-
-	var _crm94 = __webpack_require__(190);
-
+	var _crm94 = __webpack_require__(189);
 
 	var _crm95 = __webpack_require__(190);
 
 	var _crm96 = __webpack_require__(191);
 
-	var _hrm38 = __webpack_require__(193);
+	var _crm97 = __webpack_require__(192);
 
-	var _hrm39 = __webpack_require__(194);
+	var _hrm38 = __webpack_require__(194);
 
-	var _hrm40 = __webpack_require__(195);
+	var _hrm39 = __webpack_require__(195);
 
-	var _hrm41 = __webpack_require__(196);
+	var _hrm40 = __webpack_require__(196);
 
-	var _hrm42 = __webpack_require__(197);
+	var _hrm41 = __webpack_require__(197);
 
-	var _crm97 = __webpack_require__(198);
+	var _hrm42 = __webpack_require__(198);
 
 	var _crm98 = __webpack_require__(199);
 
-	var _cms6 = __webpack_require__(201);
+	var _crm99 = __webpack_require__(200);
 
-	var _crm99 = __webpack_require__(202);
+	var _cms6 = __webpack_require__(202);
 
-
-	var _crm100 = __webpack_require__(206);
-
+	var _crm100 = __webpack_require__(203);
 
 	var _crm101 = __webpack_require__(206);
 
 	var _crm102 = __webpack_require__(207);
 
-	var _supplier_edit = __webpack_require__(208);
+	var _crm103 = __webpack_require__(208);
 
-	var _supplier_add = __webpack_require__(209);
+	var _supplier_edit = __webpack_require__(209);
 
-	var _supplier_lists = __webpack_require__(210);
+	var _supplier_add = __webpack_require__(210);
 
-	var _userProfile = __webpack_require__(211);
+	var _supplier_lists = __webpack_require__(211);
 
-	var _userVerification = __webpack_require__(212);
+	var _userProfile = __webpack_require__(212);
 
-	var _userEdit = __webpack_require__(213);
+	var _userVerification = __webpack_require__(213);
 
-	var _userPermissionsEdit = __webpack_require__(214);
+	var _userEdit = __webpack_require__(214);
 
-	var _userPermissionsAdd = __webpack_require__(215);
+	var _userPermissionsEdit = __webpack_require__(215);
 
-	var _userPermissions = __webpack_require__(216);
+	var _userPermissionsAdd = __webpack_require__(216);
 
-	var _userRolesEdit = __webpack_require__(217);
+	var _userPermissions = __webpack_require__(217);
 
-	var _userRolesAdd = __webpack_require__(218);
+	var _userRolesEdit = __webpack_require__(218);
 
-	var _userRoles = __webpack_require__(219);
+	var _userRolesAdd = __webpack_require__(219);
 
-	var _userLists = __webpack_require__(220);
+	var _userRoles = __webpack_require__(220);
 
-	var _dashboard = __webpack_require__(221);
+	var _userLists = __webpack_require__(221);
 
-	var _navSidebar = __webpack_require__(222);
+	var _dashboard = __webpack_require__(222);
 
-	var _navHeader = __webpack_require__(223);
+	var _navSidebar = __webpack_require__(223);
 
-	var _loginLoader = __webpack_require__(224);
+	var _navHeader = __webpack_require__(224);
 
-	var _resetPassword = __webpack_require__(225);
+	var _loginLoader = __webpack_require__(225);
 
-	var _forgotPassword = __webpack_require__(226);
+	var _resetPassword = __webpack_require__(226);
 
-	var _loginForm = __webpack_require__(227);
+	var _forgotPassword = __webpack_require__(227);
 
-	var _crm103 = __webpack_require__(228);
+	var _loginForm = __webpack_require__(228);
 
-	angular.module("app.components").component("crm3020", _crm103.Crm3020Component).component("crm3010", _crm.Crm3010Component).component("crm3000", _crm2.Crm3000Component).component("crm4001", _crm3.Crm4001Component).component("crm4002", _crm4.Crm4002Component).component("crm2520", _crm5.Crm2520Component).component("crm2521", _crm6.Crm2521Component).component("crm2910", _crm7.Crm2910Component).component("crm2900", _crm8.Crm2900Component).component("cms0400", _cms.Cms0400Component).component("cms0300", _cms2.Cms0300Component).component("rpt0519", _rpt.Rpt0519Component).component("crm0751", _crm9.Crm0751Component).component("crm0750", _crm10.Crm0750Component).component("crm2820", _crm11.Crm2820Component).component("crm2810", _crm12.Crm2810Component).component("crm2800", _crm13.Crm2800Component).component("hrm1112", _hrm.Hrm1112Component).component("hrm1130", _hrm2.Hrm1130Component).component("hrm1120", _hrm3.Hrm1120Component).component("hrm1111", _hrm4.Hrm1111Component).component("hrm1110", _hrm5.Hrm1110Component).component("hrm1100", _hrm6.Hrm1100Component).component("hrm1021", _hrm7.Hrm1021Component).component("hrm1020", _hrm8.Hrm1020Component).component("hrm1010", _hrm9.Hrm1010Component).component("hrm1000", _hrm10.Hrm1000Component).component("hrm0910", _hrm11.Hrm0910Component).component("hrm0900", _hrm12.Hrm0900Component).component("hrm0810", _hrm13.Hrm0810Component).component("hrm0800", _hrm14.Hrm0800Component).component("crm0915", _crm14.Crm0915Component).component("crm0914", _crm15.Crm0914Component).component("hrm0154", _hrm15.Hrm0154Component).component("hrm0153", _hrm16.Hrm0153Component).component("tmp9999", _tmp.Tmp9999Component).component("hrm0716", _hrm17.Hrm0716Component).component("hrm0715", _hrm18.Hrm0715Component).component("hrm0714", _hrm19.Hrm0714Component).component("hrm0713", _hrm20.Hrm0713Component).component("hrm0712", _hrm21.Hrm0712Component).component("hrm0711", _hrm22.Hrm0711Component).component("hrm0600", _hrm23.Hrm0600Component).component("hrm0510", _hrm24.Hrm0510Component).component("hrm0500", _hrm25.Hrm0500Component).component("hrm0410", _hrm26.Hrm0410Component).component("hrm0400", _hrm27.Hrm0400Component).component("hrm0710", _hrm28.Hrm0710Component).component("hrm0700", _hrm29.Hrm0700Component).component("crm2710", _crm16.Crm2710Component).component("crm2700", _crm17.Crm2700Component).component("crm0510", _crm18.Crm0510Component).component("crm0500", _crm19.Crm0500Component).component("crm2610", _crm20.Crm2610Component).component("crm2602", _crm21.Crm2602Component).component("crm2601", _crm22.Crm2601Component).component("crm2600", _crm23.Crm2600Component).component("rpt0518", _rpt2.Rpt0518Component).component("hrm0310", _hrm30.Hrm0310Component).component("hrm0300", _hrm31.Hrm0300Component).component("adm0500", _adm.Adm0500Component).component("mobile", _mobile.MobileComponent).component("crm2550", _crm24.Crm2550Component).component("crm2540", _crm25.Crm2540Component).component("crm2530", _crm26.Crm2530Component).component("crm2510", _crm27.Crm2510Component).component("crm2500", _crm28.Crm2500Component).component("crm0301", _crm29.Crm0301Component).component("hrm0152", _hrm32.Hrm0152Component).component("hrm0151", _hrm33.Hrm0151Component).component("hrm0150", _hrm34.Hrm0150Component).component("hrm0141", _hrm35.Hrm0141Component).component("crm2400", _crm30.Crm2400Component).component("rpt0517", _rpt3.Rpt0517Component).component("crm0351", _crm31.Crm0351Component).component("crm0350", _crm32.Crm0350Component).component("crm2330", _crm33.Crm2330Component).component("crm2320", _crm34.Crm2320Component).component("crm2310", _crm35.Crm2310Component).component("crm2300", _crm36.Crm2300Component).component("crm2110", _crm37.Crm2110Component).component("crm2100", _crm38.Crm2100Component).component("crm2010", _crm39.Crm2010Component).component("crm2000", _crm40.Crm2000Component).component("crm1930", _crm41.Crm1930Component).component("crm1921", _crm42.Crm1921Component).component("crm1920", _crm43.Crm1920Component).component("crm1900", _crm44.Crm1900Component).component("crm0121", _crm45.Crm0121Component).component("crm0120", _crm46.Crm0120Component).component("crm0250", _crm47.Crm0250Component).component("rpt0516", _rpt4.Rpt0516Component).component("crm1831", _crm48.Crm1831Component).component("crm1830", _crm49.Crm1830Component).component("crm1821", _crm50.Crm1821Component).component("crm1820", _crm51.Crm1820Component).component("crm1811", _crm52.Crm1811Component).component("crm1810", _crm53.Crm1810Component).component("rpt0515", _rpt5.Rpt0515Component).component("crm1710", _crm54.Crm1710Component).component("crm1700", _crm55.Crm1700Component).component("crm0740", _crm56.Crm0740Component).component("crm1630", _crm57.Crm1630Component).component("crm1640", _crm58.Crm1640Component).component("crm1650", _crm59.Crm1650Component).component("crm0240", _crm60.Crm0240Component).component("cms0220", _cms3.Cms0220Component).component("crm1620", _crm66.Crm1620Component).component("crm0340", _crm67.Crm0340Component).component("hrm0140", _hrm37.Hrm0140Component).component("crm0141", _crm68.Crm0141Component).component("crm0720", _crm69.Crm0720Component).component("crm1610", _crm70.Crm1610Component).component("crm1600", _crm71.Crm1600Component).component("crm1510", _crm72.Crm1510Component).component("crm1500", _crm73.Crm1500Component).component("crm1310", _crm74.Crm1310Component).component("crm1300", _crm75.Crm1300Component).component("crm0913", _crm61.Crm0913Component).component("crm0321", _crm62.Crm0321Component).component("crm0140", _crm63.Crm0140Component).component("adm0110", _adm2.Adm0110Component).component("crm0231", _crm65.Crm0231Component).component("crm0230", _crm64.Crm0230Component).component("hrm0130", _hrm36.Hrm0130Component).component("crm1110", _crm76.Crm1110Component).component("crm0810", _crm84.Crm0810Component).component("crm0800", _crm85.Crm0800Component).component("crm1200", _crm82.Crm1200Component).component("crm1210", _crm83.Crm1210Component).component("adm0400", _adm3.Adm0400Component).component("crm0912", _crm77.Crm0912Component).component("rpt0514", _rpt6.Rpt0514Component).component("rpt0510", _rpt7.Rpt0510Component).component("rpt0513", _rpt8.Rpt0513Component).component("rpt0512", _rpt9.Rpt0512Component).component("rpt0511", _rpt10.Rpt0511Component).component("cms0210", _cms4.Cms0210Component).component("cms0200", _cms5.Cms0200Component).component("crm0911", _crm78.Crm0911Component).component("crm0330", _crm79.Crm0330Component).component("rpt0310", _rpt11.Rpt0310Component).component("crm0920", _crm80.Crm0920Component).component("crm0910", _crm81.Crm0910Component).component("crm0331", _crm86.Crm0331Component).component("crm0220", _crm87.Crm0220Component).component("crm0320", _crm88.Crm0320Component).component("crm1100", _crm89.Crm1100Component).component("crm1010", _crm90.Crm1010Component).component("rpt0200", _rpt12.Rpt0200Component).component("rpt0100", _rpt13.Rpt0100Component).component("crm0700", _crm91.Crm0700Component).component("crm0710", _crm92.Crm0710Component).component("crm0900", _crm93.Crm0900Component).component("crm1000", _crm94.Crm1000Component).component("crm0110", _crm95.Crm0110Component).component("crm0100", _crm96.Crm0100Component).component("hrm0210", _hrm38.Hrm0210Component).component("hrm0200", _hrm39.Hrm0200Component).component("hrm0120", _hrm40.Hrm0120Component).component("hrm0100", _hrm41.Hrm0100Component).component("hrm0110", _hrm42.Hrm0110Component).component("crm0410", _crm97.Crm0410Component).component("crm0400", _crm98.Crm0400Component).component("cms0100", _cms6.Cms0100Component).component("crm0310", _crm29.Crm0301Component).component("crm0300", _crm99.Crm0300Component).component("crm0210", _crm100.Crm0210Component).component("crm0200", _crm101.Crm0200Component).component("crm0130", _crm102.Crm0130Component).component("supplierEdit", _supplier_edit.SupplierEditComponent).component("supplierAdd", _supplier_add.SupplierAddComponent).component("supplierLists", _supplier_lists.SupplierListsComponent).component("userProfile", _userProfile.UserProfileComponent).component("userVerification", _userVerification.UserVerificationComponent).component("userEdit", _userEdit.UserEditComponent).component("userPermissionsEdit", _userPermissionsEdit.UserPermissionsEditComponent).component("userPermissionsAdd", _userPermissionsAdd.UserPermissionsAddComponent).component("userPermissions", _userPermissions.UserPermissionsComponent).component("userRolesEdit", _userRolesEdit.UserRolesEditComponent).component("userRolesAdd", _userRolesAdd.UserRolesAddComponent).component("userRoles", _userRoles.UserRolesComponent).component("userLists", _userLists.UserListsComponent).component("dashboard", _dashboard.DashboardComponent).component("navSidebar", _navSidebar.NavSidebarComponent).component("navHeader", _navHeader.NavHeaderComponent).component("loginLoader", _loginLoader.LoginLoaderComponent).component("resetPassword", _resetPassword.ResetPasswordComponent).component("forgotPassword", _forgotPassword.ForgotPasswordComponent).component("loginForm", _loginForm.LoginFormComponent);
+	var _crm104 = __webpack_require__(229);
+
+	angular.module("app.components").component("crm4000", _crm.Crm4000Component).component("crm3020", _crm104.Crm3020Component).component("crm3010", _crm2.Crm3010Component).component("crm3000", _crm3.Crm3000Component).component("crm4001", _crm4.Crm4001Component).component("crm4002", _crm5.Crm4002Component).component("crm2520", _crm6.Crm2520Component).component("crm2521", _crm7.Crm2521Component).component("crm2910", _crm8.Crm2910Component).component("crm2900", _crm9.Crm2900Component).component("cms0400", _cms.Cms0400Component).component("cms0300", _cms2.Cms0300Component).component("rpt0519", _rpt.Rpt0519Component).component("crm0751", _crm10.Crm0751Component).component("crm0750", _crm11.Crm0750Component).component("crm2820", _crm12.Crm2820Component).component("crm2810", _crm13.Crm2810Component).component("crm2800", _crm14.Crm2800Component).component("hrm1112", _hrm.Hrm1112Component).component("hrm1130", _hrm2.Hrm1130Component).component("hrm1120", _hrm3.Hrm1120Component).component("hrm1111", _hrm4.Hrm1111Component).component("hrm1110", _hrm5.Hrm1110Component).component("hrm1100", _hrm6.Hrm1100Component).component("hrm1021", _hrm7.Hrm1021Component).component("hrm1020", _hrm8.Hrm1020Component).component("hrm1010", _hrm9.Hrm1010Component).component("hrm1000", _hrm10.Hrm1000Component).component("hrm0910", _hrm11.Hrm0910Component).component("hrm0900", _hrm12.Hrm0900Component).component("hrm0810", _hrm13.Hrm0810Component).component("hrm0800", _hrm14.Hrm0800Component).component("crm0915", _crm15.Crm0915Component).component("crm0914", _crm16.Crm0914Component).component("hrm0154", _hrm15.Hrm0154Component).component("hrm0153", _hrm16.Hrm0153Component).component("tmp9999", _tmp.Tmp9999Component).component("hrm0716", _hrm17.Hrm0716Component).component("hrm0715", _hrm18.Hrm0715Component).component("hrm0714", _hrm19.Hrm0714Component).component("hrm0713", _hrm20.Hrm0713Component).component("hrm0712", _hrm21.Hrm0712Component).component("hrm0711", _hrm22.Hrm0711Component).component("hrm0600", _hrm23.Hrm0600Component).component("hrm0510", _hrm24.Hrm0510Component).component("hrm0500", _hrm25.Hrm0500Component).component("hrm0410", _hrm26.Hrm0410Component).component("hrm0400", _hrm27.Hrm0400Component).component("hrm0710", _hrm28.Hrm0710Component).component("hrm0700", _hrm29.Hrm0700Component).component("crm2710", _crm17.Crm2710Component).component("crm2700", _crm18.Crm2700Component).component("crm0510", _crm19.Crm0510Component).component("crm0500", _crm20.Crm0500Component).component("crm2610", _crm21.Crm2610Component).component("crm2602", _crm22.Crm2602Component).component("crm2601", _crm23.Crm2601Component).component("crm2600", _crm24.Crm2600Component).component("rpt0518", _rpt2.Rpt0518Component).component("hrm0310", _hrm30.Hrm0310Component).component("hrm0300", _hrm31.Hrm0300Component).component("adm0500", _adm.Adm0500Component).component("mobile", _mobile.MobileComponent).component("crm2550", _crm25.Crm2550Component).component("crm2540", _crm26.Crm2540Component).component("crm2530", _crm27.Crm2530Component).component("crm2510", _crm28.Crm2510Component).component("crm2500", _crm29.Crm2500Component).component("crm0301", _crm30.Crm0301Component).component("hrm0152", _hrm32.Hrm0152Component).component("hrm0151", _hrm33.Hrm0151Component).component("hrm0150", _hrm34.Hrm0150Component).component("hrm0141", _hrm35.Hrm0141Component).component("crm2400", _crm31.Crm2400Component).component("rpt0517", _rpt3.Rpt0517Component).component("crm0351", _crm32.Crm0351Component).component("crm0350", _crm33.Crm0350Component).component("crm2330", _crm34.Crm2330Component).component("crm2320", _crm35.Crm2320Component).component("crm2310", _crm36.Crm2310Component).component("crm2300", _crm37.Crm2300Component).component("crm2110", _crm38.Crm2110Component).component("crm2100", _crm39.Crm2100Component).component("crm2010", _crm40.Crm2010Component).component("crm2000", _crm41.Crm2000Component).component("crm1930", _crm42.Crm1930Component).component("crm1921", _crm43.Crm1921Component).component("crm1920", _crm44.Crm1920Component).component("crm1900", _crm45.Crm1900Component).component("crm0121", _crm46.Crm0121Component).component("crm0120", _crm47.Crm0120Component).component("crm0250", _crm48.Crm0250Component).component("rpt0516", _rpt4.Rpt0516Component).component("crm1831", _crm49.Crm1831Component).component("crm1830", _crm50.Crm1830Component).component("crm1821", _crm51.Crm1821Component).component("crm1820", _crm52.Crm1820Component).component("crm1811", _crm53.Crm1811Component).component("crm1810", _crm54.Crm1810Component).component("rpt0515", _rpt5.Rpt0515Component).component("crm1710", _crm55.Crm1710Component).component("crm1700", _crm56.Crm1700Component).component("crm0740", _crm57.Crm0740Component).component("crm1630", _crm58.Crm1630Component).component("crm1640", _crm59.Crm1640Component).component("crm1650", _crm60.Crm1650Component).component("crm0240", _crm61.Crm0240Component).component("cms0220", _cms3.Cms0220Component).component("crm1620", _crm67.Crm1620Component).component("crm0340", _crm68.Crm0340Component).component("hrm0140", _hrm37.Hrm0140Component).component("crm0141", _crm69.Crm0141Component).component("crm0720", _crm70.Crm0720Component).component("crm1610", _crm71.Crm1610Component).component("crm1600", _crm72.Crm1600Component).component("crm1510", _crm73.Crm1510Component).component("crm1500", _crm74.Crm1500Component).component("crm1310", _crm75.Crm1310Component).component("crm1300", _crm76.Crm1300Component).component("crm0913", _crm62.Crm0913Component).component("crm0321", _crm63.Crm0321Component).component("crm0140", _crm64.Crm0140Component).component("adm0110", _adm2.Adm0110Component).component("crm0231", _crm66.Crm0231Component).component("crm0230", _crm65.Crm0230Component).component("hrm0130", _hrm36.Hrm0130Component).component("crm1110", _crm77.Crm1110Component).component("crm0810", _crm85.Crm0810Component).component("crm0800", _crm86.Crm0800Component).component("crm1200", _crm83.Crm1200Component).component("crm1210", _crm84.Crm1210Component).component("adm0400", _adm3.Adm0400Component).component("crm0912", _crm78.Crm0912Component).component("rpt0514", _rpt6.Rpt0514Component).component("rpt0510", _rpt7.Rpt0510Component).component("rpt0513", _rpt8.Rpt0513Component).component("rpt0512", _rpt9.Rpt0512Component).component("rpt0511", _rpt10.Rpt0511Component).component("cms0210", _cms4.Cms0210Component).component("cms0200", _cms5.Cms0200Component).component("crm0911", _crm79.Crm0911Component).component("crm0330", _crm80.Crm0330Component).component("rpt0310", _rpt11.Rpt0310Component).component("crm0920", _crm81.Crm0920Component).component("crm0910", _crm82.Crm0910Component).component("crm0331", _crm87.Crm0331Component).component("crm0220", _crm88.Crm0220Component).component("crm0320", _crm89.Crm0320Component).component("crm1100", _crm90.Crm1100Component).component("crm1010", _crm91.Crm1010Component).component("rpt0200", _rpt12.Rpt0200Component).component("rpt0100", _rpt13.Rpt0100Component).component("crm0700", _crm92.Crm0700Component).component("crm0710", _crm93.Crm0710Component).component("crm0900", _crm94.Crm0900Component).component("crm1000", _crm95.Crm1000Component).component("crm0110", _crm96.Crm0110Component).component("crm0100", _crm97.Crm0100Component).component("hrm0210", _hrm38.Hrm0210Component).component("hrm0200", _hrm39.Hrm0200Component).component("hrm0120", _hrm40.Hrm0120Component).component("hrm0100", _hrm41.Hrm0100Component).component("hrm0110", _hrm42.Hrm0110Component).component("crm0410", _crm98.Crm0410Component).component("crm0400", _crm99.Crm0400Component).component("cms0100", _cms6.Cms0100Component).component("crm0310", _crm30.Crm0301Component).component("crm0300", _crm100.Crm0300Component).component("crm0210", _crm101.Crm0210Component).component("crm0200", _crm102.Crm0200Component).component("crm0130", _crm103.Crm0130Component).component("supplierEdit", _supplier_edit.SupplierEditComponent).component("supplierAdd", _supplier_add.SupplierAddComponent).component("supplierLists", _supplier_lists.SupplierListsComponent).component("userProfile", _userProfile.UserProfileComponent).component("userVerification", _userVerification.UserVerificationComponent).component("userEdit", _userEdit.UserEditComponent).component("userPermissionsEdit", _userPermissionsEdit.UserPermissionsEditComponent).component("userPermissionsAdd", _userPermissionsAdd.UserPermissionsAddComponent).component("userPermissions", _userPermissions.UserPermissionsComponent).component("userRolesEdit", _userRolesEdit.UserRolesEditComponent).component("userRolesAdd", _userRolesAdd.UserRolesAddComponent).component("userRoles", _userRoles.UserRolesComponent).component("userLists", _userLists.UserListsComponent).component("dashboard", _dashboard.DashboardComponent).component("navSidebar", _navSidebar.NavSidebarComponent).component("navHeader", _navHeader.NavHeaderComponent).component("loginLoader", _loginLoader.LoginLoaderComponent).component("resetPassword", _resetPassword.ResetPasswordComponent).component("forgotPassword", _forgotPassword.ForgotPasswordComponent).component("loginForm", _loginForm.LoginFormComponent);
 
 /***/ }),
 /* 27 */
-/***/ (function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var OazaloController = function () {
-	    function OazaloController() {
-	        'ngInject';
-
-	        _classCallCheck(this, OazaloController);
-	    }
-
-	    _createClass(OazaloController, [{
-	        key: '$onInit',
-	        value: function $onInit() {}
-	    }]);
-
-	    return OazaloController;
-	}();
-
-	var OazaloComponent = exports.OazaloComponent = {
-	    templateUrl: './views/app/components/oazalo/oazalo.component.html',
-	    controller: OazaloController,
-	    controllerAs: 'vm',
-	    bindings: {}
-	};
-
-/***/ }),
-/* 28 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -2116,7 +1966,7 @@
 	};
 
 /***/ }),
-/* 29 */
+/* 28 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -2211,7 +2061,7 @@
 	};
 
 /***/ }),
-/* 30 */
+/* 29 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -2338,7 +2188,7 @@
 	};
 
 /***/ }),
-/* 31 */
+/* 30 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -2707,7 +2557,7 @@
 	};
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -2819,7 +2669,7 @@
 	};
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -2932,7 +2782,7 @@
 	};
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -3033,7 +2883,7 @@
 	};
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -3137,7 +2987,7 @@
 	};
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -3239,7 +3089,7 @@
 	};
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -3346,7 +3196,7 @@
 	};
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -3474,7 +3324,7 @@
 	};
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -3588,7 +3438,7 @@
 	};
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -3989,7 +3839,7 @@
 	};
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4001,7 +3851,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _crm = __webpack_require__(40);
+	var _crm = __webpack_require__(41);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -4210,7 +4060,7 @@
 	};
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -4266,7 +4116,7 @@
 	}();
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -4453,7 +4303,7 @@
 	};
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -4733,7 +4583,7 @@
 	};
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -4901,7 +4751,7 @@
 	};
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -5135,7 +4985,7 @@
 	};
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -5329,7 +5179,7 @@
 	};
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -5470,7 +5320,7 @@
 	};
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -5917,7 +5767,7 @@
 	};
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -6116,7 +5966,7 @@
 	};
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -6255,7 +6105,7 @@
 	};
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -6359,7 +6209,7 @@
 	};
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -6500,7 +6350,7 @@
 	};
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -6715,7 +6565,7 @@
 	};
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -6856,7 +6706,7 @@
 	};
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -7051,7 +6901,7 @@
 	};
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -7197,7 +7047,7 @@
 	};
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -7394,7 +7244,7 @@
 	};
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -7541,7 +7391,7 @@
 	};
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -7696,7 +7546,7 @@
 	};
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -7825,7 +7675,7 @@
 	};
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -7959,7 +7809,7 @@
 	};
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -8121,7 +7971,7 @@
 	};
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -8237,7 +8087,7 @@
 	};
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -8421,7 +8271,7 @@
 	};
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -8493,7 +8343,7 @@
 	};
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -8596,7 +8446,7 @@
 	};
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -8687,7 +8537,7 @@
 	};
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -8761,7 +8611,7 @@
 	};
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -8837,7 +8687,7 @@
 	};
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -8896,7 +8746,7 @@
 	};
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -8955,7 +8805,7 @@
 	};
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -9014,7 +8864,7 @@
 	};
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -9073,7 +8923,7 @@
 	};
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -9132,7 +8982,7 @@
 	};
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -9201,7 +9051,7 @@
 	};
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -9300,7 +9150,7 @@
 	};
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -9438,7 +9288,7 @@
 	};
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -9543,7 +9393,7 @@
 	};
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -9711,7 +9561,7 @@
 	};
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -9723,7 +9573,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _crm0500_finish = __webpack_require__(80);
+	var _crm0500_finish = __webpack_require__(81);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -9881,7 +9731,7 @@
 	};
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -9981,7 +9831,7 @@
 	}();
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -10098,7 +9948,7 @@
 	};
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -10160,7 +10010,7 @@
 	};
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -10240,7 +10090,7 @@
 	};
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -10399,7 +10249,7 @@
 	};
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10411,7 +10261,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _report = __webpack_require__(86);
+	var _report = __webpack_require__(87);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -10743,7 +10593,7 @@
 	};
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -11006,7 +10856,7 @@
 	}();
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -11162,7 +11012,7 @@
 	};
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11174,11 +11024,11 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _Hrm = __webpack_require__(89);
+	var _Hrm = __webpack_require__(90);
 
-	var _Hrm0300_submit = __webpack_require__(90);
+	var _Hrm0300_submit = __webpack_require__(91);
 
-	var _Hrm0300_score = __webpack_require__(91);
+	var _Hrm0300_score = __webpack_require__(92);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -11423,7 +11273,7 @@
 	};
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -11466,7 +11316,7 @@
 	}();
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -11563,7 +11413,7 @@
 	}();
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -11662,7 +11512,7 @@
 	}();
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -11757,7 +11607,7 @@
 	};
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -11805,7 +11655,7 @@
 	};
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -11932,7 +11782,7 @@
 	};
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -12088,7 +11938,7 @@
 	};
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -12225,7 +12075,7 @@
 	};
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -12357,7 +12207,7 @@
 	};
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -12445,7 +12295,7 @@
 	};
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -12587,7 +12437,7 @@
 	};
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -12804,7 +12654,7 @@
 	};
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -12977,7 +12827,7 @@
 	};
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -13071,7 +12921,7 @@
 	};
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -13296,7 +13146,7 @@
 	};
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -13428,7 +13278,7 @@
 	};
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -13532,7 +13382,7 @@
 	};
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -13670,7 +13520,7 @@
 	};
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -13805,7 +13655,7 @@
 	};
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -13899,7 +13749,7 @@
 	};
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -13947,7 +13797,7 @@
 	};
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -14523,7 +14373,7 @@
 	};
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -14661,7 +14511,7 @@
 	};
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -14782,7 +14632,7 @@
 	};
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -14904,7 +14754,7 @@
 	};
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -15020,7 +14870,7 @@
 	};
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -15112,7 +14962,7 @@
 	};
 
 /***/ }),
-/* 116 */
+/* 117 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -15160,7 +15010,7 @@
 	};
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -15273,7 +15123,7 @@
 	};
 
 /***/ }),
-/* 118 */
+/* 119 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -15386,7 +15236,7 @@
 	};
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -15471,7 +15321,7 @@
 	};
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -15593,7 +15443,7 @@
 	};
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -15680,7 +15530,7 @@
 	};
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -15869,7 +15719,7 @@
 	};
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -15881,7 +15731,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _report = __webpack_require__(86);
+	var _report = __webpack_require__(87);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -16087,7 +15937,7 @@
 	};
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -16407,7 +16257,7 @@
 	};
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -16555,7 +16405,7 @@
 	};
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -16657,7 +16507,7 @@
 	};
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -16750,7 +16600,7 @@
 	};
 
 /***/ }),
-/* 128 */
+/* 129 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -16852,7 +16702,7 @@
 	};
 
 /***/ }),
-/* 129 */
+/* 130 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -16945,7 +16795,7 @@
 	};
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -17108,7 +16958,7 @@
 	};
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -17235,7 +17085,7 @@
 	};
 
 /***/ }),
-/* 132 */
+/* 133 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -17332,7 +17182,7 @@
 	};
 
 /***/ }),
-/* 133 */
+/* 134 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -17550,7 +17400,7 @@
 	};
 
 /***/ }),
-/* 134 */
+/* 135 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -18023,7 +17873,7 @@
 	};
 
 /***/ }),
-/* 135 */
+/* 136 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -18167,7 +18017,7 @@
 	};
 
 /***/ }),
-/* 136 */
+/* 137 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -18245,7 +18095,7 @@
 	};
 
 /***/ }),
-/* 137 */
+/* 138 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -18366,7 +18216,7 @@
 	};
 
 /***/ }),
-/* 138 */
+/* 139 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -18511,7 +18361,7 @@
 	};
 
 /***/ }),
-/* 139 */
+/* 140 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -18774,7 +18624,7 @@
 	};
 
 /***/ }),
-/* 140 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -18786,7 +18636,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _crm = __webpack_require__(141);
+	var _crm = __webpack_require__(142);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -18921,7 +18771,7 @@
 	};
 
 /***/ }),
-/* 141 */
+/* 142 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -19133,7 +18983,7 @@
 	}();
 
 /***/ }),
-/* 142 */
+/* 143 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -19259,7 +19109,7 @@
 	};
 
 /***/ }),
-/* 143 */
+/* 144 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -19329,7 +19179,7 @@
 	};
 
 /***/ }),
-/* 144 */
+/* 145 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -19492,7 +19342,7 @@
 	};
 
 /***/ }),
-/* 145 */
+/* 146 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -19637,7 +19487,7 @@
 	};
 
 /***/ }),
-/* 146 */
+/* 147 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -19785,7 +19635,7 @@
 	};
 
 /***/ }),
-/* 147 */
+/* 148 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -19877,7 +19727,7 @@
 	};
 
 /***/ }),
-/* 148 */
+/* 149 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -20044,7 +19894,7 @@
 	};
 
 /***/ }),
-/* 149 */
+/* 150 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -20163,7 +20013,7 @@
 	};
 
 /***/ }),
-/* 150 */
+/* 151 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -20230,7 +20080,7 @@
 	};
 
 /***/ }),
-/* 151 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20242,7 +20092,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _crm = __webpack_require__(152);
+	var _crm = __webpack_require__(153);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -20462,7 +20312,7 @@
 	};
 
 /***/ }),
-/* 152 */
+/* 153 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -20512,7 +20362,7 @@
 	}();
 
 /***/ }),
-/* 153 */
+/* 154 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -21145,7 +20995,7 @@
 	};
 
 /***/ }),
-/* 154 */
+/* 155 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -21249,7 +21099,7 @@
 	};
 
 /***/ }),
-/* 155 */
+/* 156 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -21346,7 +21196,7 @@
 	};
 
 /***/ }),
-/* 156 */
+/* 157 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -21423,7 +21273,7 @@
 	};
 
 /***/ }),
-/* 157 */
+/* 158 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -21715,7 +21565,7 @@
 	};
 
 /***/ }),
-/* 158 */
+/* 159 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -21805,7 +21655,7 @@
 	};
 
 /***/ }),
-/* 159 */
+/* 160 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -21913,7 +21763,7 @@
 	};
 
 /***/ }),
-/* 160 */
+/* 161 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -22002,7 +21852,7 @@
 	};
 
 /***/ }),
-/* 161 */
+/* 162 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -22149,7 +21999,7 @@
 	};
 
 /***/ }),
-/* 162 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22161,7 +22011,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _report = __webpack_require__(86);
+	var _report = __webpack_require__(87);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -22656,7 +22506,7 @@
 	};
 
 /***/ }),
-/* 163 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22668,7 +22518,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _report = __webpack_require__(86);
+	var _report = __webpack_require__(87);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -22818,7 +22668,7 @@
 	};
 
 /***/ }),
-/* 164 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22830,7 +22680,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _report = __webpack_require__(86);
+	var _report = __webpack_require__(87);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -23344,7 +23194,7 @@
 	};
 
 /***/ }),
-/* 165 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23356,7 +23206,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _report = __webpack_require__(86);
+	var _report = __webpack_require__(87);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -23691,7 +23541,7 @@
 	};
 
 /***/ }),
-/* 166 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23703,7 +23553,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _report = __webpack_require__(86);
+	var _report = __webpack_require__(87);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -23898,7 +23748,7 @@
 	};
 
 /***/ }),
-/* 167 */
+/* 168 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -24124,7 +23974,7 @@
 	};
 
 /***/ }),
-/* 168 */
+/* 169 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -24262,7 +24112,7 @@
 	};
 
 /***/ }),
-/* 169 */
+/* 170 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -24310,7 +24160,7 @@
 	};
 
 /***/ }),
-/* 170 */
+/* 171 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -24432,7 +24282,7 @@
 	};
 
 /***/ }),
-/* 171 */
+/* 172 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -24480,7 +24330,7 @@
 	};
 
 /***/ }),
-/* 172 */
+/* 173 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -24628,7 +24478,7 @@
 	};
 
 /***/ }),
-/* 173 */
+/* 174 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -24809,7 +24659,7 @@
 	};
 
 /***/ }),
-/* 174 */
+/* 175 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -24902,7 +24752,7 @@
 	};
 
 /***/ }),
-/* 175 */
+/* 176 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -25029,7 +24879,7 @@
 	};
 
 /***/ }),
-/* 176 */
+/* 177 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -25343,7 +25193,7 @@
 	};
 
 /***/ }),
-/* 177 */
+/* 178 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -25459,7 +25309,7 @@
 	};
 
 /***/ }),
-/* 178 */
+/* 179 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -25599,7 +25449,7 @@
 	};
 
 /***/ }),
-/* 179 */
+/* 180 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -25717,7 +25567,7 @@
 	};
 
 /***/ }),
-/* 180 */
+/* 181 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -25838,7 +25688,7 @@
 	};
 
 /***/ }),
-/* 181 */
+/* 182 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -25951,7 +25801,7 @@
 	};
 
 /***/ }),
-/* 182 */
+/* 183 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -26063,7 +25913,7 @@
 	};
 
 /***/ }),
-/* 183 */
+/* 184 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -26316,7 +26166,7 @@
 	};
 
 /***/ }),
-/* 184 */
+/* 185 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -26644,7 +26494,7 @@
 	};
 
 /***/ }),
-/* 185 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26656,7 +26506,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _crm = __webpack_require__(186);
+	var _crm = __webpack_require__(187);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -26862,7 +26712,7 @@
 	};
 
 /***/ }),
-/* 186 */
+/* 187 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -26918,7 +26768,7 @@
 	}();
 
 /***/ }),
-/* 187 */
+/* 188 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -27087,7 +26937,7 @@
 	};
 
 /***/ }),
-/* 188 */
+/* 189 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -27237,7 +27087,7 @@
 	};
 
 /***/ }),
-/* 189 */
+/* 190 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -27351,7 +27201,7 @@
 	};
 
 /***/ }),
-/* 190 */
+/* 191 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -27531,7 +27381,7 @@
 	};
 
 /***/ }),
-/* 191 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27543,7 +27393,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _crm0100_setup_price = __webpack_require__(192);
+	var _crm0100_setup_price = __webpack_require__(193);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -27697,7 +27547,7 @@
 	};
 
 /***/ }),
-/* 192 */
+/* 193 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -27773,7 +27623,7 @@
 	}();
 
 /***/ }),
-/* 193 */
+/* 194 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -27989,7 +27839,7 @@
 	};
 
 /***/ }),
-/* 194 */
+/* 195 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -28095,7 +27945,7 @@
 	};
 
 /***/ }),
-/* 195 */
+/* 196 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -28295,7 +28145,7 @@
 	};
 
 /***/ }),
-/* 196 */
+/* 197 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -28506,7 +28356,7 @@
 	};
 
 /***/ }),
-/* 197 */
+/* 198 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -28738,7 +28588,7 @@
 	};
 
 /***/ }),
-/* 198 */
+/* 199 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -29454,7 +29304,7 @@
 	};
 
 /***/ }),
-/* 199 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29466,7 +29316,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _Crm0400_shipping = __webpack_require__(200);
+	var _Crm0400_shipping = __webpack_require__(201);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -29975,7 +29825,7 @@
 	};
 
 /***/ }),
-/* 200 */
+/* 201 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -30087,7 +29937,7 @@
 	}();
 
 /***/ }),
-/* 201 */
+/* 202 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -30401,7 +30251,7 @@
 	};
 
 /***/ }),
-/* 202 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30413,9 +30263,9 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _crm = __webpack_require__(203);
+	var _crm = __webpack_require__(204);
 
-	var _crm0300_menu = __webpack_require__(204);
+	var _crm0300_menu = __webpack_require__(205);
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -30636,7 +30486,7 @@
 	};
 
 /***/ }),
-/* 203 */
+/* 204 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -30683,7 +30533,7 @@
 	}();
 
 /***/ }),
-/* 204 */
+/* 205 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -30729,7 +30579,7 @@
 	}();
 
 /***/ }),
-/* 205 */
+/* 206 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -31023,7 +30873,7 @@
 	};
 
 /***/ }),
-/* 206 */
+/* 207 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -31293,7 +31143,7 @@
 	};
 
 /***/ }),
-/* 207 */
+/* 208 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -31382,7 +31232,7 @@
 	};
 
 /***/ }),
-/* 208 */
+/* 209 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -31460,7 +31310,7 @@
 	};
 
 /***/ }),
-/* 209 */
+/* 210 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -31538,7 +31388,7 @@
 	};
 
 /***/ }),
-/* 210 */
+/* 211 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -31635,7 +31485,7 @@
 	};
 
 /***/ }),
-/* 211 */
+/* 212 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -31723,7 +31573,7 @@
 	};
 
 /***/ }),
-/* 212 */
+/* 213 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -31768,7 +31618,7 @@
 	};
 
 /***/ }),
-/* 213 */
+/* 214 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -31874,7 +31724,7 @@
 	};
 
 /***/ }),
-/* 214 */
+/* 215 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -31943,7 +31793,7 @@
 	};
 
 /***/ }),
-/* 215 */
+/* 216 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -32017,7 +31867,7 @@
 	};
 
 /***/ }),
-/* 216 */
+/* 217 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -32109,7 +31959,7 @@
 	};
 
 /***/ }),
-/* 217 */
+/* 218 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -32199,7 +32049,7 @@
 	};
 
 /***/ }),
-/* 218 */
+/* 219 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -32268,7 +32118,7 @@
 	};
 
 /***/ }),
-/* 219 */
+/* 220 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -32360,7 +32210,7 @@
 	};
 
 /***/ }),
-/* 220 */
+/* 221 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -32551,7 +32401,7 @@
 	};
 
 /***/ }),
-/* 221 */
+/* 222 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -33090,7 +32940,7 @@
 	};
 
 /***/ }),
-/* 222 */
+/* 223 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -33135,7 +32985,7 @@
 	};
 
 /***/ }),
-/* 223 */
+/* 224 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -33178,7 +33028,7 @@
 	};
 
 /***/ }),
-/* 224 */
+/* 225 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -33218,7 +33068,7 @@
 	};
 
 /***/ }),
-/* 225 */
+/* 226 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -33310,7 +33160,7 @@
 	};
 
 /***/ }),
-/* 226 */
+/* 227 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -33372,7 +33222,7 @@
 	};
 
 /***/ }),
-/* 227 */
+/* 228 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -33468,7 +33318,7 @@
 	};
 
 /***/ }),
-/* 228 */
+/* 229 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -33536,23 +33386,23 @@
 	};
 
 /***/ }),
-/* 229 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _fkColSortable = __webpack_require__(230);
+	var _fkColSortable = __webpack_require__(231);
 
-	var _routeBodyclass = __webpack_require__(231);
+	var _routeBodyclass = __webpack_require__(232);
 
-	var _passwordVerify = __webpack_require__(232);
+	var _passwordVerify = __webpack_require__(233);
 
-	var _amchart = __webpack_require__(233);
+	var _amchart = __webpack_require__(234);
 
 	angular.module('app.components').directive('routeBodyclass', _routeBodyclass.RouteBodyClassComponent).directive('passwordVerify', _passwordVerify.PasswordVerifyClassComponent).directive('fkColSortable', _fkColSortable.FkColSortableComponent).directive('amchart', _amchart.AmchartDirective);
 
 /***/ }),
-/* 230 */
+/* 231 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -33577,7 +33427,7 @@
 	var FkColSortableComponent = exports.FkColSortableComponent = fkColSortable;
 
 /***/ }),
-/* 231 */
+/* 232 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -33613,7 +33463,7 @@
 	var RouteBodyClassComponent = exports.RouteBodyClassComponent = routeBodyClass;
 
 /***/ }),
-/* 232 */
+/* 233 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -33658,7 +33508,7 @@
 	var PasswordVerifyClassComponent = exports.PasswordVerifyClassComponent = passwordVerifyClass;
 
 /***/ }),
-/* 233 */
+/* 234 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -34041,24 +33891,24 @@
 	}
 
 /***/ }),
-/* 234 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _dialog = __webpack_require__(235);
+	var _dialog = __webpack_require__(236);
 
-	var _Client = __webpack_require__(236);
+	var _Client = __webpack_require__(237);
 
-	var _Utils = __webpack_require__(237);
+	var _Utils = __webpack_require__(238);
 
-	var _Route = __webpack_require__(238);
+	var _Route = __webpack_require__(239);
 
-	var _context = __webpack_require__(239);
+	var _context = __webpack_require__(240);
 
-	var _API = __webpack_require__(240);
+	var _API = __webpack_require__(241);
 
-	var _chart = __webpack_require__(241);
+	var _chart = __webpack_require__(242);
 
 	// import { StoreDialogController } from './dialogs/store_dialog/store_dialog.dialog'
 
@@ -34066,7 +33916,7 @@
 	// .controller('StoreDialogController', StoreDialogController)
 
 /***/ }),
-/* 235 */
+/* 236 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -34200,7 +34050,7 @@
 	}();
 
 /***/ }),
-/* 236 */
+/* 237 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -34367,7 +34217,7 @@
 	}();
 
 /***/ }),
-/* 237 */
+/* 238 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -34452,7 +34302,7 @@
 	}();
 
 /***/ }),
-/* 238 */
+/* 239 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -34500,7 +34350,7 @@
 	}();
 
 /***/ }),
-/* 239 */
+/* 240 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -34552,7 +34402,7 @@
 	}();
 
 /***/ }),
-/* 240 */
+/* 241 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -34607,7 +34457,7 @@
 	}];
 
 /***/ }),
-/* 241 */
+/* 242 */
 /***/ (function(module, exports) {
 
 	'use strict';
