@@ -137,11 +137,14 @@ $api->group($apiGroupSeeting, function ($api) {
     $api->post('logout', '\App\Http\Controllers\Auth\AuthController@postLogout');
     $api->controller('suppliers', 'Admin\SupplierController');
 
+   
+
     $api->controller('crm0510', 'Admin\Crm0510Controller'); // Customer service
     $api->controller('crm0500', 'Admin\Crm0500Controller'); // Customer service
     $api->controller('crm2400', 'Admin\Crm2400Controller'); // Danh sách yêu cầu xử lý đơn hàng
     $api->controller('crm0351', 'Admin\Crm0351Controller'); // Chành xe
     $api->controller('crm0350', 'Admin\Crm0350Controller');
+    $api->controller('crm4000', 'Admin\Crm4000Controller');
     $api->controller('crm2300', 'Admin\Crm2300Controller');
     $api->controller('crm2310', 'Admin\Crm2310Controller');
     $api->controller('crm2320', 'Admin\Crm2320Controller');
@@ -384,7 +387,7 @@ $api->group($apiMobileGroupWareAuth, function ($api) {
     // Area
     $api->get('sp/areas', 'Mobile\AreaController@index');
 
-    // Area-Group
+// Area-Group
     $api->get('sp/area-groups', 'Mobile\AreaGroupController@index');
 
     // Product

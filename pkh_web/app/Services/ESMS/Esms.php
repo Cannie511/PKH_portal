@@ -11,8 +11,8 @@ use App\Services\ESMS\EsmsRequest;
 use App\Services\ESMS\EsmsTempId;
 use App\Services\FuncConfService;
 use App\Models\TrnEsmsRecord;
-use DB;
-use Log;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 /**
  * Class Esms
  *
@@ -55,6 +55,43 @@ class Esms
      *
      * @throws ZaloSDKException
      */
+    
+     protected $funcConfService;
+
+     /**
+     * @param FuncConfService $funcConfService
+     * 
+     */
+
+      /**
+     * Dynamic properties.
+     */
+    protected $properties = [];
+
+      /**
+     * Magic method to set properties.
+     *
+     * @param string $name
+     * @param mixed $value
+     */
+    public function __set($name, $value)
+    {
+        $this->properties[$name] = $value;
+    }
+
+    /**
+     * Magic method to get properties.
+     *
+     * @param string $name
+     * @return mixed
+     */
+    public function __get($name)
+    {
+        return $this->properties[$name] ?? null;
+    }
+
+
+
     public function __construct(FuncConfService $funcConfService)
     {
         $this->funcConfService = $funcConfService;
@@ -76,6 +113,7 @@ class Esms
         $this->oa_id            = $result["oa_id"];
     }
 
+    
 
 
     public function http_request($data){
@@ -116,7 +154,7 @@ class Esms
 
         Log::debug("-----check ESMS ---------");
         Log::debug(json_decode($response,true));
-        $this->recordESMS($temp_id, $store_id, "1", $phone, $params, $response);
+         $this->recordESMS($temp_id, $store_id, "1", $phone, $params, $response);
     
         return json_decode($response, true);
     }
@@ -207,8 +245,8 @@ class Esms
                 );
                 return $data;   
             case EsmsTempId::TEMP_ID_PAYMENT_CONFIRM:
-                // 5 params <customer_name>,<address>,<payments>,<date>,<payment_debt>
-                if (count($params)!= 6 ){
+                // 5 params <customer_name>,<address>,<payments>,<date>,<payment_debt> // chuyển từ count($params)!= 6 thành count($params)!= 5 
+                if (count($params)!= 5 ){
                     return array();
                 }
                 $data = array(
@@ -274,7 +312,6 @@ class Esms
                 return $data;   
             case EsmsTempId::TEMP_ID_RATING:
                 // 0 param <customer_name>,<employee_id>,<part>,<prize>,<prize_period>,<won_prize>
-                
                 $data = array(
                     'TempID' => $temp_id,
                     "Params" => $params,
@@ -285,6 +322,4 @@ class Esms
             break;
         }
     }
-
-
 }

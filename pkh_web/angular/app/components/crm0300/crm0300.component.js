@@ -85,7 +85,7 @@ class Crm0300Controller {
 
         param.page = page;
         //param.pageSize = $scope.m.paginationInfo.pageSize;
-
+        
         if (angular.isUndefined(param.month) || param.month == null || param.month == '') {
             param.month = null;
         } else {

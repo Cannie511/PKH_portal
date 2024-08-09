@@ -857,7 +857,9 @@
 	        params: { alerts: null, warehouse_id: null }
 	    }))
 	    //Đánh giá đại lý
-	    .state("app.crm3000", getStateDefinition("crm3000")).state("app.crm4001", getStateDefinition("crm4001")).state("app.crm4002", getStateDefinition("crm4002")).state("app.crm3010", getStateDefinition("crm3010"))
+
+	    .state("app.crm3000", getStateDefinition("crm3000")).state("app.crm4000", getStateDefinition("crm4000")).state("app.crm4001", getStateDefinition("crm4001")).state("app.crm4002", getStateDefinition("crm4002")).state("app.crm3010", getStateDefinition("crm3010"))
+
 	    //lịch sử điểm
 	    .state("app.crm3020", getStateDefinition("crm3020", {
 	        params: { alerts: null, warehouse_id: null }
@@ -1400,21 +1402,27 @@
 
 	'use strict';
 
-	var _crm = __webpack_require__(27);
+	var _oazalo = __webpack_require__(27);
 
-	var _crm2 = __webpack_require__(28);
+	var _crm = __webpack_require__(28);
 
-	var _crm3 = __webpack_require__(29);
+	var _crm2 = __webpack_require__(29);
 
-	var _crm4 = __webpack_require__(30);
+	var _crm3 = __webpack_require__(30);
 
-	var _crm5 = __webpack_require__(31);
+	var _crm4 = __webpack_require__(31);
 
-	var _crm6 = __webpack_require__(32);
+	var _crm5 = __webpack_require__(32);
+
 
 	var _crm7 = __webpack_require__(33);
 
 	var _crm8 = __webpack_require__(34);
+
+	var _crm6 = __webpack_require__(33);
+
+	var _crm7 = __webpack_require__(34);
+
 
 	var _cms = __webpack_require__(35);
 
@@ -1422,11 +1430,17 @@
 
 	var _rpt = __webpack_require__(37);
 
+	var _crm8 = __webpack_require__(38);
+
+
 	var _crm9 = __webpack_require__(38);
+
 
 	var _crm10 = __webpack_require__(39);
 
-	var _crm11 = __webpack_require__(41);
+
+	var _crm11 = __webpack_require__(42);
+
 
 	var _crm12 = __webpack_require__(42);
 
@@ -1496,21 +1510,90 @@
 
 	var _hrm29 = __webpack_require__(75);
 
-	var _crm16 = __webpack_require__(76);
+	var _crm12 = __webpack_require__(43);
 
-	var _crm17 = __webpack_require__(77);
+	var _hrm = __webpack_require__(44);
+
+	var _hrm2 = __webpack_require__(45);
+
+	var _hrm3 = __webpack_require__(46);
+
+	var _hrm4 = __webpack_require__(47);
+
+	var _hrm5 = __webpack_require__(48);
+
+	var _hrm6 = __webpack_require__(49);
+
+	var _hrm7 = __webpack_require__(50);
+
+	var _hrm8 = __webpack_require__(51);
+
+	var _hrm9 = __webpack_require__(52);
+
+	var _hrm10 = __webpack_require__(53);
+
+	var _hrm11 = __webpack_require__(54);
+
+	var _hrm12 = __webpack_require__(55);
+
+	var _hrm13 = __webpack_require__(56);
+
+	var _hrm14 = __webpack_require__(57);
+
+	var _crm13 = __webpack_require__(58);
+
+	var _crm14 = __webpack_require__(59);
+
+	var _hrm15 = __webpack_require__(60);
+
+	var _hrm16 = __webpack_require__(61);
+
+	var _tmp = __webpack_require__(62);
+
+	var _hrm17 = __webpack_require__(63);
+
+	var _hrm18 = __webpack_require__(64);
+
+	var _hrm19 = __webpack_require__(65);
+
+	var _hrm20 = __webpack_require__(66);
+
+	var _hrm21 = __webpack_require__(67);
+
+	var _hrm22 = __webpack_require__(68);
+
+	var _hrm23 = __webpack_require__(69);
+
+	var _hrm24 = __webpack_require__(70);
+
+	var _hrm25 = __webpack_require__(71);
+
+	var _hrm26 = __webpack_require__(72);
+
+	var _hrm27 = __webpack_require__(73);
+
+	var _hrm28 = __webpack_require__(74);
+
+	var _hrm29 = __webpack_require__(75);
+
+	var _crm15 = __webpack_require__(76);
+
+
+	var _crm16 = __webpack_require__(77);
+
+	var _crm17 = __webpack_require__(78);
 
 	var _crm18 = __webpack_require__(78);
 
 	var _crm19 = __webpack_require__(79);
 
-	var _crm20 = __webpack_require__(81);
 
-	var _crm21 = __webpack_require__(82);
+	var _crm20 = __webpack_require__(82);
 
-	var _crm22 = __webpack_require__(83);
+	var _crm21 = __webpack_require__(83);
 
-	var _crm23 = __webpack_require__(84);
+
+	var _crm22 = __webpack_require__(84);
 
 	var _rpt2 = __webpack_require__(85);
 
@@ -1522,13 +1605,17 @@
 
 	var _mobile = __webpack_require__(93);
 
-	var _crm24 = __webpack_require__(94);
+	var _crm23 = __webpack_require__(94);
 
-	var _crm25 = __webpack_require__(95);
 
-	var _crm26 = __webpack_require__(96);
+	var _crm24 = __webpack_require__(95);
 
-	var _crm27 = __webpack_require__(97);
+	var _crm25 = __webpack_require__(96);
+
+	var _crm26 = __webpack_require__(97);
+
+	var _crm27 = __webpack_require__(98);
+
 
 	var _crm28 = __webpack_require__(98);
 
@@ -1540,79 +1627,96 @@
 
 	var _hrm34 = __webpack_require__(102);
 
+
 	var _hrm35 = __webpack_require__(103);
 
 	var _crm30 = __webpack_require__(104);
 
 	var _rpt3 = __webpack_require__(105);
 
-	var _crm31 = __webpack_require__(106);
+	var _crm30 = __webpack_require__(106);
 
-	var _crm32 = __webpack_require__(107);
+	var _crm31 = __webpack_require__(107);
 
-	var _crm33 = __webpack_require__(108);
+	var _crm32 = __webpack_require__(108);
 
-	var _crm34 = __webpack_require__(109);
+	var _crm33 = __webpack_require__(109);
 
-	var _crm35 = __webpack_require__(110);
+	var _crm34 = __webpack_require__(110);
 
-	var _crm36 = __webpack_require__(111);
+	var _crm35 = __webpack_require__(111);
 
-	var _crm37 = __webpack_require__(112);
+	var _crm36 = __webpack_require__(112);
 
-	var _crm38 = __webpack_require__(113);
+	var _crm37 = __webpack_require__(113);
 
-	var _crm39 = __webpack_require__(114);
+	var _crm38 = __webpack_require__(114);
 
-	var _crm40 = __webpack_require__(115);
+	var _crm39 = __webpack_require__(115);
 
-	var _crm41 = __webpack_require__(116);
+	var _crm40 = __webpack_require__(116);
 
-	var _crm42 = __webpack_require__(117);
+	var _crm41 = __webpack_require__(117);
 
-	var _crm43 = __webpack_require__(118);
+	var _crm42 = __webpack_require__(118);
 
-	var _crm44 = __webpack_require__(119);
+	var _crm43 = __webpack_require__(119);
 
-	var _crm45 = __webpack_require__(120);
+	var _crm44 = __webpack_require__(120);
 
 	var _crm46 = __webpack_require__(121);
+
+	var _crm45 = __webpack_require__(121);
+
 
 	var _crm47 = __webpack_require__(122);
 
 	var _rpt4 = __webpack_require__(123);
 
-	var _crm48 = __webpack_require__(124);
+	var _crm47 = __webpack_require__(124);
 
-	var _crm49 = __webpack_require__(125);
+	var _crm48 = __webpack_require__(125);
 
-	var _crm50 = __webpack_require__(126);
+	var _crm49 = __webpack_require__(126);
 
-	var _crm51 = __webpack_require__(127);
+	var _crm50 = __webpack_require__(127);
+
 
 	var _crm52 = __webpack_require__(128);
+
+	var _crm51 = __webpack_require__(128);
+
 
 	var _crm53 = __webpack_require__(129);
 
 	var _rpt5 = __webpack_require__(130);
 
-	var _crm54 = __webpack_require__(131);
+	var _crm53 = __webpack_require__(131);
 
-	var _crm55 = __webpack_require__(132);
+	var _crm54 = __webpack_require__(132);
 
-	var _crm56 = __webpack_require__(133);
+	var _crm55 = __webpack_require__(133);
 
-	var _crm57 = __webpack_require__(134);
+	var _crm56 = __webpack_require__(134);
 
-	var _crm58 = __webpack_require__(135);
+	var _crm57 = __webpack_require__(135);
+
 
 	var _crm59 = __webpack_require__(136);
+
+	var _crm58 = __webpack_require__(136);
+
 
 	var _crm60 = __webpack_require__(137);
 
 	var _cms3 = __webpack_require__(138);
 
+
+	var _crm60 = __webpack_require__(139);
+
+
 	var _crm61 = __webpack_require__(139);
+
 
 	var _crm62 = __webpack_require__(140);
 
@@ -1622,7 +1726,8 @@
 
 	var _hrm36 = __webpack_require__(144);
 
-	var _crm64 = __webpack_require__(145);
+
+	var _crm64 = __webpack_require__(146);
 
 	var _crm65 = __webpack_require__(146);
 
@@ -1632,17 +1737,21 @@
 
 	var _hrm37 = __webpack_require__(149);
 
+
 	var _crm68 = __webpack_require__(150);
+
 
 	var _crm69 = __webpack_require__(151);
 
-	var _crm70 = __webpack_require__(153);
 
-	var _crm71 = __webpack_require__(154);
+	var _crm70 = __webpack_require__(154);
 
-	var _crm72 = __webpack_require__(155);
+	var _crm71 = __webpack_require__(155);
 
-	var _crm73 = __webpack_require__(156);
+	var _crm72 = __webpack_require__(156);
+
+	var _crm73 = __webpack_require__(157);
+
 
 	var _crm74 = __webpack_require__(157);
 
@@ -1674,23 +1783,24 @@
 
 	var _rpt11 = __webpack_require__(171);
 
-	var _crm80 = __webpack_require__(172);
+	var _crm79 = __webpack_require__(172);
 
-	var _crm81 = __webpack_require__(173);
+	var _crm80 = __webpack_require__(173);
 
-	var _crm82 = __webpack_require__(174);
+	var _crm81 = __webpack_require__(174);
 
-	var _crm83 = __webpack_require__(175);
+	var _crm82 = __webpack_require__(175);
 
-	var _crm84 = __webpack_require__(176);
+	var _crm83 = __webpack_require__(176);
 
-	var _crm85 = __webpack_require__(177);
+	var _crm84 = __webpack_require__(177);
 
-	var _crm86 = __webpack_require__(178);
+	var _crm85 = __webpack_require__(178);
 
-	var _crm87 = __webpack_require__(179);
+	var _crm86 = __webpack_require__(179);
 
-	var _crm88 = __webpack_require__(180);
+	var _crm87 = __webpack_require__(180);
+
 
 	var _crm89 = __webpack_require__(181);
 
@@ -1698,15 +1808,19 @@
 
 	var _rpt12 = __webpack_require__(183);
 
+
 	var _rpt13 = __webpack_require__(184);
+
 
 	var _crm91 = __webpack_require__(185);
 
-	var _crm92 = __webpack_require__(187);
 
-	var _crm93 = __webpack_require__(188);
+	var _crm92 = __webpack_require__(188);
 
-	var _crm94 = __webpack_require__(189);
+	var _crm93 = __webpack_require__(189);
+
+	var _crm94 = __webpack_require__(190);
+
 
 	var _crm95 = __webpack_require__(190);
 
@@ -1730,7 +1844,9 @@
 
 	var _crm99 = __webpack_require__(202);
 
-	var _crm100 = __webpack_require__(205);
+
+	var _crm100 = __webpack_require__(206);
+
 
 	var _crm101 = __webpack_require__(206);
 
@@ -1782,6 +1898,225 @@
 
 /***/ }),
 /* 27 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var OazaloController = function () {
+	    function OazaloController() {
+	        'ngInject';
+
+	        _classCallCheck(this, OazaloController);
+	    }
+
+	    _createClass(OazaloController, [{
+	        key: '$onInit',
+	        value: function $onInit() {}
+	    }]);
+
+	    return OazaloController;
+	}();
+
+	var OazaloComponent = exports.OazaloComponent = {
+	    templateUrl: './views/app/components/oazalo/oazalo.component.html',
+	    controller: OazaloController,
+	    controllerAs: 'vm',
+	    bindings: {}
+	};
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var Crm4000Controller = function () {
+	    Crm4000Controller.$inject = ["$scope", "$state", "$compile", "$log", "AclService", "API", "UtilsService", "ClientService"];
+	    function Crm4000Controller($scope, $state, $compile, $log, AclService, API, UtilsService, ClientService) {
+	        'ngInject';
+
+	        _classCallCheck(this, Crm4000Controller);
+
+	        this.$scope = $scope;
+	        this.$state = $state;
+	        this.$compile = $compile;
+	        this.$log = $log;
+	        this.AclService = AclService;
+	        this.API = API;
+	        this.UtilsService = UtilsService;
+	        this.ClientService = ClientService;
+	        this.currentDate = new Date();
+	        this.currentYear = this.currentDate.getFullYear();
+	        // this.currentMonth = this.currentDate.getMonth() + 1
+	        // this.currentQuarter = Math.floor((this.currentMonth - 1) / 3);
+	        this.years = [];
+	        for (var year = 2016; year <= this.currentYear; year++) {
+	            this.years.push(year);
+	        }
+	        this.m = {
+	            filter: {},
+	            data: null,
+
+	            year: this.years
+	        };
+	    }
+
+	    _createClass(Crm4000Controller, [{
+	        key: '$onInit',
+	        value: function $onInit() {
+	            var previousSearch = sessionStorage.crm4000;
+	            if (angular.isUndefined(previousSearch)) {
+	                this.search();
+	                return;
+	            }
+	            previousSearch = angular.fromJson(previousSearch);
+	            var page = previousSearch.page;
+	            delete previousSearch['page'];
+	            this.m.filter = angular.copy(previousSearch);
+	            this.doSearch(page);
+	        }
+	    }, {
+	        key: 'search',
+	        value: function search() {
+	            this.m.filter.orderBy = null;
+	            this.m.filter.orderDirection = null;
+	            this.doSearch(1);
+	        }
+	    }, {
+	        key: 'resetFilter',
+	        value: function resetFilter() {
+	            this.m.filter = {
+	                orderBy: this.m.filter.orderBy,
+	                orderDirection: this.m.filter.orderDirection
+	            };
+	        }
+	    }, {
+	        key: 'saleScore',
+	        value: function saleScore(sale) {
+	            var avgSale = this.m.data.avg_sale;
+	            avgSale = parseFloat(avgSale);
+	            sale = Number(sale);
+	            if (sale > avgSale) {
+	                return 25;
+	            }
+	            return 10;
+	        }
+	    }, {
+	        key: 'pay',
+	        value: function pay(id) {
+	            var _this = this;
+
+	            var param = {};
+	            param.payment_id = id;
+
+	            this.$log.info('ID', param);
+
+	            var paymentService = this.API.service('pay', this.API.all('crm4000'));
+	            paymentService.post(param).then(function (response) {
+	                // Xử lý dữ liệu trả về từ API
+	                _this.m.data = response.plain().data;
+	                _this.$log.info('Phản hồi từ API:', _this.m.data);
+	            }).catch(function (error) {
+
+	                _this.$log.error(error);
+	            });
+	        }
+	    }, {
+	        key: 'frequencyScore',
+	        value: function frequencyScore(frequency) {
+	            var avgFrequency = this.m.data.avg_Frequency;
+
+	            avgFrequency = parseFloat(avgFrequency);
+	            frequency = Number(frequency);
+
+	            if (frequency > avgFrequency) {
+	                return 25;
+	            } else {
+	                return 10;
+	            }
+	        }
+	    }, {
+	        key: 'totalScore',
+	        value: function totalScore(sale, rentention, frequency) {
+	            sale = Number(sale);
+	            rentention = Number(rentention);
+	            frequency = Number(frequency);
+	            var Score = 0;
+	            if (sale > +this.m.data.avg_sale) {
+	                Score += 25;
+	            } else {
+	                Score += 10;
+	            }
+
+	            if (rentention >= 3) {
+	                Score += 25;
+	            } else {
+	                Score += 10;
+	            }
+
+	            if (frequency > this.m.data.avg_Frequency) {
+	                Score += 25;
+	            } else {
+	                Score += 10;
+	            }
+	            return Score;
+	        }
+	    }, {
+	        key: 'doSearch',
+	        value: function doSearch(page) {
+	            var _this2 = this;
+
+	            var searchService = this.API.service('search', this.API.all('crm4000'));
+	            var param = angular.copy(this.m.filter);
+	            param.page = page;
+	            this.$log.info(param.page);
+	            var currentYear = new Date().getFullYear();
+	            if (angular.isUndefined(param.year)) {
+	                param.year = currentYear;
+	            } else {
+
+	                if (param.year < currentYear) {
+	                    param.year = param.year;
+	                }
+	            }
+	            this.$log.info(param.year);
+	            sessionStorage.crm3000 = angular.toJson(param);
+	            this.$log.info('param', param);
+	            searchService.post(param).then(function (response) {
+	                _this2.m.data = response.plain().data;
+	                _this2.$log.info("check data search: ", _this2.m.data);
+	            });
+	        }
+	    }]);
+
+	    return Crm4000Controller;
+	}();
+
+	var Crm4000Component = exports.Crm4000Component = {
+	    templateUrl: '/views/admin.crm4000',
+	    controller: Crm4000Controller,
+	    controllerAs: 'vm',
+	    bindings: {}
+	};
+
+/***/ }),
+/* 29 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -1876,7 +2211,7 @@
 	};
 
 /***/ }),
-/* 28 */
+/* 30 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -2003,7 +2338,7 @@
 	};
 
 /***/ }),
-/* 29 */
+/* 31 */
 /***/ (function(module, exports) {
 
 	'use strict';

@@ -18,7 +18,7 @@ class Bat0100Service extends BaseService
     {
         Log::info('BAT0100 Update Store Revenue: ' . $strMonth);
         $date = Carbon::parse($strMonth . '-01');
-
+        
         $this->deleteDataInMonth($date);
         $this->insertData($date);
     }

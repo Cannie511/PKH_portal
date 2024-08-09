@@ -5,7 +5,7 @@ namespace App\Console;
 use Carbon\Carbon;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-
+use Illuminate\Support\Facades\Log;
 class Kernel extends ConsoleKernel
 {
     /**
@@ -31,6 +31,8 @@ class Kernel extends ConsoleKernel
         Commands\Bat2100Command::class,
         Commands\Bat0912Command::class,
         Commands\Bat9999Command::class,
+        Commands\Bat0000Command::class,
+        Commands\Bat4001Command::class,
     ];
 
     /**
@@ -69,5 +71,12 @@ class Kernel extends ConsoleKernel
         // Tinh gio lam viec hang thang
         // $schedule->command('BAT0410 --mode=2')
         //     ->monthlyOn(1, '01:10');
-    }
+    
+
+
+        //    $schedule->command('BAT0000')->everyMinute();
+        // $schedule->command('BAT4001')->everyMinute();    
+        $schedule->command('BAT0000')->cron('0 6 15 3,6,9,12 *'); // chạy vào 6h sáng ngày 15 các thàng 3,6,9,12
+        $schedule->command('BAT4001')->daily(); //chay luc 0h
+     }
 }
