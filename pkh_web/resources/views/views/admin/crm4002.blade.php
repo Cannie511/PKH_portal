@@ -1,9 +1,9 @@
 <section class="content-header">
-    <h1>CRM 4002 2021 Quý 1<small></small></h1>
+    <h1>Danh sách khuyến mãi<small></small></h1>
 </section>
 <section class="content-header">
 <div style="display: flex;">
-    <!-- Chọn năm bắt đầu -->
+    <!-- Select year star -->
     <div class="select">
     <label for="year" style="margin-right: 5px;">Năm Bắt Đầu:</label>
     <select ng-model="vm.m.filter.year" ng-change="vm.doSearch(1)">
@@ -12,7 +12,7 @@
 </div>
 
 
-    <!-- Chọn quý bắt đầu -->
+    <!-- Select quarter star -->
     <div class="select">
     <label for="quarter" style="margin-right: 5px; margin-left: 5px">Quý Bắt Đầu:</label>
     <select name="quarter" id="quarter" ng-model="vm.m.filter.quarter" ng-change="vm.doSearch(1)">
@@ -80,5 +80,4 @@
             </div>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 </section>

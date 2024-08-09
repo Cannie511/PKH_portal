@@ -266,6 +266,8 @@ th.sortable .fa-sort {
 
 
 
+
+
 .crm0210 .form-horizontal .form-group {
   margin-bottom: 0px;
 }
@@ -284,12 +286,9 @@ th.sortable .fa-sort {
 
 
 
-
-
 .crm0300-menu .btn-app {
   min-width: 100px;
 }
-
 
 
 
@@ -330,9 +329,13 @@ th.sortable .fa-sort {
 
 
 
+
 .crm0914 .progress {
   margin-top: 0px;
 }
+
+
+
 
 
 
@@ -341,9 +344,6 @@ th.sortable .fa-sort {
   background: transparent;
   font-family: monospace;
 }
-
-
-
 
 
 
@@ -826,17 +826,24 @@ th.sortable .fa-sort {
   font-weight: bold;
 }
 
-.ForgotPassword-input {
-  margin-bottom: 0;
-}
 
 .hrm0100 .fc-content {
   white-space: normal !important;
 }
 
+.ForgotPassword-input {
+  margin-bottom: 0;
+}
 
 
 
+
+.hrm0150 .custom-marker {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  margin-top: 24px;
+  padding: 2px;
+}
 
 .bg-weekend {
   background: #f2dede !important;
@@ -864,14 +871,6 @@ th.sortable .fa-sort {
   z-index: 2;
   background: #ecf0f5;
 }
-
-.hrm0150 .custom-marker {
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(128, 128, 128, 0.2);
-  margin-top: 24px;
-  padding: 2px;
-}
-
 
 
 .hrm0153 .btn-checkin, .hrm0153 .btn-checkout {
@@ -902,11 +901,10 @@ th.sortable .fa-sort {
 
 
 
+
 .hrm1020 .not-read {
   font-weight: bold;
 }
-
-
 
 
 .hrm1111 .freeze-col-2 {
@@ -935,6 +933,8 @@ th.sortable .fa-sort {
 .btn-google:hover {
   color: #fff;
 }
+
+
 
 
 @media (max-width: 767px) {
@@ -1015,7 +1015,6 @@ th.sortable .fa-sort {
   margin-top: 80px;
   margin-bottom: 80px;
 }
-
 
 .Landing {
   height: 100%;
@@ -1225,10 +1224,6 @@ Make sure to remove this when you modify this demo
   }
 }
 
-.Login-formContainer {
-  margin-top: 80px;
-  margin-bottom: 80px;
-}
 
 .dataTables_filter {
   float: right;
@@ -1277,6 +1272,11 @@ Make sure to remove this when you modify this demo
 
 .no-border-radius {
   border-radius: 0px !important;
+}
+
+.Login-formContainer {
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 
 

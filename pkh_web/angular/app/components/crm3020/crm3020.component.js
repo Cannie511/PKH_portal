@@ -29,6 +29,7 @@ class Crm3020Controller {
     $onInit() {
         this.loadInit();
     }
+    
     loadInit() {
         let param = {
             store_id: this.m.store_id
@@ -37,6 +38,7 @@ class Crm3020Controller {
         searchService.post(param).then((response) => {
             this.$log.info("m init: ", response.data.data);
             this.m.data = response.data.data;
+            this.m.data1 = response.data.data1; // Gán giá trị data1
         });
     }
 }

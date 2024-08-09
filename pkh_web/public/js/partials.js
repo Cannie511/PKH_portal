@@ -99,18 +99,6 @@ try {
   module = angular.module('app.partials', []);
 }
 module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/components/login-loader/login-loader.component.html',
-    'Logging in...');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('app.partials');
-} catch (e) {
-  module = angular.module('app.partials', []);
-}
-module.run(['$templateCache', function($templateCache) {
   $templateCache.put('./views/app/components/login-form/login-form.component.html',
     '<form ng-submit="vm.login()" method="post" name="vm.loginForm">\n' +
     '  <div class="callout callout-danger" ng-if="vm.loginfailederror">\n' +
@@ -174,6 +162,18 @@ module.run(['$templateCache', function($templateCache) {
     '  </div> -->\n' +
     '</div>\n' +
     '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/components/login-loader/login-loader.component.html',
+    'Logging in...');
 }]);
 })();
 
@@ -1278,6 +1278,18 @@ try {
   module = angular.module('app.partials', []);
 }
 module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/landing/landing.page.html',
+    '<dashboard></dashboard>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
   $templateCache.put('./views/app/pages/header/header.page.html',
     '');
 }]);
@@ -1290,8 +1302,13 @@ try {
   module = angular.module('app.partials', []);
 }
 module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/pages/landing/landing.page.html',
-    '<dashboard></dashboard>');
+  $templateCache.put('./views/app/pages/layout/layout.page.html',
+    '<toaster-container toaster-options="{\'time-out\': 5000, \'close-button\':true, \'animation-class\': \'toast-top-right\'}"></toaster-container>\n' +
+    '<div ui-view="header"></div>\n' +
+    '<div id="main-content" class="content-wrapper">\n' +
+    '    <div ui-view="main"></div>\n' +
+    '</div>\n' +
+    '<div ui-view="footer"></div>');
 }]);
 })();
 
@@ -1329,23 +1346,6 @@ module.run(['$templateCache', function($templateCache) {
     '        </div>\n' +
     '    </div>\n' +
     '</div>');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('app.partials');
-} catch (e) {
-  module = angular.module('app.partials', []);
-}
-module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/pages/layout/layout.page.html',
-    '<toaster-container toaster-options="{\'time-out\': 5000, \'close-button\':true, \'animation-class\': \'toast-top-right\'}"></toaster-container>\n' +
-    '<div ui-view="header"></div>\n' +
-    '<div id="main-content" class="content-wrapper">\n' +
-    '    <div ui-view="main"></div>\n' +
-    '</div>\n' +
-    '<div ui-view="footer"></div>');
 }]);
 })();
 

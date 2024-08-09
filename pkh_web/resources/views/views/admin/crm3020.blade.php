@@ -108,7 +108,7 @@
                                <tr>
                                     <td>12/2021</td>
                                     <td>
-                                        122,084,000
+                                    {{vm . m . data1}}
                                         <br>
                                         <b><small>+10 điểm</small></b>
                                     </td>
