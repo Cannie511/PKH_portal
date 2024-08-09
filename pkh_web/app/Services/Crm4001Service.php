@@ -20,6 +20,10 @@ class Crm4001Service extends BaseService
         return null;
     }
 // tinh tham nien dai ly
+// Logic code : Lay List Order_date cua cua hang
+//              So sanh khoang thoi gian giua 2 don hang lien tiep > 6 set gia tri ve 0
+//              Sau khi het don hang cuoi thi so sanh khoang thoi gian tu don hang cuoi voi endDate > 6 return 0
+//              Tinh Retention = so thang dat hang lien tuc / 12
     public function getRetention($store_id, $year, $quarter)
 {   
     switch ($quarter) {
@@ -83,7 +87,8 @@ class Crm4001Service extends BaseService
 }
 
 
-// Lay ID, Name, Address, Total_sale cua dai ly
+// Lay Data ID, Name, Address, Total_sale
+// Logic code : Sql nhan Year - Quarter tu angular controller ket qua tra ve la 1 List
 public function getData($param, $year, $quarter)
 {
     $sqlParam = ['year' => $year];
@@ -362,7 +367,7 @@ public function getYears($param)
     return $years;
 }
 /**
- * Lay du lieu seach
+ * Lay du lieu seach ten cua hang
  */
 public function getDataSeach($param, $year, $namestore,$quarter) {
     switch ($quarter) {
@@ -417,7 +422,7 @@ public function getDataSeach($param, $year, $namestore,$quarter) {
 
     return $this->pagination12R($sql, $sqlParam, $param);
 }
-// Tan suat dat cung ky quy truoc*120
+// Tan suat dat cung ky quy truoc*120%
 public function getCountOrderQuarterOfLastYear120($year, $store_id,$quarter)
 {
     $previousYear = $year - 1;
@@ -466,7 +471,7 @@ public function getCountOrderQuarterOfLastYear120($year, $store_id,$quarter)
     $list = DB::select(DB::raw($sql), $sqlParam);
     return count($list) === 0 ? null : $list[0]->desired_OD;
 }
-// Doanh so cung ky quy truoc*120
+// Doanh so cung ky quy truoc*120%
 public function getTotalSalesQuarterOfLastYear120($year,$store_id,$quarter)
 {   
     $previousYear = $year - 1;

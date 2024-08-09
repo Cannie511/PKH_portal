@@ -65,7 +65,7 @@ class Crm4001Controller {
             }
         });
     }
-    
+   
     loadLineChart() {
         console.log(this.m.filter.year);
 
@@ -322,8 +322,6 @@ class Crm4001Controller {
     }
     
 }
-
-
 
 
 export const Crm4001Component = {

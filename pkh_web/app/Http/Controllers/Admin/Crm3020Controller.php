@@ -25,10 +25,13 @@ class Crm3020Controller extends AdminBaseController
     public function postSearch(Request $request)
     {
         $param = $request->all();
+        $store_id = $request->input('store_id');
         
-        $data = $this->crm3020Service->selectList($param);
+        $data = $this->crm3020Service->selectList($param);     
+        $totalOrderCount = $this->crm3020Service->getAvgCountAStoreOrderQuarterOfYear($store_id);
         $result = [
             'data' => $data,
+            'data1' =>$totalOrderCount
         ];
 
         return response()->success($result);

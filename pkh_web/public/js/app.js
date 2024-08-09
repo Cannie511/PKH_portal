@@ -33185,6 +33185,7 @@
 	            searchService.post(param).then(function (response) {
 	                _this.$log.info("m init: ", response.data.data);
 	                _this.m.data = response.data.data;
+	                _this.m.data1 = response.data.data1; // Gán giá trị data1
 	            });
 	        }
 	    }]);

@@ -30,37 +30,49 @@ class Crm4001Controller extends AdminBaseController
     public function postSearch(Request $request)
 {
     $param = $request->all();
+    // get year
     $year = $param['year'] ?? date('Y');
+    // get quarter
     $quarter = $param['quarter'] ?? 1;
-
+    
+    // Button seach
     if (isset($param['storeName']) && !empty($param['storeName'])) {
         $data = $this->crm4001Service->getDataSeach($param, $year, $param['storeName'], $quarter);
     }
+     // Button pass total
     elseif (isset($param['listAboveAvg']) && $param['listAboveAvg']) {
         $data = $this->crm4001Service->getDataAboveAvgSales($param, $year, $quarter);
     }
+     // Button pass retention
     elseif (isset($param['listAboveRetention']) && $param['listAboveRetention']) {
         $data = $this->crm4001Service->getDataStoresAboveRetention($param, $year, $quarter);
     }
+     // Button pass order
     elseif (isset($param['listAboveOrderfrequency']) && $param['listAboveOrderfrequency']) {
         $data = $this->crm4001Service->getDataStoresWithHigherThanAvgOrderFrequency($param, $year, $quarter);
     }
+     // Button had dept
     elseif (isset($param['listAboveDept']) && $param['listAboveDept']) {
         $data = $this->crm4001Service->getDataStoresWithDebt($param, $year, $quarter);
     }
+     // Button reset
     else {
         $data = $this->crm4001Service->getData($param, $year, $quarter);
     }
-
+    // Sum(Total_sale)
     $avgSale = $this->crm4001Service->getSalesQuarterOfYear($param, $year, $quarter);
+    // Count Order 
     $avg_OD = $this->crm4001Service->getCountOrderQuarterOfYear($param, $year, $quarter);
-
+    
+    // count store pass Criteria
     $countpass_TotalSale = $this->crm4001Service->getCountPass_TotalSale_QuarterOfYear($param,$year,$quarter);
     $countpass_Retention = $this->crm4001Service->getCountPass_Retention_QuarterOfYear($param,$year,$quarter);
     $countpass_Order = $this->crm4001Service->getCountPass_Order_QuarterOfYear($param,$year,$quarter);
     $countNopass_Dept = $this->crm4001Service->getCountNoPass_Dept_QuarterOfYear($param,$year,$quarter);
-
+    
+    // Count store by score 45->100 current quarter 
     $storeCountsByScore = $this->crm4001Service->getStoreCountsByScore($param,$year,$quarter);
+    // Count store by score 45->100 same period
     $storeCountsByScoreSamePeriod = $this->crm4001Service->getStoreCountsByScoreSamePeriod($param,$year,$quarter);
 
     foreach ($data as $v) {
@@ -90,7 +102,7 @@ class Crm4001Controller extends AdminBaseController
         // $v->Dept_score = $Dept_scoreItem;
         // $v->Total_score_card = $Total_score_card;
 
-        // // Lưu điểm số vào cơ sở dữ liệu
+        // // Ham Luu điểm số vào cơ sở dữ liệu
 
         // StoreScore::updateOrCreate(
         //     [
@@ -123,7 +135,7 @@ class Crm4001Controller extends AdminBaseController
 
     return response()->success($result);
 }
-    
+     
     public function getYears(Request $request)
 {
     $years = $this->crm4001Service->getYears($request->all());

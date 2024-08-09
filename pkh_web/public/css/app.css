@@ -246,6 +246,7 @@ th.sortable .fa-sort {
 
 
 
+
 .cms0210 .img-preview {
   max-width: 240px;
   max-height: 240px;
@@ -255,7 +256,6 @@ th.sortable .fa-sort {
   max-width: 168px;
   max-height: 168px;
 }
-
 
 
 
@@ -329,7 +329,6 @@ th.sortable .fa-sort {
 
 
 
-
 .crm0914 .progress {
   margin-top: 0px;
 }
@@ -378,9 +377,11 @@ th.sortable .fa-sort {
 
 
 
+
 #crm2510 #imgPreview img {
   max-height: 240px;
 }
+
 
 
 
@@ -811,7 +812,6 @@ th.sortable .fa-sort {
 }
 
 
-
 .das0100 canvas {
   width: 100% !important;
   max-width: 800px;
@@ -980,6 +980,11 @@ th.sortable .fa-sort {
 
 
 
+.ForgotPassword-formContainer {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
 .Footer {
   text-align: center;
   background-color: #F6F9FA;
@@ -1010,12 +1015,6 @@ th.sortable .fa-sort {
   width: 49px;
   height: 46px;
 }
-
-.ForgotPassword-formContainer {
-  margin-top: 80px;
-  margin-bottom: 80px;
-}
-
 
 .Landing {
   height: 100%;
@@ -1225,10 +1224,6 @@ Make sure to remove this when you modify this demo
   }
 }
 
-.Login-formContainer {
-  margin-top: 80px;
-  margin-bottom: 80px;
-}
 
 .dataTables_filter {
   float: right;
@@ -1277,6 +1272,11 @@ Make sure to remove this when you modify this demo
 
 .no-border-radius {
   border-radius: 0px !important;
+}
+
+.Login-formContainer {
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 
 
