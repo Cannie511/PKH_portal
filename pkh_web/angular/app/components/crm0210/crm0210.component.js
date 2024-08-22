@@ -25,7 +25,7 @@ class Crm0210Controller {
         this.m.store_id = $stateParams.store_id;
         this.loadInitData();
     }
-
+    
 
     loadInitData() {
         

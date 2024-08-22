@@ -33,6 +33,7 @@
                         <table class="table table-striped table_4001">
                             <thead class="bg-primary">                               
                             <tr>
+                                    <th>#</th>
                                     <th>STT.</th>
                                     <th>Tên đại lý</th>
                                     <th class="text-center">Điểm ScoreScard</th>
@@ -46,6 +47,18 @@
                             </thead>
                             <tbody>
                                 <tr ng-repeat="item in vm.m.data.data.data">
+                                <td class="col-action">
+                                        <div class="btn-group" uib-dropdown dropdown-append-to-body>
+                                          <button type="button" class="btn btn-default btn-sm" uib-dropdown-toggle>
+                                            <i class="fa fa-ellipsis-v"></i>
+                                          </button>
+                                          <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-body">                                           
+                                                <li role="menuitem"><a ui-sref='app.crm3021({store_id: item.store_id})'>Lịch sử điểm</a></li>
+                                                <li role="menuitem"><a ui-sref='app.crm4003({store_id: item.store_id})'>Trang test Đặt hàng</a></li>
+                                          </ul>
+                                        </div>
+                                    </td>
+
                                     <td><b>{{$index + vm.m.data.data.from}}<b></td>
                                     <td id="namestore_4001">
                                         <b>{{item.name}}</b><br>

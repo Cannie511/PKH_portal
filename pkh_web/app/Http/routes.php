@@ -239,6 +239,7 @@ $api->group($apiGroupSeeting, function ($api) {
     $api->controller('crm3000', 'Admin\Crm3000Controller'); // Đánh giá cửa hàng
     $api->controller('crm4001', 'Admin\Crm4001Controller');
     $api->controller('crm4002', 'Admin\Crm4002Controller');
+    $api->controller('crm4003', 'Admin\Crm4003Controller');
     $api->controller('crm3010', 'Admin\Crm3010Controller'); //Mã chưa mua
     $api->controller('crm3020', 'Admin\Crm3020Controller');
     

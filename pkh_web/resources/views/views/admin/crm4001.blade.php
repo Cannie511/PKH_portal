@@ -35,15 +35,15 @@
     <div class="container_car">
             <div class="card-content">
                 <h2>Tổng doanh số của các Đại Lý</h2>
-                <h1>{{ vm.m.data.avg_sale | number: 0 }} VNĐ</h1>
-                <p class="increase">Tần suất đặt hàng trong quý {{vm.m.data.avg_OD}} đơn/Quý</p>
-                <button class="withdraw-button">
-                 <i class="fa fa-gift"></i> Danh sách khuyến mãi
-                </button>
+                <h2>{{ vm.m.data.avg_sale | number: 0 }} VNĐ</h2>
+                <h5 class="increase">Tổng số đơn đặt hàng trong quý {{vm.m.data.avg_OD}} đơn/Quý</h5>
+             
+                <a ui-sref="app.crm4002" class="btn btn-default withdraw-button">  <i class="fa fa-gift"></i> Danh sách khuyến mãi</a>
+              
             </div>
             <div class="card-image">
                 <img src="https://devtop.io/wp-content/uploads/2023/07/back-end-developer-working-on-a-laptop-6765194-5607779.webp" class="dashboard-image">
-            </div>
+            </div> 
         </div>   
     <!-- Container Count Store Pass Criteria  -->
         <div class="container_avg">
@@ -51,13 +51,13 @@
         <!-- Store Pass Criteria 1 -->
         <div class="c-dashboardInfo col-lg-6 col-md-6 first">
                 <div class="wrap">
-                    <h4 class="heading heading5 hind-font medium-font-weight c-dashboardInfo__title nameCard" >Số Đại Lý Đạt Tiêu Chí  1
+                    <h4 class="heading heading5 hind-font medium-font-weight c-dashboardInfo__title nameCard" >Số Đại Lý Đạt Tiêu Chí Doanh Số
                     <svg class="MuiSvgIcon-root-19" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
                     <path fill="none" d="M0 0h24v24H0z"></path>
                     <path d="M3 17h2v-7H3v7zm4 0h2V7H7v10zm4 0h2V4h-2v13zm4 0h2v-9h-2v9zm4 0h2v-5h-2v5z"></path>
                     </svg>
                     </h4>
-                    <span class="hind-font caption-12 c-dashboardInfo__count">{{ vm.m.data.storePass_1}} Đại Lý 
+                    <span class="hind-font caption-12 c-dashboardInfo__count">{{ vm.m.data.storePass_1}} /{{ vm.m.data.CountStore}} Đại Lý 
                     <button class="btn_listStore" type="button" ng-click="vm.listStoreAvg()"><i class="fas fa-arrow-right"></i>Xem Danh Sách </button>
                     </span>
                 </div>
@@ -66,13 +66,13 @@
          <!-- Store Pass Criteria 2 -->
         <div class="c-dashboardInfo col-lg-6 col-md-6 first magin_left">
             <div class="wrap">
-                <h4 class="heading heading5 hind-font medium-font-weight c-dashboardInfo__title nameCard">Số Đại Lý Đạt Tiêu Chí 2
+                <h4 class="heading heading5 hind-font medium-font-weight c-dashboardInfo__title nameCard">Số Đại Lý Đạt Tiêu Chí Thâm Niên
                     <svg class="MuiSvgIcon-root-19" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
                     <path  d="M12 1C6.48 1 2 5.48 2 11s4.48 10 10 10 10-4.48 10-10S17.52 1 12 1zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
                     <path  d="M12 6v6l4 2"/>
                     </svg>
                 </h4>
-                <span class="hind-font caption-12 c-dashboardInfo__count">{{ vm.m.data.storePass_2}} Đại Lý
+                <span class="hind-font caption-12 c-dashboardInfo__count">{{ vm.m.data.storePass_2}} /{{ vm.m.data.CountStore}} Đại Lý
                 <button class="btn_listStore" type="button" ng-click="vm.listStoreRetention()"><i class="fas fa-arrow-right"></i>Xem Danh Sách </button>
                 </span>
             </div>
@@ -82,7 +82,7 @@
 
             <div class="c-dashboardInfo col-lg-6 col-md-6 first container_avg_magin_top">
                 <div class="wrap">
-                    <h4 class="heading heading5 hind-font medium-font-weight c-dashboardInfo__title nameCard">Số Đại Lý Đạt Tiêu Chí 3
+                    <h4 class="heading heading5 hind-font medium-font-weight c-dashboardInfo__title nameCard">Số Đại Lý Đạt Tiêu Chí Tần Suất Đặt
                     <svg  class="MuiSvgIcon-root-19" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
                         <path d="M7 2h10c1.1 0 2 .9 2 2v16l-3-2-3 2-3-2-3 2V4c0-1.1.9-2 2-2z"/>
                         <line x1="8" y1="6" x2="16" y2="6" stroke="white" stroke-width="2"/>
@@ -90,7 +90,7 @@
                         <line x1="8" y1="14" x2="16" y2="14" stroke="white" stroke-width="2"/>
                     </svg>
                     </h4>
-                    <span class="hind-font caption-12 c-dashboardInfo__count ">{{ vm.m.data.storePass_3}} Đại Lý
+                    <span class="hind-font caption-12 c-dashboardInfo__count ">{{ vm.m.data.storePass_3}} /{{ vm.m.data.CountStore}} Đại Lý
                         <button class="btn_listStore" type="button" ng-click="vm.listStoreOrderfrequency()"><i class="fas fa-arrow-right"></i>Xem Danh Sách </button></span>
                 </div>
             </div>
@@ -98,14 +98,14 @@
     <!-- Store Pass Criteria 4 -->
             <div class="c-dashboardInfo col-lg-6 col-md-6 first magin_left container_avg_magin_top">
                 <div class="wrap">
-                    <h4 class="heading heading5 hind-font medium-font-weight c-dashboardInfo__title nameCard">Số Đại Lý Có Công Nợ
+                    <h4 class="heading heading5 hind-font medium-font-weight c-dashboardInfo__title nameCard">Số Đại Lý Đạt Tiêu Chí Công Nợ
                     <svg class="MuiSvgIcon-root-19" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation">   
                         <circle cx="12" cy="12" r="10" fill="none" stroke="#007bff" stroke-width="2"/>
                         <path d="M13 9c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2h2c1.1 0 2 .9 2 2s-.9 2-2 2h-2c-1.1 0-2-.9-2-2" fill="none" stroke="#007bff" stroke-width="2"/>
                         <path d="M12 7v12" fill="none" stroke="#007bff" stroke-width="2"/>
                     </svg>
                     </h4>
-                    <span class="hind-font caption-12 c-dashboardInfo__count">{{ vm.m.data.storePass_4}} Đại Lý
+                    <span class="hind-font caption-12 c-dashboardInfo__count">{{ vm.m.data.storePass_4}} /{{ vm.m.data.CountStore}} Đại Lý
                     <button class="btn_listStore" type="button" ng-click="vm.listStoreDept()"><i class="fas fa-arrow-right"></i>Xem Danh Sách </button>
                     </span>
                 </div>
@@ -145,6 +145,7 @@
                         <table class="table table-striped table_4001">
                             <thead class="bg-primary">                               
                             <tr>
+                                    <th>#</th>
                                     <th>STT.</th>
                                     <th>Tên đại lý</th>
                                     <th class="text-center">Doanh số</th>
@@ -161,40 +162,55 @@
                             </thead>
                             <tbody>
                                 <tr ng-repeat="item in vm.m.data.data.data">
+                                  <td class="col-action">
+                                        <div class="btn-group" uib-dropdown dropdown-append-to-body>
+                                          <button type="button" class="btn btn-default btn-sm" uib-dropdown-toggle>
+                                            <i class="fa fa-ellipsis-v"></i>
+                                          </button>
+                                          <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-body">
+                                            <li role="menuitem"><a ui-sref='app.crm3021({store_id: item.store_id})'>Lịch sử điểm</a></li>
+                                            <li role="menuitem"><a ui-sref='app.crm4003({store_id: item.store_id})'>Trang test Đặt hàng</a></li>
+                                          </ul>
+                                        </div>
+                                    </td>
+
+
                                     <td><b>{{$index + vm.m.data.data.from}}<b></td>
                                     <td id="namestore_4001">
                                         <b>{{item.name}}</b><br>
                                         <small><i>{{item.address}}</i></small>
                                     </td>
                                     <td class="text-center">{{item.total_sale | currency:'':0}}</td>
-                                    <td class="text-center">{{item.retention}} năm
+                                    <td class="text-center">{{item.retention ? "Có":"Không"}}
                                     <!-- <br>
                                     <small><i>{{item.store_id}}</i></small> -->
                                     </td>
                                    
-                                    <td class="text-center">{{+item.order_frequency}} đơn</td>
+                                    <td class="text-center">{{+item.order_frequency | currency:'':2}} đơn</td>
                                     <td class="text-center">{{item.checkdept ? "Có":"Không"}}</td>
 
-                                    <td class="text-center"><b>{{+item.total_sale > +item.TotalSales120 ? 25:10}}</b>
-                                    <!-- <br>
-                                    <small><i>{{item.total_sale}}</i></small><br>
+                                    <td class="text-center"><b>{{+item.Sale_score}}</b>
+                                    <!-- <td class="text-center"><b>{{+item.total_sale > +item.TotalSales120 ? 25:10}}</b> -->
+                                    <br>
+                                    <!-- <small><i>{{item.TotalSales80}}</i></small><br>
                                     <small><i>{{item.TotalSales120}}</i></small><br> -->
                                     </td>
 
-                                    <td class="text-center"><b>{{+item.retention >=3 ? 25:10}}</b></td>
+                                    <td class="text-center"><b>{{+item.retention ? 25:10}}</b></td>
 
-                                    <td class="text-center"><b>{{+item.order_frequency > +item.countOrderYear120 ? 25:10}}</b>
-                                    <!-- <br>
-                                    <small><i>{{item.order_frequency}}</i></small><br>
-                                    <small><i>{{item.countOrderYear120}}</i></small><br> -->
+                                    <!-- <td class="text-center"><b>{{+item.order_frequency > +item.countOrderYear120 ? 25:10}}</b> -->
+                                    <td class="text-center"><b>{{+item.Order_score}}</b>
+                                    <br>
+                                    <!-- <small><i>{{item.countOrderYear80}}</i></small><br>
+                                    <small><i>{{item.countOrderYear120}}</i></small><br>  -->
 
                                     </td>
                                     <td class="text-center"><b>{{+item.checkdept ? 15:25}}</b>
                                     <!-- <br>
                                     <small><i>{{item.checkdept}}</i></small> -->
                                     </td>
-                                    <td class="text-center TotalScore_4001"><b>{{ vm.getTotalScore(item.total_sale, item.retention, item.order_frequency, item.checkdept,item.TotalSales120,item.countOrderYear120) }}</b></td>
-                                    <!-- <td class="text-center TotalScore_4001"><b>{{+item.Total_score_card}}</b></td> -->
+                                    <!-- <td class="text-center TotalScore_4001"><b>{{ vm.getTotalScore(item.total_sale, item.retention, item.order_frequency, item.checkdept,item.TotalSales120,item.countOrderYear120) }}</b></td> -->
+                                    <td class="text-center TotalScore_4001"><b>{{+item.Total_score_card}}</b></td>
                                     <td></td>
                                 </tr>
                             </tbody>

@@ -24,8 +24,76 @@ class Crm4001Service extends BaseService
 //              So sanh khoang thoi gian giua 2 don hang lien tiep > 6 set gia tri ve 0
 //              Sau khi het don hang cuoi thi so sanh khoang thoi gian tu don hang cuoi voi endDate > 6 return 0
 //              Tinh Retention = so thang dat hang lien tuc / 12
-    public function getRetention($store_id, $year, $quarter)
-{   
+//     public function getRetention($store_id, $year, $quarter)
+// {   
+//     switch ($quarter) {
+//         case 1:
+//             $endQuarter = $year . '-03-31';
+//             break;
+//         case 2:
+//             $endQuarter = $year . '-06-30';
+//             break;
+//         case 3:
+//             $endQuarter = $year . '-09-30';
+//             break;
+//         case 4:
+//             $endQuarter = $year . '-12-31';
+//             break;
+//     }
+//     $endDate = $endQuarter;
+//     $sqlCheck = "
+//         SELECT order_date
+//         FROM trn_store_order
+//         WHERE store_id = :store_id
+//         AND order_date <= :endDate
+//         ORDER BY order_date
+//     ";
+
+//     $orders = DB::select(DB::raw($sqlCheck), ['store_id' => $store_id, 'endDate' => $endDate]);
+
+//     if (count($orders) === 0) {
+//         return 0;
+//     }
+
+//     $retentionStartDate = new \DateTime($orders[0]->order_date);
+//     $previousOrderDate = $retentionStartDate;
+
+//     foreach ($orders as $order) {
+//         $currentOrderDate = new \DateTime($order->order_date);
+//         $diff = $previousOrderDate->diff($currentOrderDate);
+//         $monthsDiff = ($diff->y * 12) + $diff->m;
+
+//         if ($monthsDiff > 6) {
+//             return 0;
+//         }
+
+//         $previousOrderDate = $currentOrderDate;
+//     }
+
+   
+//     $endDateTime = new \DateTime($endDate);
+//     $lastOrderDate = new \DateTime($orders[count($orders) - 1]->order_date);
+//     $diffToEndDate = $lastOrderDate->diff($endDateTime);
+//     $monthsDiffToEndDate = ($diffToEndDate->y * 12) + $diffToEndDate->m;
+
+//     if ($monthsDiffToEndDate > 6) {
+//         return 0;
+//     }
+
+//     $retentionMonths = ($endDateTime->diff($retentionStartDate)->y * 12) + $endDateTime->diff($retentionStartDate)->m;
+//     $retentionYears = floor($retentionMonths / 12);
+
+//     return max(0, $retentionYears);
+// }
+
+public function getRetention($store_id, $year, $quarter)
+{
+    // Nếu năm là 2016, 2017, hoặc 2018 thì trả về false
+    if (in_array($year, [2016, 2017, 2018])) {
+        return false;
+    }
+
+    // Xác định ngày kết thúc của quý
     switch ($quarter) {
         case 1:
             $endQuarter = $year . '-03-31';
@@ -40,50 +108,59 @@ class Crm4001Service extends BaseService
             $endQuarter = $year . '-12-31';
             break;
     }
+
     $endDate = $endQuarter;
+    $startDate = (new \DateTime($endDate))->modify('-3 years')->format('Y-m-d');
+
+    // Lấy các đơn hàng trong khoảng từ startDate đến endDate
     $sqlCheck = "
         SELECT order_date
         FROM trn_store_order
         WHERE store_id = :store_id
-        AND order_date <= :endDate
+        AND order_date BETWEEN :startDate AND :endDate
         ORDER BY order_date
     ";
 
-    $orders = DB::select(DB::raw($sqlCheck), ['store_id' => $store_id, 'endDate' => $endDate]);
+    $orders = DB::select(DB::raw($sqlCheck), [
+        'store_id' => $store_id, 
+        'startDate' => $startDate, 
+        'endDate' => $endDate
+    ]);
 
+    // Nếu không có đơn hàng nào trong khoảng thời gian này, trả về false
     if (count($orders) === 0) {
-        return 0;
+        return false;
     }
 
-    $retentionStartDate = new \DateTime($orders[0]->order_date);
-    $previousOrderDate = $retentionStartDate;
+    $previousOrderDate = new \DateTime($orders[0]->order_date);
 
+    // Kiểm tra khoảng cách giữa các đơn hàng liên tiếp
     foreach ($orders as $order) {
         $currentOrderDate = new \DateTime($order->order_date);
         $diff = $previousOrderDate->diff($currentOrderDate);
         $monthsDiff = ($diff->y * 12) + $diff->m;
 
+        // Nếu có khoảng cách hơn 6 tháng giữa hai đơn hàng liên tiếp, trả về false
         if ($monthsDiff > 6) {
-            return 0;
+            return false;
         }
 
         $previousOrderDate = $currentOrderDate;
     }
 
-   
+    // Kiểm tra khoảng cách giữa đơn hàng cuối cùng và ngày kết thúc
     $endDateTime = new \DateTime($endDate);
-    $lastOrderDate = new \DateTime($orders[count($orders) - 1]->order_date);
+    $lastOrderDate = new \DateTime(end($orders)->order_date);
     $diffToEndDate = $lastOrderDate->diff($endDateTime);
     $monthsDiffToEndDate = ($diffToEndDate->y * 12) + $diffToEndDate->m;
 
+    // Nếu khoảng cách giữa đơn hàng cuối cùng và ngày kết thúc lớn hơn 6 tháng, trả về false
     if ($monthsDiffToEndDate > 6) {
-        return 0;
+        return false;
     }
 
-    $retentionMonths = ($endDateTime->diff($retentionStartDate)->y * 12) + $endDateTime->diff($retentionStartDate)->m;
-    $retentionYears = floor($retentionMonths / 12);
-
-    return max(0, $retentionYears);
+    // Nếu tất cả các điều kiện đều thoả mãn, trả về true
+    return true;
 }
 
 
@@ -291,7 +368,7 @@ public function getAvgCountAStoreOrderQuarterOfYear($store_id, $year, $quarter)
     
     $sql = "
         SELECT 
-            COUNT(a.order_date) AS total_order_count
+            (COUNT(a.order_date)/3) AS total_order_count
         FROM 
             trn_store_order a
         WHERE 
@@ -447,7 +524,56 @@ public function getCountOrderQuarterOfLastYear120($year, $store_id,$quarter)
     $sqlParam = ['year' => $previousYear, 'store_id' => $store_id];
     $sql = "
         SELECT 
-            SUM(order_count) * 1.2 AS desired_OD
+            (SUM(order_count)/3) * 1.2 AS desired_OD
+        FROM (
+            SELECT 
+                b.store_id, 
+                COUNT(a.order_date) AS order_count
+            FROM 
+                mst_store b
+            LEFT JOIN 
+                trn_store_order a ON a.store_id = b.store_id
+            WHERE 
+                a.order_date IS NOT NULL
+                AND YEAR(order_date) = :year
+                AND MONTH(order_date) BETWEEN $startMonth AND $endMonth 
+                AND b.store_id = :store_id
+            GROUP BY 
+                b.store_id
+            HAVING 
+                COUNT(a.order_date) > 0
+        ) AS store_order_counts;
+    ";
+
+    $list = DB::select(DB::raw($sql), $sqlParam);
+    return count($list) === 0 ? null : $list[0]->desired_OD;
+}
+// Tan suat dat cung ky quy truoc*80%
+public function getCountOrderQuarterOfLastYear80($year, $store_id,$quarter)
+{
+    $previousYear = $year - 1;
+    switch ($quarter) {
+        case 1:
+            $startMonth = 1;
+            $endMonth = 3;
+            break;
+        case 2:
+            $startMonth = 4;
+            $endMonth = 6;
+            break;
+        case 3:
+            $startMonth = 7;
+            $endMonth = 9;
+            break;
+        case 4:
+            $startMonth = 10;
+            $endMonth = 12;
+            break;
+    }
+    $sqlParam = ['year' => $previousYear, 'store_id' => $store_id];
+    $sql = "
+        SELECT 
+            (SUM(order_count)/3) * 0.8 AS desired_OD
         FROM (
             SELECT 
                 b.store_id, 
@@ -508,6 +634,43 @@ public function getTotalSalesQuarterOfLastYear120($year,$store_id,$quarter)
     $list = DB::select(DB::raw($sql), $sqlParam);
     return count($list) === 0 ? null : $list[0]->Total_OD;
 }
+// Doanh so cung ky quy truoc*80%
+public function getTotalSalesQuarterOfLastYear80($year,$store_id,$quarter)
+{   
+    $previousYear = $year - 1;
+    switch ($quarter) {
+        case 1:
+            $startMonth = 1;
+            $endMonth = 3;
+            break;
+        case 2:
+            $startMonth = 4;
+            $endMonth = 6;
+            break;
+        case 3:
+            $startMonth = 7;
+            $endMonth = 9;
+            break;
+        case 4:
+            $startMonth = 10;
+            $endMonth = 12;
+            break;
+    }
+    $sqlParam = ['year' => $previousYear, 'store_id' => $store_id];
+    $sql = "
+        SELECT 
+            SUM(total_with_discount)* 0.8 AS Total_OD
+        FROM 
+            trn_store_order 
+        WHERE 
+            YEAR(order_date) = :year 
+             AND MONTH(order_date) BETWEEN $startMonth AND $endMonth 
+            AND store_id = :store_id
+    ";
+
+    $list = DB::select(DB::raw($sql), $sqlParam);
+    return count($list) === 0 ? null : $list[0]->Total_OD;
+}
 
 // Lay doanh so cua mot cua hang
 public function getSalesAStoreQuarterOfYear($year,$store_id,$quarter)
@@ -545,7 +708,7 @@ public function getSalesAStoreQuarterOfYear($year,$store_id,$quarter)
     $list = DB::select(DB::raw($sql), $sqlParam);
     return count($list) === 0 ? null : $list[0]->Total_OD;
 }
-// Tan suat dat cung ky quy cua mot cua hang
+// Tan suat dat cua mot cua hang
 public function getCountOrderAStoreQuarterOfYear($year, $store_id,$quarter)
 {
     switch ($quarter) {
@@ -569,7 +732,7 @@ public function getCountOrderAStoreQuarterOfYear($year, $store_id,$quarter)
     $sqlParam = ['year' => $year, 'store_id' => $store_id];
     $sql = "
         SELECT 
-            SUM(order_count) AS desired_OD
+            (SUM(order_count)/3) AS desired_OD
         FROM (
             SELECT 
                 b.store_id, 
@@ -599,13 +762,18 @@ public function getSalesScore($year, $store_id, $quarter)
     {
         $currentSales = $this->getSalesAStoreQuarterOfYear($year, $store_id, $quarter);
         $previousSales120 = $this->getTotalSalesQuarterOfLastYear120($year, $store_id, $quarter);
+        $previousSales80 = $this->getTotalSalesQuarterOfLastYear80($year, $store_id, $quarter);
 
         $sale_score = 0;
 
         if ($currentSales > $previousSales120) {
             $sale_score = 25;
-        } else {
-            $sale_score = 10;
+        } 
+        elseif ($currentSales < $previousSales120 && $currentSales > $previousSales80) {
+            $sale_score  = 10;
+        } 
+        else {
+            $sale_score  = 0;
         }
         return $sale_score;
     }
@@ -615,13 +783,18 @@ public function getOrderScore($year, $store_id, $quarter)
     {
         $currentOrder = $this->getCountOrderAStoreQuarterOfYear($year, $store_id, $quarter);
         $previousOrder120 = $this->getCountOrderQuarterOfLastYear120($year, $store_id, $quarter);
+        $previousOrder80 = $this->getCountOrderQuarterOfLastYear80($year, $store_id, $quarter);
 
         $order_score = 0;
 
         if ($currentOrder > $previousOrder120) {
             $order_score = 25;
-        } else {
+        } 
+        elseif ($currentOrder < $previousOrder120 && $currentOrder > $previousOrder80) {
             $order_score = 10;
+        } 
+        else {
+            $order_score = 0;
         }
         return $order_score;
     }
@@ -633,7 +806,7 @@ public function getRetentionScore($store_id, $year, $quarter)
 
     $retention_score = 0;
 
-    if ($retention >= 3) {
+    if ($retention) {
         $retention_score = 25;
     } else {
         $retention_score = 10;
@@ -720,13 +893,13 @@ public function getCountPass_Order_QuarterOfYear($param,$year,$quarter)
 
 
 // Dem so cua hang co cong no 
-public function getCountNoPass_Dept_QuarterOfYear($param,$year,$quarter)
+public function getCountPass_Dept_QuarterOfYear($param,$year,$quarter)
 {
     $sqlParam = ['year' => $year,'quarter' => $quarter];
    
     $sql = "SELECT COUNT(*) AS store_count
     FROM store_scores
-    WHERE dept_score = 15
+    WHERE dept_score = 25
       AND year = :year
       AND quarter = :quarter";
 
@@ -785,12 +958,12 @@ public function getStoreIdPass_Order_QuarterOfYear($param, $year, $quarter)
     return $storeIds;
 }
 // Lay List ID cua hang co cong no
-public function getStoreIdNoPass_Dept_QuarterOfYear($param, $year, $quarter)
+public function getStoreIdPass_Dept_QuarterOfYear($param, $year, $quarter)
 {
     $sqlParam = ['year' => $year, 'quarter' => $quarter];
     $sql = "SELECT store_id
             FROM store_scores
-            WHERE dept_score = 15
+            WHERE dept_score = 25
               AND year = :year
               AND quarter = :quarter";
     $result = DB::select(DB::raw($sql), $sqlParam);
@@ -999,7 +1172,7 @@ public function getDataStoresWithHigherThanAvgOrderFrequency($param, $year, $qua
 //  Liet ke cua hang co Cong No
 public function getDataStoresWithDebt($param, $year, $quarter)
 {
-    $storeIds = $this->getStoreIdNoPass_Dept_QuarterOfYear($param, $year, $quarter);
+    $storeIds = $this->getStoreIdPass_Dept_QuarterOfYear($param, $year, $quarter);
 
     if (empty($storeIds)) {
         return [];
@@ -1067,7 +1240,16 @@ public function getStoreCountsByScore($param,$year, $quarter)
     $sql = "SELECT 
     COALESCE(t.store_count, 0) AS store_count
 FROM (
-    SELECT 45 AS total_score_card UNION ALL
+    SELECT 0 AS total_score_card UNION ALL
+    SELECT 5 UNION ALL
+    SELECT 10 UNION ALL
+    SELECT 15 UNION ALL
+    SELECT 20 UNION ALL
+    SELECT 25 UNION ALL
+    SELECT 30 UNION ALL
+    SELECT 35 UNION ALL
+    SELECT 40 UNION ALL
+    SELECT 45 UNION ALL
     SELECT 50 UNION ALL
     SELECT 55 UNION ALL
     SELECT 60 UNION ALL
@@ -1106,7 +1288,16 @@ public function getStoreCountsByScoreSamePeriod($param,$year, $quarter)
     $sql = "SELECT 
     COALESCE(t.store_count, 0) AS store_count
 FROM (
-    SELECT 45 AS total_score_card UNION ALL
+    SELECT 0 AS total_score_card UNION ALL
+    SELECT 5 UNION ALL
+    SELECT 10 UNION ALL
+    SELECT 15 UNION ALL
+    SELECT 20 UNION ALL
+    SELECT 25 UNION ALL
+    SELECT 30 UNION ALL
+    SELECT 35 UNION ALL
+    SELECT 40 UNION ALL
+    SELECT 45 UNION ALL
     SELECT 50 UNION ALL
     SELECT 55 UNION ALL
     SELECT 60 UNION ALL
@@ -1135,6 +1326,20 @@ ORDER BY ds.total_score_card";
     }
 
     return $storeCounts;
+}
+// Dem so cua hang 
+public function getCountStoreQuarterOfYear($param,$year,$quarter)
+{
+    $sqlParam = ['year' => $year,'quarter' => $quarter];
+   
+    $sql = "SELECT COUNT(*) AS store_count
+    FROM store_scores
+    WHERE 
+      year = :year
+      AND quarter = :quarter";
+
+    $result = DB::select(DB::raw($sql), $sqlParam);
+    return !empty($result) ? round($result[0]->store_count, 2) : null;
 }
 
 }

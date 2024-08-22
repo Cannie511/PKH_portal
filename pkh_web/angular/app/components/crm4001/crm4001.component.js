@@ -81,24 +81,28 @@ class Crm4001Controller {
                 if (line) {
                     line.height = 280;
                     this.lineChart = new Chart(line, {
-                        type: 'line',
+                        type: 'bar',
                         data: {
-                            labels: ['45', '50', '55', '60', '65', '70','75','80','85','90','95','100'],
+                            labels: ['Tiêu chí Doanh Số', 'Tiêu Chí Thâm Niên', 'Tiêu Chí Tần Suất Đặt', 'Tiêu Chí Công Nợ'],
                             datasets: [{
                                 label: 'Số Lượng Đại Lý', // Tên series
-                                data: this.m.data.storeCountsByScore, // Cập nhật data
+                                data: [this.m.data.storePass_1,this.m.data.storePass_2,this.m.data.storePass_3,this.m.data.storePass_4], // Cập nhật data
                                 fill: false,
                                 borderColor: '#2196f3', // Màu viền
                                 backgroundColor: '#2196f3', // Màu nền
-                                borderWidth: 2, // Độ rộng viền
+                                borderWidth: 1, // Độ rộng viền
+                                barThickness: 50, // Chiều rộng cụ thể của mỗi cột (giá trị nhỏ hơn để cột mỏng hơn)
+                                maxBarThickness: 80 // Chiều rộng tối đa của cột
                             },
                             {
-                                label: 'Số Lượng Đại Lý Cùng Kỳ', // Tên series mới
-                                data: this.m.data.storeCountsByScoreSamePeriod, // Cập nhật data mới
+                                label: 'Số Lượng Đại Lý', // Tên series mới
+                                data: [this.m.data.CountStore,this.m.data.CountStore,this.m.data.CountStore,this.m.data.CountStore], // Cập nhật data mới
                                 fill: false,
                                 borderColor: '#ff0000', // Màu viền đỏ
                                 backgroundColor: '#ff0000', // Màu nền đỏ
-                                borderWidth: 2 // Độ rộng viền
+                                borderWidth: 1, // Độ rộng viền
+                                barThickness: 50, // Chiều rộng cụ thể của mỗi cột (giá trị nhỏ hơn để cột mỏng hơn)
+                                maxBarThickness: 80 // Chiều rộng tối đa của cột
                             }
                         ]
                         },

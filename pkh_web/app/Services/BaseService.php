@@ -813,7 +813,7 @@ public function pagination12R(
         }
     }
 
-    $perPage = 10; // Số hàng trên mỗi trang, thay đổi tại đây
+    $perPage = 25; // Số hàng trên mỗi trang, thay đổi tại đây
 
     $offset = ($currentPage - 1) * $perPage;
 

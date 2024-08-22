@@ -20,7 +20,9 @@ class Crm3020Controller {
         this.can = AclService.can;
         this.m = {
             data: {},
-            init: {}
+            init: {},
+            selectedYear: null,  // Lưu trữ năm đã chọn
+            totalScoreCard: {}   // Khởi tạo object để lưu trữ dữ liệu score card
         };
         this.m.store_id = $stateParams.store_id;
         this.m.isSaving = false;
@@ -28,17 +30,39 @@ class Crm3020Controller {
 
     $onInit() {
         this.loadInit();
+        this.loadYears();
     }
     
-    loadInit() {
+    loadDataForYear() {
+        this.loadInit(this.m.selectedYear);
+    }
+
+    loadYears() {
+        this.API.all('crm3020').customGET('years')
+            .then((response) => {
+                this.m.years = response.plain();
+            })
+            .catch((error) => {
+                this.$log.error('Error loading years:', error);
+            });
+    }
+
+    loadInit(selectedYear) {
         let param = {
-            store_id: this.m.store_id
+            store_id: this.m.store_id,
+            year: selectedYear
         };
+    
         let searchService = this.API.service("search", this.API.all("crm3020"));
         searchService.post(param).then((response) => {
             this.$log.info("m init: ", response.data.data);
+            this.$log.info("K init: ", response.data.totalScoreCard);
             this.m.data = response.data.data;
-            this.m.data1 = response.data.data1; // Gán giá trị data1
+            this.m.TotalSale = response.data.TotalSale;
+            this.m.CountOrder = response.data.CountOrder;
+            this.m.Retention = response.data.Retention;
+            this.m.Dept = response.data.Dept;
+            this.m.totalScoreCard = response.data.totalScoreCard; // Gán giá trị từ backend
         });
     }
 }

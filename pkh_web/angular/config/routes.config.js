@@ -837,7 +837,13 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
         .state("app.crm3000", getStateDefinition("crm3000"))
         .state("app.crm4001", getStateDefinition("crm4001"))
         .state("app.crm4002", getStateDefinition("crm4002"))
-        .state("app.crm4000", getStateDefinition("crm4000"))
+        .state(
+            "app.crm4003",
+            getStateDefinition("crm4003", {
+                url: "/crm4003/{store_id:int}", // Thêm URL nếu cần
+                params: { alerts: null, store_id: null }, // Thêm các tham số tùy ý
+            })
+        )
         .state("app.crm3010", getStateDefinition("crm3010"))
         //lịch sử điểm
         .state(
@@ -853,6 +859,7 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
                 params: { alerts: null, store_id: null },
             })
         )
+        
         /**
          * HRM: Human resouce management
          */

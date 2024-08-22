@@ -68,41 +68,34 @@ class Crm4001Controller extends AdminBaseController
     $countpass_TotalSale = $this->crm4001Service->getCountPass_TotalSale_QuarterOfYear($param,$year,$quarter);
     $countpass_Retention = $this->crm4001Service->getCountPass_Retention_QuarterOfYear($param,$year,$quarter);
     $countpass_Order = $this->crm4001Service->getCountPass_Order_QuarterOfYear($param,$year,$quarter);
-    $countNopass_Dept = $this->crm4001Service->getCountNoPass_Dept_QuarterOfYear($param,$year,$quarter);
+    $countpass_Dept = $this->crm4001Service->getCountPass_Dept_QuarterOfYear($param,$year,$quarter);
+
+    $countStore = $this->crm4001Service->getCountStoreQuarterOfYear($param,$year,$quarter);
     
-    // Count store by score 45->100 current quarter 
-    $storeCountsByScore = $this->crm4001Service->getStoreCountsByScore($param,$year,$quarter);
-    // Count store by score 45->100 same period
-    $storeCountsByScoreSamePeriod = $this->crm4001Service->getStoreCountsByScoreSamePeriod($param,$year,$quarter);
 
     foreach ($data as $v) {
         $orderFrequency = $this->crm4001Service->getAvgCountAStoreOrderQuarterOfYear($v->store_id, $year, $quarter);
         $retentionItem = $this->crm4001Service->getRetention($v->store_id, $year, $quarter);
         $checkdeptItem = $this->crm4001Service->checkDeptAStoreQuarterOfYear($v->store_id, $year, $quarter);
-        $countOrderYear120Item = $this->crm4001Service->getCountOrderQuarterOfLastYear120($year, $v->store_id, $quarter);
-        $TotalSales120Item = $this->crm4001Service->getTotalSalesQuarterOfLastYear120($year, $v->store_id, $quarter);
+      
 
         // Goi Ham tinh diem
 
-        // $Sale_scoreItem = $this->crm4001Service->getSalesScore($year, $v->store_id, $quarter);
-        // $Order_scoreItem = $this->crm4001Service->getOrderScore($year, $v->store_id, $quarter);
-        // $Retention_scoreItem = $this->crm4001Service->getRetentionScore($v->store_id, $year, $quarter);
-        // $Dept_scoreItem = $this->crm4001Service->getDeptScore($v->store_id, $year, $quarter);
-        // $Total_score_card = $this->crm4001Service->getTotalScoreCard($year, $v->store_id, $quarter);
+        $Sale_scoreItem = $this->crm4001Service->getSalesScore($year, $v->store_id, $quarter);
+        $Order_scoreItem = $this->crm4001Service->getOrderScore($year, $v->store_id, $quarter);
+       
+        $Total_score_card = $this->crm4001Service->getTotalScoreCard($year, $v->store_id, $quarter);
 
         $v->order_frequency = $orderFrequency;
         $v->retention = $retentionItem;
         $v->checkdept = $checkdeptItem;
-        $v->countOrderYear120 = $countOrderYear120Item;
-        $v->TotalSales120 = $TotalSales120Item;
+      
+        $v->Sale_score = $Sale_scoreItem;
+        $v->Order_score = $Order_scoreItem;
+       
+        $v->Total_score_card = $Total_score_card;
 
-        // $v->Sale_score = $Sale_scoreItem;
-        // $v->Order_score = $Order_scoreItem;
-        // $v->Retention_score = $Retention_scoreItem;
-        // $v->Dept_score = $Dept_scoreItem;
-        // $v->Total_score_card = $Total_score_card;
-
-        // // Ham Luu điểm số vào cơ sở dữ liệu
+        // Ham Luu điểm số vào cơ sở dữ liệu
 
         // StoreScore::updateOrCreate(
         //     [
@@ -128,9 +121,9 @@ class Crm4001Controller extends AdminBaseController
         "storePass_1" => $countpass_TotalSale,
         "storePass_2" => $countpass_Retention,
         "storePass_3" => $countpass_Order,
-        "storePass_4" => $countNopass_Dept,
-        "storeCountsByScore" => $storeCountsByScore,
-        "storeCountsByScoreSamePeriod" => $storeCountsByScoreSamePeriod
+        "storePass_4" => $countpass_Dept,
+        "CountStore" =>  $countStore,
+       
     ];
 
     return response()->success($result);

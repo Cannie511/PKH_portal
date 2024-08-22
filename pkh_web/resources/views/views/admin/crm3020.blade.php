@@ -1,380 +1,102 @@
 <section class="content-header">
-    <h1>Lịch sử điểm<small></small></h1>
+    <h1>Lịch sử điểm <small></small></h1>
 </section>
 <section class="content">
-<div class="row">
+    <div class="row">
         <div class="col-md-12">
             <div class="box box-info">
-                <div class="box-header with-border">
-                    <h3 class="box-title">{{vm . m . data . name}}</h3>
-                    <div class="box-tools pull-right">
-                        <!-- <a ui-sref="app.crm2910" class="btn btn-success btn-xs"><i class="fa fa-plus"></i>&nbsp;{{'COM_BTN_NEW' | translate}}</a> -->
+                <div class="box-header with-border d-flex justify-content-between align-items-center">
+                    <h3 class="box-title">{{ vm.m.data.name }}</h3>
+                    <div class="box-tools">
+                        <!-- Custom tools or buttons can be added here -->
                     </div>
                 </div>
                 <div class="box-body">
                     <div class="row">
-                        <div class="col-md-6 col-sm-12">
-                            <span>Địa chỉ: {{vm . m . data . address}}</span>
+                        <div class="col-md-6">
+                            <span><strong>Địa chỉ:</strong> {{ vm.m.data.address }}</span>
                         </div>
-                        <div class="col-md-6 col-sm-12">
-                            <span>Phụ trách hiện tại: {{vm . m . data . salesman_name}}</span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-sm-12">
-                            <span>Khu vực: {{vm . m . data . area1_name}} - <i>{{vm . m . data . area2_name}}</i></span>
-                        </div>
-                        <div class="col-md-6 col-sm-12">
-                            <span>Liên hệ: {{vm . m . data . contact_tel}} - {{vm . m . data . contact_mobile1}}</span>
+                        <div class="col-md-6">
+                            <span><strong>Phụ trách hiện tại:</strong> {{ vm.m.data.salesman_name }}</span>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6 col-sm-12">
-                            <span>Ngày sinh: 01 - 01 - 1999</i></span>
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <span><strong>Khu vực:</strong> {{ vm.m.data.area1_name }} - <i>{{ vm.m.data.area2_name }}</i></span>
                         </div>
-                        <div class="col-md-6 col-sm-12">
-                            <span>Điểm tích lũy: {{vm . m . data . scorecard}}</span>
+                        <div class="col-md-6">
+                            <span><strong>Liên hệ:</strong> {{ vm.m.data.contact_tel }} - {{ vm.m.data.contact_mobile1 }}</span>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <span><strong>Ngày sinh:</strong> </span>
+                        </div>
+                        <div class="col-md-6">
+                            <span><strong>Điểm tích lũy:</strong> {{ vm.m.data.scorecard }}</span>
                         </div>
                     </div>
                     <hr>
-                    <div class="mt-2">
-                    <form class="form" ng-submit="vm.search()">
-                        <div class="row">
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                    <label for="title">Tháng</label>
-                                    <select class="form-control" ng-model="vm.m.filter.month">
-                                        <option value="">- Tất cả -</option>
-                                        <option value="1">01</option>
-                                        <option value="2">02</option>
-                                        <option value="3">03</option>
-                                        <option value="4">04</option>
-                                        <option value="5">05</option>
-                                        <option value="6">06</option>
-                                        <option value="7">07</option>
-                                        <option value="8">08</option>
-                                        <option value="9">09</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                    <label for="title">Năm</label>
-                                    <select class="form-control" ng-model="vm.m.filter.year">
-                                        <option value="">- Tất cả -</option>
-                                        <option value="1">2021</option>
-                                        <option value="2">2020</option>
-                                        <option value="3">2019</option>
-                                        <option value="4">2018</option>
-                                    </select>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary btn-sm btn-width-default">
-                                    <i class="fa fa-search fa-fw"></i>
-                                    <span translate="COM_BTN_SEARCH"></span>
-                                </button>
-                                <button type="button" class="btn btn-default btn-sm btn-width-default" ng-click="vm.resetFilter()">
-                                    <i class="fa fa-eraser fa-fw"></i>
-                                    <span translate="COM_BTN_RESET"></span>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    <div class="form-group">
+                        <label for="year" style="margin-right: 5px;">Năm Bắt Đầu:</label>
+                        <select ng-model="vm.m.selectedYear" ng-change="vm.loadDataForYear()" class="form-control d-inline-block" style="width: 150px;">
+                            <option ng-repeat="year in vm.m.years" value="{{ year.year }}">
+                                {{ year.year }}
+                            </option>
+                        </select>
                     </div>
                 </div>
-                
+
                 <div class="box-body">
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Tháng</th>
-                                    <th>Doanh số</th>
-                                    <th>Thâm niên</th>
-                                    <th>Tần suất đặt hàng</th>
-                                    <th>Công nợ</th>
-                                    <th>Tổng điểm</th>
-                                    <th></th>
+                    <div class="table-responsive ">
+                        <table class="table table-bordered table-hover table_history">
+                            <thead class="thead-light">
+                                <tr class="tr_history" style="border: 2px solid #dee2e6;">
+                                    <th style="border: 2px solid #dee2e6;">Quý</th>
+                                    <th style="border: 2px solid #dee2e6;">Doanh số</th>
+                                    <th style="border: 2px solid #dee2e6;">Thâm niên</th>
+                                    <th style="border: 2px solid #dee2e6;">Tần suất đặt hàng</th>
+                                    <th style="border: 2px solid #dee2e6;">Công nợ</th>
+                                    <th style="border: 2px solid #dee2e6;">Tổng điểm</th>
+                                   
                                 </tr>
                             </thead>
                             <tbody>
-                               <tr>
-                                    <td>12/2021</td>
-                                    <td>
-                                    {{vm . m . data1}}
+                                <tr ng-repeat="quarter in [1, 2, 3, 4]" style="border: 2px solid #dee2e6;">
+                                    <td style="border: 2px solid #dee2e6;">{{ quarter }}</td>
+                                    <td style="border: 2px solid #dee2e6;">
+                                        {{ vm.m.TotalSale[quarter] | currency:'':0 }} VNĐ
                                         <br>
-                                        <b><small>+10 điểm</small></b>
+                                        <small class="text-success font-weight-bold">+{{ vm.m.totalScoreCard[quarter].sale_score }} điểm</small>
                                     </td>
-                                    <td>
-                                        4 năm
+                                    <td style="border: 2px solid #dee2e6;">
+                                        {{ vm.m.Retention[quarter] ? "Có Thâm Niên" : "Không Thâm Niên" }}
                                         <br>
-                                        <b><small>+25 điểm</small></b>
+                                        <small class="text-success font-weight-bold">+{{ vm.m.totalScoreCard[quarter].retention_score }} điểm</small>
                                     </td>
-                                    <td>
-                                        0.57 đơn / năm
+                                    <td style="border: 2px solid #dee2e6;">
+                                        {{ vm.m.CountOrder[quarter] | currency:'':2 }} Đơn
                                         <br>
-                                        <b><small>+10 điểm</small></b>
+                                        <small class="text-success font-weight-bold">+{{ vm.m.totalScoreCard[quarter].order_score }} điểm</small>
                                     </td>
-                                    <td>
-                                        Còn công nợ
+                                    <td style="border: 2px solid #dee2e6;">
+                                        {{ vm.m.Dept[quarter] ? "Không Công Nợ" : "Có Công Nợ" }}
                                         <br>
-                                        <b><small>+15 điểm</small></b>
+                                        <small class="text-success font-weight-bold">+{{ vm.m.totalScoreCard[quarter].dept_score }} điểm</small>
                                     </td>
-                                    <td>
-                                        <b>60 điểm</b>
+                                    <td class="total_score_card" style="border: 2px solid #dee2e6;">
+                                        <b>{{ vm.m.totalScoreCard[quarter].total_score_card }} điểm</b>
                                     </td>
-                                    <td>
-                                        <h5 class="fw-bold"><i class="fa fa-arrow-down" style="color: red;"></i> (-10)</h5>
-                                    </td>
-                               </tr>
-                            <tr>
-                                <td>11/2021</td>
-                                <td>
-                                    102,220,102
-                                    <br>
-                                    <b><small>+10 điểm</small></b>
-                                </td>
-                                <td>
-                                    4 năm
-                                    <br>
-                                    <b><small>+25 điểm</small></b>
-                                </td>
-                                <td>
-                                    0.54 đơn / năm
-                                    <br>
-                                    <b><small>+10 điểm</small></b>
-                                </td>
-                                <td>
-                                    Không còn công nợ
-                                    <br>
-                                    <b><small>+15 điểm</small></b>
-                                </td>
-                                <td>
-                                    <b>70 điểm</b>
-                                </td>
-                                <td>
-                                    <h5 class="fw-bold"><i class="fa fa-arrow-up" style="color: green;"></i> (+10)</h5>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>10/2021</td>
-                                <td>
-                                    88,181,210
-                                    <br>
-                                    <b><small>+10 điểm</small></b>
-                                </td>
-                                <td>
-                                    4 năm
-                                    <br>
-                                    <b><small>+25 điểm</small></b>
-                                </td>
-                                <td>
-                                    0.5 đơn / năm
-                                    <br>
-                                    <b><small>+10 điểm</small></b>
-                                </td>
-                                <td>
-                                    Còn công nợ
-                                    <br>
-                                    <b><small>+15 điểm</small></b>
-                                </td>
-                                <td>
-                                    <b>60 điểm</b>
-                                </td>
-                                <td>
-                                    __
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>09/2021</td>
-                                <td>
-                                    68,842,100
-                                    <br>
-                                    <b><small>+10 điểm</small></b>
-                                </td>
-                                <td>
-                                    4 năm
-                                    <br>
-                                    <b><small>+25 điểm</small></b>
-                                </td>
-                                <td>
-                                    0.48 đơn / năm
-                                    <br>
-                                    <b><small>+10 điểm</small></b>
-                                </td>
-                                <td>
-                                    Còn công nợ
-                                    <br>
-                                    <b><small>+15 điểm</small></b>
-                                </td>
-                                <td>
-                                    <b>60 điểm</b>
-                                </td>
-                                <td>
-                                    __
-                                </td>
+                                  
                                 </tr>
-                            <tr>
-                                <td>08/2021</td>
-                                <td>
-                                    42,116,200
-                                    <br>
-                                    <b><small>+10 điểm</small></b>
-                                </td>
-                                <td>
-                                    4 năm
-                                    <br>
-                                    <b><small>+25 điểm</small></b>
-                                </td>
-                                <td>
-                                    0.43 đơn / năm
-                                    <br>
-                                    <b><small>+10 điểm</small></b>
-                                </td>
-                                <td>
-                                    Còn công nợ
-                                    <br>
-                                    <b><small>+15 điểm</small></b>
-                                </td>
-                                <td>
-                                    <b>60 điểm</b>
-                                </td>
-                                <td>
-                                    <h5 class="fw-bold"><i class="fa fa-arrow-down" style="color: red;"></i> (-10)</h5>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>07/2021</td>
-                                <td>
-                                    32,213,803
-                                    <br>
-                                    <b><small>+10 điểm</small></b>
-                                </td>
-                                <td>
-                                    4 năm
-                                    <br>
-                                    <b><small>+25 điểm</small></b>
-                                </td>
-                                <td>
-                                    0.4 đơn / năm
-                                    <br>
-                                    <b><small>+10 điểm</small></b>
-                                </td>
-                                <td>
-                                    Không còn công nợ
-                                    <br>
-                                    <b><small>+25 điểm</small></b>
-                                </td>
-                                <td>
-                                    <b>70 điểm</b>
-                                </td>
-                                <td>
-                                    __
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>06/2021</td>
-                                <td>
-                                    32,213,803
-                                    <br>
-                                    <b><small>+10 điểm</small></b>
-                                </td>
-                                <td>
-                                    4 năm
-                                    <br>
-                                    <b><small>+25 điểm</small></b>
-                                </td>
-                                <td>
-                                    0.4 đơn / năm
-                                    <br>
-                                    <b><small>+10 điểm</small></b>
-                                </td>
-                                <td>
-                                    Không còn công nợ
-                                    <br>
-                                    <b><small>+25 điểm</small></b>
-                                </td>
-                                <td>
-                                    <b>70 điểm</b>
-                                </td>
-                                <td>
-                                    __
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>05/2021</td>
-                                <td>
-                                    32,213,803
-                                    <br>
-                                    <b><small>+10 điểm</small></b>
-                                </td>
-                                <td>
-                                    4 năm
-                                    <br>
-                                    <b><small>+25 điểm</small></b>
-                                </td>
-                                <td>
-                                    0.4 đơn / năm
-                                    <br>
-                                    <b><small>+10 điểm</small></b>
-                                </td>
-                                <td>
-                                    Không còn công nợ
-                                    <br>
-                                    <b><small>+25 điểm</small></b>
-                                </td>
-                                <td>
-                                    <b>70 điểm</b>
-                                </td>
-                                <td>
-                                    <h5 class="fw-bold"><i class="fa fa-arrow-up" style="color: green;"></i> (+10)</h5>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>04/2021</td>
-                                <td>
-                                    24,192,073
-                                    <br>
-                                    <b><small>+10 điểm</small></b>
-                                </td>
-                                <td>
-                                    4 năm
-                                    <br>
-                                    <b><small>+25 điểm</small></b>
-                                </td>
-                                <td>
-                                    0.38 đơn / năm
-                                    <br>
-                                    <b><small>+10 điểm</small></b>
-                                </td>
-                                <td>
-                                    Còn công nợ
-                                    <br>
-                                    <b><small>+15 điểm</small></b>
-                                </td>
-                                <td>
-                                    <b>60 điểm</b>
-                                </td>
-                                <td>
-                                    __
-                                </td>
-                            </tr>
                             </tbody>
                         </table>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6 col-sm-12 text-left">
-                            <p class="form-control-static">{{vm . m . data . from}} - {{vm . m . data . to}} / {{vm . m . data . total}}</p>                            
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <p class="form-control-static">{{ vm.m.data.from }} - {{ vm.m.data.to }} / {{ vm.m.data.total }}</p>
                         </div>
-                        <div class="col-md-6 col-sm-12 text-right">
+                        <div class="col-md-6 text-right">
                             <uib-pagination 
                                 total-items="vm.m.data.total"
                                 ng-model="vm.m.data.current_page"
