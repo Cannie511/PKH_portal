@@ -33,16 +33,16 @@
                         <table class="table table-striped table_4001">
                             <thead class="bg-primary">                               
                             <tr>
-                                    <th>STT.</th>
-                                    <th>Tên đại lý</th>
-                                    <th class="text-center">Điểm ScoreScard</th>
-                                    <th class="text-center">Chiết Khấu</th>
-                                    <th class="text-center">Voucher quà tặng</th>
-                                    <!-- <th class="text-center">Quà tặng đề xuất</th>
-                                    <th class="text-center">Mô tả</th>
-                                    <th class="text-center">Hình ảnh</th>                                  -->
-                                    <th></th>
-                                </tr>
+                                <th>STT.</th>
+                                <th>Tên đại lý</th>
+                                <th class="text-center">Điểm ScoreScard</th>
+                                <th class="text-center">Chiết Khấu</th>
+                                <th class="text-center">Voucher quà tặng</th>
+                                <!-- <th class="text-center">Quà tặng đề xuất</th>
+                                <th class="text-center">Mô tả</th>
+                                <th class="text-center">Hình ảnh</th>                                  -->
+                                <th></th>
+                            </tr>
                             </thead>
                             <tbody>
                                 <tr ng-repeat="item in vm.m.data.data.data">

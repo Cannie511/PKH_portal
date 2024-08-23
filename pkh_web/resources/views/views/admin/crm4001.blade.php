@@ -49,9 +49,9 @@
                 <div class="wrap">
                     <h4 class="heading heading5 hind-font medium-font-weight c-dashboardInfo__title nameCard" >Số Đại Lý Đạt Tiêu Chí  1
                     <svg class="MuiSvgIcon-root-19" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
-        <path fill="none" d="M0 0h24v24H0z"></path>
-        <path d="M3 17h2v-7H3v7zm4 0h2V7H7v10zm4 0h2V4h-2v13zm4 0h2v-9h-2v9zm4 0h2v-5h-2v5z"></path>
-    </svg>
+                        <path fill="none" d="M0 0h24v24H0z"></path>
+                        <path d="M3 17h2v-7H3v7zm4 0h2V7H7v10zm4 0h2V4h-2v13zm4 0h2v-9h-2v9zm4 0h2v-5h-2v5z"></path>
+                    </svg>
                     </h4>
                     <span class="hind-font caption-12 c-dashboardInfo__count">{{ vm.m.data.storePass_1}} Đại Lý 
                     <button class="btn_listStore" type="button" ng-click="vm.listStoreAvg()"><i class="fas fa-arrow-right"></i>Xem Danh Sách </button>
@@ -61,12 +61,12 @@
 
     
           <div class="c-dashboardInfo col-lg-6 col-md-6 first magin_left">
-    <div class="wrap">
+        <div class="wrap">
         <h4 class="heading heading5 hind-font medium-font-weight c-dashboardInfo__title nameCard">Số Đại Lý Đạt Tiêu Chí 2
         <svg class="MuiSvgIcon-root-19" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
-    <path  d="M12 1C6.48 1 2 5.48 2 11s4.48 10 10 10 10-4.48 10-10S17.52 1 12 1zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
-    <path  d="M12 6v6l4 2"/>
-</svg>
+            <path  d="M12 1C6.48 1 2 5.48 2 11s4.48 10 10 10 10-4.48 10-10S17.52 1 12 1zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+            <path  d="M12 6v6l4 2"/>
+        </svg>
         </h4>
         <span class="hind-font caption-12 c-dashboardInfo__count">{{ vm.m.data.storePass_2}} Đại Lý
         <button class="btn_listStore" type="button" ng-click="vm.listStoreRetention()"><i class="fas fa-arrow-right"></i>Xem Danh Sách </button>
@@ -82,11 +82,11 @@
                 <div class="wrap">
                     <h4 class="heading heading5 hind-font medium-font-weight c-dashboardInfo__title nameCard">Số Đại Lý Đạt Tiêu Chí 3
                     <svg  class="MuiSvgIcon-root-19" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
-    <path d="M7 2h10c1.1 0 2 .9 2 2v16l-3-2-3 2-3-2-3 2V4c0-1.1.9-2 2-2z"/>
-    <line x1="8" y1="6" x2="16" y2="6" stroke="white" stroke-width="2"/>
-    <line x1="8" y1="10" x2="16" y2="10" stroke="white" stroke-width="2"/>
-    <line x1="8" y1="14" x2="16" y2="14" stroke="white" stroke-width="2"/>
-</svg>
+                    <path d="M7 2h10c1.1 0 2 .9 2 2v16l-3-2-3 2-3-2-3 2V4c0-1.1.9-2 2-2z"/>
+                    <line x1="8" y1="6" x2="16" y2="6" stroke="white" stroke-width="2"/>
+                    <line x1="8" y1="10" x2="16" y2="10" stroke="white" stroke-width="2"/>
+                    <line x1="8" y1="14" x2="16" y2="14" stroke="white" stroke-width="2"/>
+                </svg>
                     </h4>
                     <span class="hind-font caption-12 c-dashboardInfo__count ">{{ vm.m.data.storePass_3}} Đại Lý
                         <button class="btn_listStore" type="button" ng-click="vm.listStoreOrderfrequency()"><i class="fas fa-arrow-right"></i>Xem Danh Sách </button></span>

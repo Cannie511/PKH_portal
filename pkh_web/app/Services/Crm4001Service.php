@@ -334,7 +334,7 @@ public function checkDeptAStoreQuarterOfYear($store_id, $year,$quarter)
                     END) > 0 THEN 'Có nợ'
                     ELSE 'Không nợ'
                 END AS debt_status
-            FROM trn_store_payment_status
+                tus
             WHERE store_id = :store_id
             AND YEAR(delivery_date) = :year
              AND MONTH(delivery_date) BETWEEN $startMonth AND $endMonth
@@ -1100,37 +1100,37 @@ public function getStoreCountsByScoreSamePeriod($param,$year, $quarter)
     $sqlParam = ['year' => $SamePeriod,'quarter' => $quarter];
     $sql = "SELECT 
     COALESCE(t.store_count, 0) AS store_count
-FROM (
-    SELECT 45 AS total_score_card UNION ALL
-    SELECT 50 UNION ALL
-    SELECT 55 UNION ALL
-    SELECT 60 UNION ALL
-    SELECT 65 UNION ALL
-    SELECT 70 UNION ALL
-    SELECT 75 UNION ALL
-    SELECT 80 UNION ALL
-    SELECT 85 UNION ALL
-    SELECT 90 UNION ALL
-    SELECT 95 UNION ALL
-    SELECT 100
-) ds
-LEFT JOIN (
-    SELECT total_score_card, COUNT(*) AS store_count
-    FROM store_scores
-    WHERE year = :year AND quarter = :quarter
-    GROUP BY total_score_card
-) t ON ds.total_score_card = t.total_score_card
-ORDER BY ds.total_score_card";
-    
-    $result = DB::select(DB::raw($sql), $sqlParam);
-    
-    $storeCounts = [];
-    foreach ($result as $item) {
-        $storeCounts[] = (int)$item->store_count;
-    }
+    FROM (
+        SELECT 45 AS total_score_card UNION ALL
+        SELECT 50 UNION ALL
+        SELECT 55 UNION ALL
+        SELECT 60 UNION ALL
+        SELECT 65 UNION ALL
+        SELECT 70 UNION ALL
+        SELECT 75 UNION ALL
+        SELECT 80 UNION ALL
+        SELECT 85 UNION ALL
+        SELECT 90 UNION ALL
+        SELECT 95 UNION ALL
+        SELECT 100
+    ) ds
+    LEFT JOIN (
+        SELECT total_score_card, COUNT(*) AS store_count
+        FROM store_scores
+        WHERE year = :year AND quarter = :quarter
+        GROUP BY total_score_card
+    ) t ON ds.total_score_card = t.total_score_card
+    ORDER BY ds.total_score_card";
+        
+        $result = DB::select(DB::raw($sql), $sqlParam);
+        
+        $storeCounts = [];
+        foreach ($result as $item) {
+            $storeCounts[] = (int)$item->store_count;
+        }
 
-    return $storeCounts;
-}
+        return $storeCounts;
+    }
 
 }
 
