@@ -17,11 +17,13 @@ class Crm3020Controller {
         this.UtilsService = UtilsService;
         this.ClientService = ClientService;
         this.RouteService = RouteService;
+        this.currentDate = new Date();
+        this.currentYear = this.currentDate.getFullYear();
         this.can = AclService.can;
         this.m = {
             data: {},
             init: {},
-            selectedYear: null,  // Lưu trữ năm đã chọn
+            selectedYear: this.currentYear,  // Lưu trữ năm đã chọn
             totalScoreCard: {}   // Khởi tạo object để lưu trữ dữ liệu score card
         };
         this.m.store_id = $stateParams.store_id;

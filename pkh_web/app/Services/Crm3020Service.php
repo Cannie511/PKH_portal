@@ -218,15 +218,14 @@ public function getTotalScoreCard($store_id, $year)
 
 public function getYears($param)
 {
-    $sqlParam = [];
-    $sql = "
-        SELECT DISTINCT 
-            YEAR(order_date) AS year
-        FROM trn_store_order
-        WHERE YEAR(order_date) >= 2016
-        ORDER BY year DESC;
-    ";
-    $years = DB::select(DB::raw($sql), $sqlParam);
+    $currentYear = date('Y');
+    $startYear = 2016;
+    
+    // Tạo danh sách các năm từ 2016 đến năm hiện tại
+    $years = [];
+    for ($year = $currentYear; $year >= $startYear; $year--) {
+        $years[] = ['year' => $year];
+    }
 
     return $years;
 }

@@ -9,7 +9,7 @@
     <div class="select">
     <label for="year" style="margin-right: 5px;">Năm Bắt Đầu:</label>
     <select ng-model="vm.m.filter.year" ng-change="vm.doSearch(1)">
-        <option ng-repeat="year in vm.m.years" value="{{ year.year }}">{{ year.year }}</option>
+        <option ng-repeat="year in vm.m.years" ng-value="{{ year.year }}">{{ year.year }}</option>
     </select>
 </div>
 
@@ -17,10 +17,10 @@
     <div class="select">
     <label for="quarter" style="margin-right: 5px; margin-left: 5px">Quý Bắt Đầu:</label>
     <select name="quarter" id="quarter" ng-model="vm.m.filter.quarter" ng-change="vm.doSearch(1)">
-        <option value="1">Quý 1</option>
-        <option value="2">Quý 2</option>
-        <option value="3">Quý 3</option>
-        <option value="4">Quý 4</option>
+        <option ng-value="1">Quý 1</option>
+        <option ng-value="2">Quý 2</option>
+        <option ng-value="3">Quý 3</option>
+        <option ng-value="4">Quý 4</option>
     </select>
 </div>
     
@@ -156,7 +156,7 @@
                                     <th class="text-center">Tiêu chí 2</th>
                                     <th class="text-center">Tiêu chí 3</th>
                                     <th class="text-center">Tiêu chí 4</th>
-                                    <th class="text-center">Tổng</th>
+                                    <th class="text-center">Tổng</th>                                  
                                     <th></th>
                                 </tr>
                             </thead>
@@ -186,10 +186,10 @@
                                     <small><i>{{item.store_id}}</i></small> -->
                                     </td>
                                    
-                                    <td class="text-center">{{+item.order_frequency | currency:'':2}} đơn</td>
+                                    <td class="text-center">{{+item.total_order_count | currency:'':2}} đơn</td>
                                     <td class="text-center">{{item.checkdept ? "Có":"Không"}}</td>
 
-                                    <td class="text-center"><b>{{+item.Sale_score}}</b>
+                                    <td class="text-center"><b>{{+item.sale_score}}</b>
                                     <!-- <td class="text-center"><b>{{+item.total_sale > +item.TotalSales120 ? 25:10}}</b> -->
                                     <br>
                                     <!-- <small><i>{{item.TotalSales80}}</i></small><br>
@@ -199,18 +199,18 @@
                                     <td class="text-center"><b>{{+item.retention ? 25:10}}</b></td>
 
                                     <!-- <td class="text-center"><b>{{+item.order_frequency > +item.countOrderYear120 ? 25:10}}</b> -->
-                                    <td class="text-center"><b>{{+item.Order_score}}</b>
+                                    <td class="text-center"><b>{{+item.order_score}}</b>
                                     <br>
                                     <!-- <small><i>{{item.countOrderYear80}}</i></small><br>
                                     <small><i>{{item.countOrderYear120}}</i></small><br>  -->
 
                                     </td>
-                                    <td class="text-center"><b>{{+item.checkdept ? 15:25}}</b>
+                                    <td class="text-center"><b>{{+item.checkdept ? 15:25}}</b>                                  
                                     <!-- <br>
                                     <small><i>{{item.checkdept}}</i></small> -->
                                     </td>
                                     <!-- <td class="text-center TotalScore_4001"><b>{{ vm.getTotalScore(item.total_sale, item.retention, item.order_frequency, item.checkdept,item.TotalSales120,item.countOrderYear120) }}</b></td> -->
-                                    <td class="text-center TotalScore_4001"><b>{{+item.Total_score_card}}</b></td>
+                                    <td class="text-center TotalScore_4001"><b>{{+item.total_score_card}}</b></td>
                                     <td></td>
                                 </tr>
                             </tbody>

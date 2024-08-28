@@ -7,7 +7,7 @@
     <div class="select">
     <label for="year" style="margin-right: 5px;">Năm Bắt Đầu:</label>
     <select ng-model="vm.m.filter.year" ng-change="vm.doSearch(1)">
-        <option ng-repeat="year in vm.m.years" value="{{ year.year }}">{{ year.year }}</option>
+        <option ng-repeat="year in vm.m.years" ng-value="{{ year.year }}">{{ year.year }}</option>
     </select>
 </div>
 
@@ -16,10 +16,10 @@
     <div class="select">
     <label for="quarter" style="margin-right: 5px; margin-left: 5px">Quý Bắt Đầu:</label>
     <select name="quarter" id="quarter" ng-model="vm.m.filter.quarter" ng-change="vm.doSearch(1)">
-        <option value="1">Quý 1</option>
-        <option value="2">Quý 2</option>
-        <option value="3">Quý 3</option>
-        <option value="4">Quý 4</option>
+        <option ng-value="1">Quý 1</option>
+        <option ng-value="2">Quý 2</option>
+        <option ng-value="3">Quý 3</option>
+        <option ng-value="4">Quý 4</option>
     </select>
 </div>
 </section>

@@ -1,7 +1,6 @@
-
-import {Crm4000Component} from './app/components/crm4000/crm4000.component';
 import { Crm3010Component } from "./app/components/crm3010/crm3010.component";
 import {Crm3000Component} from './app/components/crm3000/crm3000.component';
+import {Crm4000Component} from './app/components/crm4000/crm4000.component';
 import {Crm4001Component} from './app/components/crm4001/crm4001.component';
 import {Crm4002Component} from './app/components/crm4002/crm4002.component';
 import {Crm4003Component} from './app/components/crm4003/crm4003.component';
@@ -193,10 +192,10 @@ import { Crm3020Component } from "./app/components/crm3020/crm3020.component";
 
 angular
     .module("app.components")
-    .component("crm4000", Crm4000Component)
     .component("crm3020", Crm3020Component)
     .component("crm3010", Crm3010Component)
     .component("crm3000", Crm3000Component)
+    .component("crm4000", Crm4000Component)
     .component("crm4001", Crm4001Component)
     .component("crm4002", Crm4002Component)
     .component("crm4003", Crm4003Component)

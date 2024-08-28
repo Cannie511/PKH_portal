@@ -40,7 +40,7 @@
                     <div class="form-group">
                         <label for="year" style="margin-right: 5px;">Năm Bắt Đầu:</label>
                         <select ng-model="vm.m.selectedYear" ng-change="vm.loadDataForYear()" class="form-control d-inline-block" style="width: 150px;">
-                            <option ng-repeat="year in vm.m.years" value="{{ year.year }}">
+                            <option ng-repeat="year in vm.m.years" ng-value="{{ year.year }}">
                                 {{ year.year }}
                             </option>
                         </select>
@@ -92,20 +92,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="row mt-3">
-                        <div class="col-md-6">
-                            <p class="form-control-static">{{ vm.m.data.from }} - {{ vm.m.data.to }} / {{ vm.m.data.total }}</p>
-                        </div>
-                        <div class="col-md-6 text-right">
-                            <uib-pagination 
-                                total-items="vm.m.data.total"
-                                ng-model="vm.m.data.current_page"
-                                items-per-page="vm.m.data.per_page"
-                                ng-change="vm.doSearch(vm.m.data.current_page)"
-                                class="pagination pagination-sm m-t-none m-b-none">
-                            </uib-pagination>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>

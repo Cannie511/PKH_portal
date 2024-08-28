@@ -26,9 +26,10 @@ class Crm4001Controller {
             data: {
                 storeCountsByScore: []
             },
+            // data_scoreCard:{},
             years: [],
-            quarter: this.currentQuarter
         };
+        console.log('Initial quarter value:', this.m.filter.quarter);
     }
 
     $onInit() {
@@ -85,7 +86,7 @@ class Crm4001Controller {
                         data: {
                             labels: ['Tiêu chí Doanh Số', 'Tiêu Chí Thâm Niên', 'Tiêu Chí Tần Suất Đặt', 'Tiêu Chí Công Nợ'],
                             datasets: [{
-                                label: 'Số Lượng Đại Lý', // Tên series
+                                label: 'Số Đại Lý Đạt', // Tên series
                                 data: [this.m.data.storePass_1,this.m.data.storePass_2,this.m.data.storePass_3,this.m.data.storePass_4], // Cập nhật data
                                 fill: false,
                                 borderColor: '#2196f3', // Màu viền
@@ -95,7 +96,7 @@ class Crm4001Controller {
                                 maxBarThickness: 80 // Chiều rộng tối đa của cột
                             },
                             {
-                                label: 'Số Lượng Đại Lý', // Tên series mới
+                                label: 'Tổng Đại Lý', // Tên series mới
                                 data: [this.m.data.CountStore,this.m.data.CountStore,this.m.data.CountStore,this.m.data.CountStore], // Cập nhật data mới
                                 fill: false,
                                 borderColor: '#ff0000', // Màu viền đỏ
@@ -314,7 +315,10 @@ class Crm4001Controller {
         param.page = page;
         param.per_page = 15;
         sessionStorage.crm4001 = angular.toJson(param);
+        console.log('Current quarter:', this.m.filter.quarter);
         this.$log.info('doSearch param', param);
+        
+       
         searchService.post(param)
             .then((response) => {
                 this.m.data = response.plain().data;
@@ -323,6 +327,15 @@ class Crm4001Controller {
             .catch((error) => {
                 this.$log.error('Error in doSearch', error);
             });
+        
+        // searchService.post(param)
+        //     .then((response) => {
+        //         this.m.data_scoreCard = response.plain().data_scoreCard;
+        //         this.$log.info("check data scoreCard search: ", this.m.data_scoreCard);
+        //     })
+        //     .catch((error) => {
+        //         this.$log.error('Error in doSearch', error);
+        //     });
     }
     
 }

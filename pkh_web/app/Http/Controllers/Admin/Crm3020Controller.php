@@ -17,7 +17,7 @@ class Crm3020Controller extends AdminBaseController
     public function postSearch(Request $request)
     {
         $param = $request->all();
-        $year = $request->input('year');
+        $year = $param['year'] ?? date('Y');
         $store_id = $request->input('store_id');
 
         $data = $this->crm3020Service->selectList($param);

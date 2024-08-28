@@ -33,8 +33,7 @@ class Crm4001Controller extends AdminBaseController
     // get year
     $year = $param['year'] ?? date('Y');
     // get quarter
-    $quarter = $param['quarter'] ?? 1;
-    
+    $quarter = $param['quarter'] ?? ceil(date('n') / 3);   
     // Button seach
     if (isset($param['storeName']) && !empty($param['storeName'])) {
         $data = $this->crm4001Service->getDataSeach($param, $year, $param['storeName'], $quarter);
@@ -51,7 +50,7 @@ class Crm4001Controller extends AdminBaseController
     elseif (isset($param['listAboveOrderfrequency']) && $param['listAboveOrderfrequency']) {
         $data = $this->crm4001Service->getDataStoresWithHigherThanAvgOrderFrequency($param, $year, $quarter);
     }
-     // Button had dept
+     // Button pass dept
     elseif (isset($param['listAboveDept']) && $param['listAboveDept']) {
         $data = $this->crm4001Service->getDataStoresWithDebt($param, $year, $quarter);
     }
@@ -73,27 +72,40 @@ class Crm4001Controller extends AdminBaseController
     $countStore = $this->crm4001Service->getCountStoreQuarterOfYear($param,$year,$quarter);
     
 
+
     foreach ($data as $v) {
-        $orderFrequency = $this->crm4001Service->getAvgCountAStoreOrderQuarterOfYear($v->store_id, $year, $quarter);
+        // $orderFrequency = $this->crm4001Service->getAvgCountAStoreOrderQuarterOfYear($v->store_id, $year, $quarter);
         $retentionItem = $this->crm4001Service->getRetention($v->store_id, $year, $quarter);
         $checkdeptItem = $this->crm4001Service->checkDeptAStoreQuarterOfYear($v->store_id, $year, $quarter);
-      
-
+        
+        $dataScoreCard = $this->crm4001Service->getData_ScoreCard_QuarterOfYear($v->store_id, $year, $quarter);
+       
+        if ($dataScoreCard && count($dataScoreCard) > 0) {
+            $scoreCard = $dataScoreCard[0]; // Giả sử $dataScoreCard chứa ít nhất một bản ghi
+            $v->total_score_card = $scoreCard->total_score_card ?? null;
+            $v->sale_score = $scoreCard->sale_score ?? null;
+            $v->order_score = $scoreCard->order_score ?? null;
+        } else {
+            $v->total_score_card = null;
+            $v->sale_score = null;
+            $v->order_score = null;
+        }
+    
         // Goi Ham tinh diem
 
-        $Sale_scoreItem = $this->crm4001Service->getSalesScore($year, $v->store_id, $quarter);
-        $Order_scoreItem = $this->crm4001Service->getOrderScore($year, $v->store_id, $quarter);
+        // $Sale_scoreItem = $this->crm4001Service->getSalesScore($year, $v->store_id, $quarter);
+        // $Order_scoreItem = $this->crm4001Service->getOrderScore($year, $v->store_id, $quarter);
        
-        $Total_score_card = $this->crm4001Service->getTotalScoreCard($year, $v->store_id, $quarter);
+        // $Total_score_card = $this->crm4001Service->getTotalScoreCard($year, $v->store_id, $quarter);
 
-        $v->order_frequency = $orderFrequency;
+        // $v->order_frequency = $orderFrequency;
         $v->retention = $retentionItem;
         $v->checkdept = $checkdeptItem;
       
-        $v->Sale_score = $Sale_scoreItem;
-        $v->Order_score = $Order_scoreItem;
+        // $v->Sale_score = $Sale_scoreItem;
+        // $v->Order_score = $Order_scoreItem;
        
-        $v->Total_score_card = $Total_score_card;
+        // $v->Total_score_card = $Total_score_card;
 
         // Ham Luu điểm số vào cơ sở dữ liệu
 
@@ -123,7 +135,6 @@ class Crm4001Controller extends AdminBaseController
         "storePass_3" => $countpass_Order,
         "storePass_4" => $countpass_Dept,
         "CountStore" =>  $countStore,
-       
     ];
 
     return response()->success($result);

@@ -168,28 +168,36 @@ public function getRetention($store_id, $year, $quarter)
 // Logic code : Sql nhan Year - Quarter tu angular controller ket qua tra ve la 1 List
 public function getData($param, $year, $quarter)
 {
-    $sqlParam = ['year' => $year];
-    
     // Xác định tháng bắt đầu và kết thúc của quý
+    $YearOr = $year;
     switch ($quarter) {
         case 1:
             $startMonth = 1;
             $endMonth = 3;
+            $startMonthOr = 1;
+            $endMonthOr = 3;
             break;
         case 2:
             $startMonth = 4;
             $endMonth = 6;
+            $startMonthOr = 4;
+            $endMonthOr = 6;
             break;
         case 3:
             $startMonth = 7;
             $endMonth = 9;
+            $startMonthOr = 7;
+            $endMonthOr = 9;
             break;
         case 4:
             $startMonth = 10;
             $endMonth = 12;
+            $startMonthOr = 10;
+            $endMonthOr = 12;
             break;
     }
 
+    // Xây dựng câu truy vấn SQL
     $sql = "
         SELECT DISTINCT 
             a.store_id, 
@@ -197,10 +205,16 @@ public function getData($param, $year, $quarter)
             b.address, 
             COALESCE(SUM(CASE 
                 WHEN YEAR(a.order_date) = :year 
-                     AND MONTH(a.order_date) BETWEEN $startMonth AND $endMonth 
+                     AND MONTH(a.order_date) BETWEEN :startMonth AND :endMonth 
                 THEN a.total_with_discount 
                 ELSE 0 
-            END), 0) AS total_sale
+            END), 0) AS total_sale,
+            COALESCE(COUNT(CASE 
+                WHEN YEAR(a.order_date) = :yearOr
+                     AND MONTH(a.order_date) BETWEEN :startMonthOr AND  :endMonthOr
+                THEN a.order_date 
+                ELSE NULL 
+            END) / 3, 0) AS total_order_count
         FROM mst_store b
         LEFT JOIN trn_store_order a ON a.store_id = b.store_id
         WHERE a.order_date IS NOT NULL  
@@ -214,12 +228,24 @@ public function getData($param, $year, $quarter)
             AND lower(b.name) NOT LIKE '%tiki%' 
             AND lower(b.name) NOT LIKE 'a%' 
             AND lower(b.name) NOT LIKE 'anh%'
+        GROUP BY a.store_id, b.name, b.address
+        ORDER BY b.name ASC
     ";
-    $sql .= " GROUP BY a.store_id";
-    $sql .= " ORDER BY b.name ASC";
-    
+
+    // Truyền các tham số cho truy vấn SQL
+    $sqlParam = [
+        'year' => $year,
+        'yearOr' => $YearOr,
+        'startMonth' => $startMonth,
+        'endMonth' => $endMonth,
+        'startMonthOr' => $startMonth,
+        'endMonthOr' => $endMonth,
+    ];
+
+    // Thực thi truy vấn và trả về kết quả
     return $this->pagination12R($sql, $sqlParam, $param);
 }
+
 // Tong doanh so cua tat ca cua hang
 public function getSalesQuarterOfYear($param, $year, $quarter)
 {
@@ -431,15 +457,14 @@ public function checkDeptAStoreQuarterOfYear($store_id, $year,$quarter)
  */
 public function getYears($param)
 {
-    $sqlParam = [];
-    $sql = "
-        SELECT DISTINCT 
-            YEAR(order_date) AS year
-        FROM trn_store_order
-        WHERE YEAR(order_date) >= 2016
-        ORDER BY year DESC;
-    ";
-    $years = DB::select(DB::raw($sql), $sqlParam);
+    $currentYear = date('Y');
+    $startYear = 2016;
+    
+    // Tạo danh sách các năm từ 2016 đến năm hiện tại
+    $years = [];
+    for ($year = $currentYear; $year >= $startYear; $year--) {
+        $years[] = ['year' => $year];
+    }
 
     return $years;
 }
@@ -1341,6 +1366,28 @@ public function getCountStoreQuarterOfYear($param,$year,$quarter)
     $result = DB::select(DB::raw($sql), $sqlParam);
     return !empty($result) ? round($result[0]->store_count, 2) : null;
 }
+
+public function getData_ScoreCard_QuarterOfYear($store_id, $year, $quarter)
+{
+    $sqlParam = ['year' => $year, 'quarter' => $quarter, 'store_id' => $store_id];
+   
+    $sql = "SELECT sale_score, order_score, total_score_card 
+            FROM store_scores
+            WHERE store_id = :store_id
+              AND year = :year
+              AND quarter = :quarter";
+    
+    $list = DB::select(DB::raw($sql), $sqlParam);
+    
+    if (count($list) == 0) {
+        return null;
+    }
+    
+    return $list;
+}
+
+
+
 
 }
 

@@ -29,7 +29,7 @@ class Crm4002Controller extends AdminBaseController
     public function postSearch(Request $request){
         $param = $request->all();
         $year = $param['year'] ?? date('Y');
-        $quarter = $param['quarter'] ?? 1;
+        $quarter = $param['quarter'] ?? ceil(date('n') / 3);   
         $data = $this->crm4002Service->getData($param,$year,$quarter);   
         foreach($data as $v){
             $voucherItem = $this->crm4002Service->getVoucher($v->store_id,$year,$quarter);
