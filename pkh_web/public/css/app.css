@@ -241,6 +241,11 @@ th.sortable .fa-sort {
   color: #ccc;
 }
 
+.ForgotPassword-formContainer {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
 .Footer {
   text-align: center;
   background-color: #F6F9FA;
@@ -272,9 +277,53 @@ th.sortable .fa-sort {
   height: 46px;
 }
 
-.ForgotPassword-formContainer {
-  margin-top: 80px;
-  margin-bottom: 80px;
+.dataTables_filter {
+  float: right;
+}
+
+.dataTables_filter input {
+  margin: 0px 5px 0px 5px;
+}
+
+.dataTables_paginate {
+  float: right;
+}
+
+.dataTables_paginate .pagination {
+  margin: 0px;
+}
+
+#main-content {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+}
+
+.product-list .img-thumb {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.form-group .chosen-container {
+  width: 100% !important;
+  margin-bottom: 1rem;
+}
+
+.pagination {
+  margin: 0px;
+}
+
+.treeview-menu .divider {
+  border-bottom: 1px solid #41575f;
+  margin-left: 15px !important;
+}
+
+.thumb-img-list-item {
+  max-height: 80px;
+  max-width: 80px;
+}
+
+.no-border-radius {
+  border-radius: 0px !important;
 }
 
 .Landing {
@@ -486,55 +535,6 @@ Make sure to remove this when you modify this demo
 }
 
 
-.dataTables_filter {
-  float: right;
-}
-
-.dataTables_filter input {
-  margin: 0px 5px 0px 5px;
-}
-
-.dataTables_paginate {
-  float: right;
-}
-
-.dataTables_paginate .pagination {
-  margin: 0px;
-}
-
-#main-content {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 12px;
-}
-
-.product-list .img-thumb {
-  max-width: 100px;
-  max-height: 100px;
-}
-
-.form-group .chosen-container {
-  width: 100% !important;
-  margin-bottom: 1rem;
-}
-
-.pagination {
-  margin: 0px;
-}
-
-.treeview-menu .divider {
-  border-bottom: 1px solid #41575f;
-  margin-left: 15px !important;
-}
-
-.thumb-img-list-item {
-  max-height: 80px;
-  max-width: 80px;
-}
-
-.no-border-radius {
-  border-radius: 0px !important;
-}
-
 .Login-formContainer {
   margin-top: 80px;
   margin-bottom: 80px;
@@ -727,6 +727,7 @@ Make sure to remove this when you modify this demo
 .total_score_card {
   color: red;
 }
+
 
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap");
@@ -1142,7 +1143,6 @@ Make sure to remove this when you modify this demo
 
 
 
-
 .das0100 canvas {
   width: 100% !important;
   max-width: 800px;
@@ -1196,7 +1196,6 @@ Make sure to remove this when you modify this demo
   background: #ecf0f5;
 }
 
-
 .hrm0150 .custom-marker {
   background: rgba(255, 255, 255, 0.5);
   border: 1px solid rgba(128, 128, 128, 0.2);
@@ -1205,10 +1204,11 @@ Make sure to remove this when you modify this demo
 }
 
 
+
+
 .hrm0153 .btn-checkin, .hrm0153 .btn-checkout {
   height: 100px;
 }
-
 
 
 
@@ -1240,7 +1240,6 @@ Make sure to remove this when you modify this demo
 
 
 
-
 .hrm1111 .freeze-col-2 {
   left: 38 px;
 }
@@ -1252,6 +1251,7 @@ Make sure to remove this when you modify this demo
 .hrm1111 .chosen-container-single {
   width: 250px !important;
 }
+
 
 
 

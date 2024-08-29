@@ -55,18 +55,6 @@ try {
   module = angular.module('app.partials', []);
 }
 module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/pages/footer/footer.page.html',
-    '');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('app.partials');
-} catch (e) {
-  module = angular.module('app.partials', []);
-}
-module.run(['$templateCache', function($templateCache) {
   $templateCache.put('./views/app/pages/forgot-password/forgot-password.page.html',
     '<div class="login-box">\n' +
     '  <div class="login-logo">\n' +
@@ -104,19 +92,7 @@ try {
   module = angular.module('app.partials', []);
 }
 module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/pages/landing/landing.page.html',
-    '<dashboard></dashboard>');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('app.partials');
-} catch (e) {
-  module = angular.module('app.partials', []);
-}
-module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/pages/header/header.page.html',
+  $templateCache.put('./views/app/pages/footer/footer.page.html',
     '');
 }]);
 })();
@@ -135,6 +111,30 @@ module.run(['$templateCache', function($templateCache) {
     '    <div ui-view="main"></div>\n' +
     '</div>\n' +
     '<div ui-view="footer"></div>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/landing/landing.page.html',
+    '<dashboard></dashboard>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/header/header.page.html',
+    '');
 }]);
 })();
 
@@ -902,43 +902,6 @@ try {
   module = angular.module('app.partials', []);
 }
 module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/components/user-lists/user-lists.component.html',
-    '<section class="content-header">\n' +
-    '    <h1>Users <small>Users management</small></h1>\n' +
-    '    <ol class="breadcrumb">\n' +
-    '        <li><a ui-sref="app.landing"><i class="fa fa-dashboard"></i> Home</a></li>\n' +
-    '        <li class="active">User Lists</li>\n' +
-    '    </ol>\n' +
-    '</section>\n' +
-    '<section class="content">\n' +
-    '    <div class="row">\n' +
-    '        <div class="col-md-12">\n' +
-    '            <div class="box box-info">\n' +
-    '                <div class="box-header with-border">\n' +
-    '                    <h3 class="box-title">User List</h3>\n' +
-    '                    <div class="box-tools pull-right">\n' +
-    '                        <a ui-sref="app.adm0110" class="btn btn-success btn-xs"><i class="fa fa-plus"></i>&nbsp;{{\'COM_BTN_NEW\' | translate}}</a>\n' +
-    '                        <!--<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>\n' +
-    '                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>-->\n' +
-    '                    </div>\n' +
-    '                </div>\n' +
-    '                <div class="box-body">\n' +
-    '                    <table datatable="" width="100%" class="table table-striped table-bordered" ng-if="vm.displayTable" dt-options="vm.dtOptions" dt-columns="vm.dtColumns"></table>\n' +
-    '                </div>\n' +
-    '            </div>\n' +
-    '        </div>\n' +
-    '    </div>\n' +
-    '</section>');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('app.partials');
-} catch (e) {
-  module = angular.module('app.partials', []);
-}
-module.run(['$templateCache', function($templateCache) {
   $templateCache.put('./views/app/components/user-edit/user-edit.component.html',
     '<section class="content-header">\n' +
     '    <h1>Users <small>Module description here</small></h1>\n' +
@@ -1006,6 +969,43 @@ module.run(['$templateCache', function($templateCache) {
     '                        <button type="submit" class="btn btn-primary pull-right">Update</button>\n' +
     '                    </div>\n' +
     '                </form>\n' +
+    '            </div>\n' +
+    '        </div>\n' +
+    '    </div>\n' +
+    '</section>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/components/user-lists/user-lists.component.html',
+    '<section class="content-header">\n' +
+    '    <h1>Users <small>Users management</small></h1>\n' +
+    '    <ol class="breadcrumb">\n' +
+    '        <li><a ui-sref="app.landing"><i class="fa fa-dashboard"></i> Home</a></li>\n' +
+    '        <li class="active">User Lists</li>\n' +
+    '    </ol>\n' +
+    '</section>\n' +
+    '<section class="content">\n' +
+    '    <div class="row">\n' +
+    '        <div class="col-md-12">\n' +
+    '            <div class="box box-info">\n' +
+    '                <div class="box-header with-border">\n' +
+    '                    <h3 class="box-title">User List</h3>\n' +
+    '                    <div class="box-tools pull-right">\n' +
+    '                        <a ui-sref="app.adm0110" class="btn btn-success btn-xs"><i class="fa fa-plus"></i>&nbsp;{{\'COM_BTN_NEW\' | translate}}</a>\n' +
+    '                        <!--<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>\n' +
+    '                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>-->\n' +
+    '                    </div>\n' +
+    '                </div>\n' +
+    '                <div class="box-body">\n' +
+    '                    <table datatable="" width="100%" class="table table-striped table-bordered" ng-if="vm.displayTable" dt-options="vm.dtOptions" dt-columns="vm.dtColumns"></table>\n' +
+    '                </div>\n' +
     '            </div>\n' +
     '        </div>\n' +
     '    </div>\n' +

@@ -33,7 +33,7 @@ class Crm4003Service extends BaseService
         $sqlParam = [
             'store_id' => $store_id,
             'quartercurrent' => $currentQuarter,
-            'yearcurrent' => 2020,
+            'yearcurrent' => $currentYear,
         ];
     
         $sql = "
@@ -63,7 +63,7 @@ public function getTotalSale($store_id)
     
     $sqlParam = [
         'store_id' => $store_id,
-        'yearcurrent' => 2020,
+        'yearcurrent' => $currentYear,
         'startMonth' => $startMonth,
         'endMonth' => $endMonth,
     ];
@@ -94,7 +94,7 @@ public function getTotalSaleSamePeriod($store_id)
 
     $startMonth = ($currentQuarter - 1) * 3 + 1; 
     $endMonth = $startMonth + 2; 
-    $lastYear = 2020 -1;
+    $lastYear = $currentYear -1;
 
     $sqlParam = [
         'store_id' => $store_id,
@@ -127,7 +127,7 @@ public function getSaleScore($store_id)
     $sqlParam = [
         'store_id' => $store_id,
         'quartercurrent' => $currentQuarter,
-        'yearcurrent' => 2020,
+        'yearcurrent' => $currentYear,
     ];
 
     $sql = "
@@ -153,7 +153,7 @@ public function getOrderScore($store_id)
     $sqlParam = [
         'store_id' => $store_id,
         'quartercurrent' => $currentQuarter,
-        'yearcurrent' => 2020,
+        'yearcurrent' => $currentYear,
     ];
 
     $sql = "
@@ -179,7 +179,7 @@ public function getOrderFrequencySamePeriod($store_id)
 
     $startMonth = ($currentQuarter - 1) * 3 + 1; 
     $endMonth = $startMonth + 2; 
-    $lastYear = 2020 -1;
+    $lastYear = $currentYear -1;
 
     $sqlParam = [
         'store_id' => $store_id,
@@ -223,7 +223,7 @@ public function getOrderFrequencyCurrent($store_id)
 
     $startMonth = ($currentQuarter - 1) * 3 + 1; 
     $endMonth = $startMonth + 2; 
-    $lastYear = 2020;
+    $lastYear = $currentYear;
 
     $sqlParam = [
         'store_id' => $store_id,
