@@ -19,73 +19,7 @@ class Crm4001Service extends BaseService
     {
         return null;
     }
-// tinh tham nien dai ly
-// Logic code : Lay List Order_date cua cua hang
-//              So sanh khoang thoi gian giua 2 don hang lien tiep > 6 set gia tri ve 0
-//              Sau khi het don hang cuoi thi so sanh khoang thoi gian tu don hang cuoi voi endDate > 6 return 0
-//              Tinh Retention = so thang dat hang lien tuc / 12
-//     public function getRetention($store_id, $year, $quarter)
-// {   
-//     switch ($quarter) {
-//         case 1:
-//             $endQuarter = $year . '-03-31';
-//             break;
-//         case 2:
-//             $endQuarter = $year . '-06-30';
-//             break;
-//         case 3:
-//             $endQuarter = $year . '-09-30';
-//             break;
-//         case 4:
-//             $endQuarter = $year . '-12-31';
-//             break;
-//     }
-//     $endDate = $endQuarter;
-//     $sqlCheck = "
-//         SELECT order_date
-//         FROM trn_store_order
-//         WHERE store_id = :store_id
-//         AND order_date <= :endDate
-//         ORDER BY order_date
-//     ";
-
-//     $orders = DB::select(DB::raw($sqlCheck), ['store_id' => $store_id, 'endDate' => $endDate]);
-
-//     if (count($orders) === 0) {
-//         return 0;
-//     }
-
-//     $retentionStartDate = new \DateTime($orders[0]->order_date);
-//     $previousOrderDate = $retentionStartDate;
-
-//     foreach ($orders as $order) {
-//         $currentOrderDate = new \DateTime($order->order_date);
-//         $diff = $previousOrderDate->diff($currentOrderDate);
-//         $monthsDiff = ($diff->y * 12) + $diff->m;
-
-//         if ($monthsDiff > 6) {
-//             return 0;
-//         }
-
-//         $previousOrderDate = $currentOrderDate;
-//     }
-
-   
-//     $endDateTime = new \DateTime($endDate);
-//     $lastOrderDate = new \DateTime($orders[count($orders) - 1]->order_date);
-//     $diffToEndDate = $lastOrderDate->diff($endDateTime);
-//     $monthsDiffToEndDate = ($diffToEndDate->y * 12) + $diffToEndDate->m;
-
-//     if ($monthsDiffToEndDate > 6) {
-//         return 0;
-//     }
-
-//     $retentionMonths = ($endDateTime->diff($retentionStartDate)->y * 12) + $endDateTime->diff($retentionStartDate)->m;
-//     $retentionYears = floor($retentionMonths / 12);
-
-//     return max(0, $retentionYears);
-// }
-
+// Tinh Tham Nien
 public function getRetention($store_id, $year, $quarter)
 {
     // Nếu năm là 2016, 2017, hoặc 2018 thì trả về false

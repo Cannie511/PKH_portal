@@ -65,7 +65,7 @@
                                         <small><i>{{item.address}}</i></small>
                                     </td>
                                     <td class="text-center" style="color:red"><b>{{item.total_score_card}}<b></td>
-                                    <td class="text-center"><b> 5% </b>     </td>                                                                                         
+                                    <td class="text-center"><b> 50% </b>     </td>                                                                                         
                                     <td class="text-center"><b>{{+item.voucher|currency:'':0}} đ</b></td>
                                     <!-- <td class="text-center"></td>
                                     <td class="text-center"></td>                                              

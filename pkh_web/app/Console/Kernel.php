@@ -33,6 +33,7 @@ class Kernel extends ConsoleKernel
         Commands\Bat9999Command::class,
         Commands\Bat0000Command::class,
         Commands\Bat4001Command::class,
+        Commands\Bat4002Command::class,
     ];
 
     /**
@@ -75,7 +76,8 @@ class Kernel extends ConsoleKernel
 
 
         //    $schedule->command('BAT0000')->everyMinute();
-        $schedule->command('BAT4001')->everyMinute();    
+        $schedule->command('BAT4002')->daily();
+        $schedule->command('BAT4001')->cron('0 0 1 4,7,10,1 *');  // chạy vào 0h sáng ngày 1 các thàng 4,7,10,1  
         $schedule->command('BAT0000')->cron('0 6 15 3,6,9,12 *'); // chạy vào 6h sáng ngày 15 các thàng 3,6,9,12
         // $schedule->command('BAT4001')->daily(); //chay luc 0h
      }
