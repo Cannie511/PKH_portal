@@ -246,6 +246,7 @@ th.sortable .fa-sort {
 
 
 
+
 .cms0210 .img-preview {
   max-width: 240px;
   max-height: 240px;
@@ -255,8 +256,6 @@ th.sortable .fa-sort {
   max-width: 168px;
   max-height: 168px;
 }
-
-
 
 
 
@@ -289,6 +288,8 @@ th.sortable .fa-sort {
 .crm0300-menu .btn-app {
   min-width: 100px;
 }
+
+
 
 
 
@@ -377,7 +378,6 @@ th.sortable .fa-sort {
 
 
 
-
 #crm2510 #imgPreview img {
   max-height: 240px;
 }
@@ -412,7 +412,6 @@ th.sortable .fa-sort {
 .total_score_card {
   color: red;
 }
-
 
 
 @charset "UTF-8";
@@ -828,6 +827,11 @@ th.sortable .fa-sort {
 }
 
 
+
+.ForgotPassword-input {
+  margin-bottom: 0;
+}
+
 .das0100 canvas {
   width: 100% !important;
   max-width: 800px;
@@ -840,10 +844,6 @@ th.sortable .fa-sort {
 
 .das0100 .not-read {
   font-weight: bold;
-}
-
-.ForgotPassword-input {
-  margin-bottom: 0;
 }
 
 .hrm0100 .fc-content {
@@ -890,11 +890,11 @@ th.sortable .fa-sort {
 
 
 
+
+
 .hrm0153 .btn-checkin, .hrm0153 .btn-checkout {
   height: 100px;
 }
-
-
 
 
 
@@ -925,7 +925,6 @@ th.sortable .fa-sort {
 
 
 
-
 .hrm1111 .freeze-col-2 {
   left: 38 px;
 }
@@ -937,6 +936,7 @@ th.sortable .fa-sort {
 .hrm1111 .chosen-container-single {
   width: 250px !important;
 }
+
 
 
 
@@ -996,11 +996,6 @@ th.sortable .fa-sort {
 
 
 
-.ForgotPassword-formContainer {
-  margin-top: 80px;
-  margin-bottom: 80px;
-}
-
 .Footer {
   text-align: center;
   background-color: #F6F9FA;
@@ -1030,6 +1025,11 @@ th.sortable .fa-sort {
 .Footer-logo {
   width: 49px;
   height: 46px;
+}
+
+.ForgotPassword-formContainer {
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 
 
@@ -1241,6 +1241,11 @@ Make sure to remove this when you modify this demo
   }
 }
 
+.Login-formContainer {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
 .dataTables_filter {
   float: right;
 }
@@ -1288,11 +1293,6 @@ Make sure to remove this when you modify this demo
 
 .no-border-radius {
   border-radius: 0px !important;
-}
-
-.Login-formContainer {
-  margin-top: 80px;
-  margin-bottom: 80px;
 }
 
 

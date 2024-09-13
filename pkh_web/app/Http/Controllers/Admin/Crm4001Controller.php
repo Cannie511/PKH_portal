@@ -63,7 +63,7 @@ class Crm4001Controller extends AdminBaseController
     // Count Order 
     $avg_OD = $this->crm4001Service->getCountOrderQuarterOfYear($param, $year, $quarter);
     
-    // count store pass Criteria
+    // count store pass 
     $countpass_TotalSale = $this->crm4001Service->getCountPass_TotalSale_QuarterOfYear($param,$year,$quarter);
     $countpass_Retention = $this->crm4001Service->getCountPass_Retention_QuarterOfYear($param,$year,$quarter);
     $countpass_Order = $this->crm4001Service->getCountPass_Order_QuarterOfYear($param,$year,$quarter);
@@ -74,57 +74,58 @@ class Crm4001Controller extends AdminBaseController
 
 
     foreach ($data as $v) {
-        // $orderFrequency = $this->crm4001Service->getAvgCountAStoreOrderQuarterOfYear($v->store_id, $year, $quarter);
+        // Lấy các giá trị từ service
         $retentionItem = $this->crm4001Service->getRetention($v->store_id, $year, $quarter);
         $checkdeptItem = $this->crm4001Service->checkDeptAStoreQuarterOfYear($v->store_id, $year, $quarter);
-        
+        $saleStoreItem = $this->crm4001Service->getSalesAStoreQuarterOfYear($year, $v->store_id, $quarter);
+        $saleStoreLastYearItem = $this->crm4001Service->getTotalSalesQuarterOfLastYear($year, $v->store_id, $quarter);
+        $orderStoreItem = $this->crm4001Service->getCountOrderAStoreQuarterOfYear($year, $v->store_id, $quarter);
+        $orderStoreLastYearItem = $this->crm4001Service->getCountOrderQuarterOfLastYear($year, $v->store_id, $quarter);
+    
+        // Lấy điểm số từ Data Score Card
         $dataScoreCard = $this->crm4001Service->getData_ScoreCard_QuarterOfYear($v->store_id, $year, $quarter);
-       
         if ($dataScoreCard && count($dataScoreCard) > 0) {
-            $scoreCard = $dataScoreCard[0]; // Giả sử $dataScoreCard chứa ít nhất một bản ghi
+            $scoreCard = $dataScoreCard[0]; // Lấy bản ghi đầu tiên
             $v->total_score_card = $scoreCard->total_score_card ?? null;
             $v->sale_score = $scoreCard->sale_score ?? null;
             $v->order_score = $scoreCard->order_score ?? null;
         } else {
-            $v->total_score_card = null;
-            $v->sale_score = null;
-            $v->order_score = null;
+            $v->total_score_card = $v->sale_score = $v->order_score = null;
         }
     
-        // Goi Ham tinh diem
-
-        // $Sale_scoreItem = $this->crm4001Service->getSalesScore($year, $v->store_id, $quarter);
-        // $Order_scoreItem = $this->crm4001Service->getOrderScore($year, $v->store_id, $quarter);
-       
-        // $Total_score_card = $this->crm4001Service->getTotalScoreCard($year, $v->store_id, $quarter);
-
-        // $v->order_frequency = $orderFrequency;
+        // Gán giá trị retention và dept check
         $v->retention = $retentionItem;
         $v->checkdept = $checkdeptItem;
-      
-        // $v->Sale_score = $Sale_scoreItem;
-        // $v->Order_score = $Order_scoreItem;
-       
-        // $v->Total_score_card = $Total_score_card;
-
-        // Ham Luu điểm số vào cơ sở dữ liệu
-
-        // StoreScore::updateOrCreate(
-        //     [
-        //         'store_id' => $v->store_id,
-        //         'year' => $year,
-        //         'quarter' => $quarter,
-        //     ],
-        //     [
-        //         'sale_score' => $Sale_scoreItem,
-        //         'retention_score' => $Retention_scoreItem,
-        //         'order_score' => $Order_scoreItem,
-        //         'dept_score' => $Dept_scoreItem,
-        //         'total_score_card' => $Total_score_card,
-        //         'isUsed' => false, // giá trị mặc định là false
-        //     ]
-        // );
+    
+        // Tính toán điểm số
+        $dept_score = $checkdeptItem ? 15 : 25;
+        $retention_score = $retentionItem ? 15 : 25;
+        
+        $order_score = ($orderStoreItem > $orderStoreLastYearItem * 1.2) ? 25 : 
+                       (($orderStoreItem < $orderStoreLastYearItem * 1.2 && $orderStoreItem > $orderStoreLastYearItem * 0.8) ? 10 : 0);
+    
+        $sale_score = ($saleStoreItem > $saleStoreLastYearItem * 1.2) ? 25 : 
+                      (($saleStoreItem < $saleStoreLastYearItem * 1.2 && $saleStoreItem > $saleStoreLastYearItem * 0.8) ? 10 : 0);
+        
+        $total_score_card = $dept_score + $retention_score + $order_score + $sale_score;
+    
+        // Lưu điểm số vào cơ sở dữ liệu
+        StoreScore::updateOrCreate(
+            [
+                'store_id' => $v->store_id,
+                'year' => $year,
+                'quarter' => $quarter,
+            ],
+            [
+                'sale_score' => $sale_score,
+                'order_score' => $order_score,
+                'dept_score' => $dept_score,
+                'retention_score' => $retention_score,
+                'total_score_card' => $total_score_card,
+            ]
+        );
     }
+    
 
     $result = [
         "data" => $data,

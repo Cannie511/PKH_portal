@@ -659,43 +659,6 @@ try {
   module = angular.module('app.partials', []);
 }
 module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/components/user-lists/user-lists.component.html',
-    '<section class="content-header">\n' +
-    '    <h1>Users <small>Users management</small></h1>\n' +
-    '    <ol class="breadcrumb">\n' +
-    '        <li><a ui-sref="app.landing"><i class="fa fa-dashboard"></i> Home</a></li>\n' +
-    '        <li class="active">User Lists</li>\n' +
-    '    </ol>\n' +
-    '</section>\n' +
-    '<section class="content">\n' +
-    '    <div class="row">\n' +
-    '        <div class="col-md-12">\n' +
-    '            <div class="box box-info">\n' +
-    '                <div class="box-header with-border">\n' +
-    '                    <h3 class="box-title">User List</h3>\n' +
-    '                    <div class="box-tools pull-right">\n' +
-    '                        <a ui-sref="app.adm0110" class="btn btn-success btn-xs"><i class="fa fa-plus"></i>&nbsp;{{\'COM_BTN_NEW\' | translate}}</a>\n' +
-    '                        <!--<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>\n' +
-    '                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>-->\n' +
-    '                    </div>\n' +
-    '                </div>\n' +
-    '                <div class="box-body">\n' +
-    '                    <table datatable="" width="100%" class="table table-striped table-bordered" ng-if="vm.displayTable" dt-options="vm.dtOptions" dt-columns="vm.dtColumns"></table>\n' +
-    '                </div>\n' +
-    '            </div>\n' +
-    '        </div>\n' +
-    '    </div>\n' +
-    '</section>');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('app.partials');
-} catch (e) {
-  module = angular.module('app.partials', []);
-}
-module.run(['$templateCache', function($templateCache) {
   $templateCache.put('./views/app/components/user-edit/user-edit.component.html',
     '<section class="content-header">\n' +
     '    <h1>Users <small>Module description here</small></h1>\n' +
@@ -777,6 +740,43 @@ try {
   module = angular.module('app.partials', []);
 }
 module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/components/user-lists/user-lists.component.html',
+    '<section class="content-header">\n' +
+    '    <h1>Users <small>Users management</small></h1>\n' +
+    '    <ol class="breadcrumb">\n' +
+    '        <li><a ui-sref="app.landing"><i class="fa fa-dashboard"></i> Home</a></li>\n' +
+    '        <li class="active">User Lists</li>\n' +
+    '    </ol>\n' +
+    '</section>\n' +
+    '<section class="content">\n' +
+    '    <div class="row">\n' +
+    '        <div class="col-md-12">\n' +
+    '            <div class="box box-info">\n' +
+    '                <div class="box-header with-border">\n' +
+    '                    <h3 class="box-title">User List</h3>\n' +
+    '                    <div class="box-tools pull-right">\n' +
+    '                        <a ui-sref="app.adm0110" class="btn btn-success btn-xs"><i class="fa fa-plus"></i>&nbsp;{{\'COM_BTN_NEW\' | translate}}</a>\n' +
+    '                        <!--<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>\n' +
+    '                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>-->\n' +
+    '                    </div>\n' +
+    '                </div>\n' +
+    '                <div class="box-body">\n' +
+    '                    <table datatable="" width="100%" class="table table-striped table-bordered" ng-if="vm.displayTable" dt-options="vm.dtOptions" dt-columns="vm.dtColumns"></table>\n' +
+    '                </div>\n' +
+    '            </div>\n' +
+    '        </div>\n' +
+    '    </div>\n' +
+    '</section>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
   $templateCache.put('./views/app/components/user-permissions/user-permissions.component.html',
     '<section class="content-header">\n' +
     '  <h1>User Permissions <small>Module description here</small></h1>\n' +
@@ -798,69 +798,6 @@ module.run(['$templateCache', function($templateCache) {
     '    </div>\n' +
     '    <div class="box-footer">\n' +
     '      Footer\n' +
-    '    </div>\n' +
-    '  </div>\n' +
-    '</section>\n' +
-    '');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('app.partials');
-} catch (e) {
-  module = angular.module('app.partials', []);
-}
-module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/components/user-permissions-add/user-permissions-add.component.html',
-    '<section class="content-header">\n' +
-    '  <h1>Users <small>Module description here</small></h1>\n' +
-    '  <ol class="breadcrumb">\n' +
-    '    <li><a ui-sref="app.landing"><i class="fa fa-dashboard"></i> Home</a></li>\n' +
-    '    <li><a ui-sref="app.userpermissions">Permission Lists</a></li>\n' +
-    '    <li class="active">Add New User Permission</li>\n' +
-    '  </ol>\n' +
-    '</section>\n' +
-    '<section class="content">\n' +
-    '  <div class="row">\n' +
-    '    <div class="col-sm-12 col-md-7">\n' +
-    '      <div class="box box-primary">\n' +
-    '        <div class="box-header with-border">\n' +
-    '          <h3 class="box-title">Add New User Permission</h3>\n' +
-    '        </div>\n' +
-    '        <form class="form-horizontal" name="permissionForm" ng-submit="vm.save(permissionForm.$valid, permissionForm)" novalidate>\n' +
-    '          <div class="box-body">\n' +
-    '            <div ng-if="vm.alerts" class="alert alert-{{alert.type}}" ng-repeat="alert in vm.alerts">\n' +
-    '              <h4>{{alert.title}}</h4>\n' +
-    '              <p>{{alert.msg}}</p>\n' +
-    '            </div>\n' +
-    '            <div class="form-group" ng-class="{ \'has-error\': permissionForm.name.$invalid && ( vm.formSubmitted || permissionForm.name.$touched) }">\n' +
-    '              <label for="inputEmail3" class="col-sm-2 control-label">Name</label>\n' +
-    '              <div class="col-sm-10">\n' +
-    '                <input type="text" class="form-control" ng-model="vm.name" name="name" placeholder="Name" required>\n' +
-    '                <p ng-show="permissionForm.name.$error.required && ( vm.formSubmitted || permissionForm.name.$touched)" class="help-block">Name is required.</p>\n' +
-    '              </div>\n' +
-    '            </div>\n' +
-    '            <div class="form-group" ng-class="{ \'has-error\': permissionForm.slug.$invalid && ( vm.formSubmitted || permissionForm.slug.$touched) }">\n' +
-    '              <label for="inputPassword3" class="col-sm-2 control-label">Slug</label>\n' +
-    '              <div class="col-sm-10">\n' +
-    '                <input type="text" class="form-control" ng-model="vm.slug" name="slug" placeholder="Slug" required>\n' +
-    '                <p ng-show="permissionForm.slug.$error.required && ( vm.formSubmitted || permissionForm.slug.$touched)" class="help-block">Slug is required.</p>\n' +
-    '              </div>\n' +
-    '            </div>\n' +
-    '            <div class="form-group">\n' +
-    '              <label for="inputPassword3" class="col-sm-2 control-label">Description</label>\n' +
-    '              <div class="col-sm-10">\n' +
-    '                <textarea class="form-control" rows="3" ng-model="vm.description" name="description" placeholder="Description"></textarea>\n' +
-    '              </div>\n' +
-    '            </div>\n' +
-    '          </div>\n' +
-    '          <div class="box-footer">\n' +
-    '            <a ui-sref="app.userpermissions" class="btn btn-default"><i class="fa fa-angle-double-left"></i> Back</a>\n' +
-    '            <button type="submit" class="btn btn-primary pull-right">Add New</button>\n' +
-    '          </div>\n' +
-    '        </form>\n' +
-    '      </div>\n' +
     '    </div>\n' +
     '  </div>\n' +
     '</section>\n' +
@@ -921,6 +858,69 @@ module.run(['$templateCache', function($templateCache) {
     '          <div class="box-footer">\n' +
     '            <a ui-sref="app.userpermissions" class="btn btn-default"><i class="fa fa-angle-double-left"></i> Back</a>\n' +
     '            <button type="submit" class="btn btn-primary pull-right">Update</button>\n' +
+    '          </div>\n' +
+    '        </form>\n' +
+    '      </div>\n' +
+    '    </div>\n' +
+    '  </div>\n' +
+    '</section>\n' +
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/components/user-permissions-add/user-permissions-add.component.html',
+    '<section class="content-header">\n' +
+    '  <h1>Users <small>Module description here</small></h1>\n' +
+    '  <ol class="breadcrumb">\n' +
+    '    <li><a ui-sref="app.landing"><i class="fa fa-dashboard"></i> Home</a></li>\n' +
+    '    <li><a ui-sref="app.userpermissions">Permission Lists</a></li>\n' +
+    '    <li class="active">Add New User Permission</li>\n' +
+    '  </ol>\n' +
+    '</section>\n' +
+    '<section class="content">\n' +
+    '  <div class="row">\n' +
+    '    <div class="col-sm-12 col-md-7">\n' +
+    '      <div class="box box-primary">\n' +
+    '        <div class="box-header with-border">\n' +
+    '          <h3 class="box-title">Add New User Permission</h3>\n' +
+    '        </div>\n' +
+    '        <form class="form-horizontal" name="permissionForm" ng-submit="vm.save(permissionForm.$valid, permissionForm)" novalidate>\n' +
+    '          <div class="box-body">\n' +
+    '            <div ng-if="vm.alerts" class="alert alert-{{alert.type}}" ng-repeat="alert in vm.alerts">\n' +
+    '              <h4>{{alert.title}}</h4>\n' +
+    '              <p>{{alert.msg}}</p>\n' +
+    '            </div>\n' +
+    '            <div class="form-group" ng-class="{ \'has-error\': permissionForm.name.$invalid && ( vm.formSubmitted || permissionForm.name.$touched) }">\n' +
+    '              <label for="inputEmail3" class="col-sm-2 control-label">Name</label>\n' +
+    '              <div class="col-sm-10">\n' +
+    '                <input type="text" class="form-control" ng-model="vm.name" name="name" placeholder="Name" required>\n' +
+    '                <p ng-show="permissionForm.name.$error.required && ( vm.formSubmitted || permissionForm.name.$touched)" class="help-block">Name is required.</p>\n' +
+    '              </div>\n' +
+    '            </div>\n' +
+    '            <div class="form-group" ng-class="{ \'has-error\': permissionForm.slug.$invalid && ( vm.formSubmitted || permissionForm.slug.$touched) }">\n' +
+    '              <label for="inputPassword3" class="col-sm-2 control-label">Slug</label>\n' +
+    '              <div class="col-sm-10">\n' +
+    '                <input type="text" class="form-control" ng-model="vm.slug" name="slug" placeholder="Slug" required>\n' +
+    '                <p ng-show="permissionForm.slug.$error.required && ( vm.formSubmitted || permissionForm.slug.$touched)" class="help-block">Slug is required.</p>\n' +
+    '              </div>\n' +
+    '            </div>\n' +
+    '            <div class="form-group">\n' +
+    '              <label for="inputPassword3" class="col-sm-2 control-label">Description</label>\n' +
+    '              <div class="col-sm-10">\n' +
+    '                <textarea class="form-control" rows="3" ng-model="vm.description" name="description" placeholder="Description"></textarea>\n' +
+    '              </div>\n' +
+    '            </div>\n' +
+    '          </div>\n' +
+    '          <div class="box-footer">\n' +
+    '            <a ui-sref="app.userpermissions" class="btn btn-default"><i class="fa fa-angle-double-left"></i> Back</a>\n' +
+    '            <button type="submit" class="btn btn-primary pull-right">Add New</button>\n' +
     '          </div>\n' +
     '        </form>\n' +
     '      </div>\n' +
@@ -1229,6 +1229,18 @@ try {
   module = angular.module('app.partials', []);
 }
 module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/footer/footer.page.html',
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
   $templateCache.put('./views/app/pages/forgot-password/forgot-password.page.html',
     '<div class="login-box">\n' +
     '  <div class="login-logo">\n' +
@@ -1266,18 +1278,6 @@ try {
   module = angular.module('app.partials', []);
 }
 module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/pages/footer/footer.page.html',
-    '');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('app.partials');
-} catch (e) {
-  module = angular.module('app.partials', []);
-}
-module.run(['$templateCache', function($templateCache) {
   $templateCache.put('./views/app/pages/header/header.page.html',
     '');
 }]);
@@ -1292,23 +1292,6 @@ try {
 module.run(['$templateCache', function($templateCache) {
   $templateCache.put('./views/app/pages/landing/landing.page.html',
     '<dashboard></dashboard>');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('app.partials');
-} catch (e) {
-  module = angular.module('app.partials', []);
-}
-module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('./views/app/pages/layout/layout.page.html',
-    '<toaster-container toaster-options="{\'time-out\': 5000, \'close-button\':true, \'animation-class\': \'toast-top-right\'}"></toaster-container>\n' +
-    '<div ui-view="header"></div>\n' +
-    '<div id="main-content" class="content-wrapper">\n' +
-    '    <div ui-view="main"></div>\n' +
-    '</div>\n' +
-    '<div ui-view="footer"></div>');
 }]);
 })();
 
@@ -1346,6 +1329,23 @@ module.run(['$templateCache', function($templateCache) {
     '        </div>\n' +
     '    </div>\n' +
     '</div>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('app.partials');
+} catch (e) {
+  module = angular.module('app.partials', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('./views/app/pages/layout/layout.page.html',
+    '<toaster-container toaster-options="{\'time-out\': 5000, \'close-button\':true, \'animation-class\': \'toast-top-right\'}"></toaster-container>\n' +
+    '<div ui-view="header"></div>\n' +
+    '<div id="main-content" class="content-wrapper">\n' +
+    '    <div ui-view="main"></div>\n' +
+    '</div>\n' +
+    '<div ui-view="footer"></div>');
 }]);
 })();
 

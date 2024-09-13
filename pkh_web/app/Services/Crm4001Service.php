@@ -631,6 +631,44 @@ public function getTotalSalesQuarterOfLastYear80($year,$store_id,$quarter)
     return count($list) === 0 ? null : $list[0]->Total_OD;
 }
 
+// Doanh so cung ky quy truoc
+public function getTotalSalesQuarterOfLastYear($year,$store_id,$quarter)
+{   
+    $previousYear = $year - 1;
+    switch ($quarter) {
+        case 1:
+            $startMonth = 1;
+            $endMonth = 3;
+            break;
+        case 2:
+            $startMonth = 4;
+            $endMonth = 6;
+            break;
+        case 3:
+            $startMonth = 7;
+            $endMonth = 9;
+            break;
+        case 4:
+            $startMonth = 10;
+            $endMonth = 12;
+            break;
+    }
+    $sqlParam = ['year' => $previousYear, 'store_id' => $store_id];
+    $sql = "
+        SELECT 
+            SUM(total_with_discount) AS Total_OD
+        FROM 
+            trn_store_order 
+        WHERE 
+            YEAR(order_date) = :year 
+             AND MONTH(order_date) BETWEEN $startMonth AND $endMonth 
+            AND store_id = :store_id
+    ";
+
+    $list = DB::select(DB::raw($sql), $sqlParam);
+    return count($list) === 0 ? null : $list[0]->Total_OD;
+}
+
 // Lay doanh so cua mot cua hang
 public function getSalesAStoreQuarterOfYear($year,$store_id,$quarter)
 {
@@ -689,6 +727,56 @@ public function getCountOrderAStoreQuarterOfYear($year, $store_id,$quarter)
             break;
     }
     $sqlParam = ['year' => $year, 'store_id' => $store_id];
+    $sql = "
+        SELECT 
+            (SUM(order_count)/3) AS desired_OD
+        FROM (
+            SELECT 
+                b.store_id, 
+                COUNT(a.order_date) AS order_count
+            FROM 
+                mst_store b
+            LEFT JOIN 
+                trn_store_order a ON a.store_id = b.store_id
+            WHERE 
+                a.order_date IS NOT NULL
+                AND YEAR(order_date) = :year
+                AND MONTH(order_date) BETWEEN $startMonth AND $endMonth 
+                AND b.store_id = :store_id
+            GROUP BY 
+                b.store_id
+            HAVING 
+                COUNT(a.order_date) > 0
+        ) AS store_order_counts;
+    ";
+
+    $list = DB::select(DB::raw($sql), $sqlParam);
+    return count($list) === 0 ? null : $list[0]->desired_OD;
+}
+
+// Tan suat dat cua mot cua hang cung ky
+public function getCountOrderQuarterOfLastYear($year, $store_id,$quarter)
+{
+    $previousYear = $year - 1;
+    switch ($quarter) {
+        case 1:
+            $startMonth = 1;
+            $endMonth = 3;
+            break;
+        case 2:
+            $startMonth = 4;
+            $endMonth = 6;
+            break;
+        case 3:
+            $startMonth = 7;
+            $endMonth = 9;
+            break;
+        case 4:
+            $startMonth = 10;
+            $endMonth = 12;
+            break;
+    }
+    $sqlParam = ['year' => $previousYear, 'store_id' => $store_id];
     $sql = "
         SELECT 
             (SUM(order_count)/3) AS desired_OD
