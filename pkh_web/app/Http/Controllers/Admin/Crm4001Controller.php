@@ -99,7 +99,7 @@ class Crm4001Controller extends AdminBaseController
     
         // Tính toán điểm số
         $dept_score = $checkdeptItem ? 15 : 25;
-        $retention_score = $retentionItem ? 15 : 25;
+        $retention_score = $retentionItem ? 25 : 10;
         
         $order_score = ($orderStoreItem > $orderStoreLastYearItem * 1.2) ? 25 : 
                        (($orderStoreItem < $orderStoreLastYearItem * 1.2 && $orderStoreItem > $orderStoreLastYearItem * 0.8) ? 10 : 0);

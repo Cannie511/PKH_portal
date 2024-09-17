@@ -138,12 +138,23 @@ public function getStoreBatch($year, $quarter, $limit, $offset)
     $sql = "SELECT store_id, sale_score, order_score, dept_score FROM store_scores WHERE year = ? AND quarter = ? LIMIT ? OFFSET ?";
     return DB::select(DB::raw($sql), $sqlParam);
 }
-// update retention và total_score_card
-public function UpdatetoTable($store_id, $year, $quarter,$retention_score, $total)
+
+// update retention, total_score_card, và isUsed
+public function UpdatetoTable($store_id, $year, $quarter, $retention_score, $total)
 {
     $sqlParam = array();
-    $sql = "UPDATE store_scores as a set retention_score = ?, total_score_card = ? WHERE store_id = ? and a.year = ? and a.quarter = ? ";
-    $sqlParam = [$retention_score,$total,$store_id,$year,$quarter ];
+    $sql = "UPDATE store_scores as a 
+            SET retention_score = ?, 
+                total_score_card = ?, 
+                isUsed = ? 
+            WHERE store_id = ? 
+            AND a.year = ? 
+            AND a.quarter = ?";
+            
+    // Giá trị mặc định của isUsed là false
+    $isUsed = false;
+
+    $sqlParam = [$retention_score, $total, $isUsed, $store_id, $year, $quarter];
     DB::update($sql, $sqlParam);
 }
 }
