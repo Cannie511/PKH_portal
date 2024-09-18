@@ -37,11 +37,12 @@
                                     <th>STT.</th>
                                     <th>Tên đại lý</th>
                                     <th class="text-center">Điểm ScoreScard</th>
-                                    <th class="text-center">Chiết Khấu</th>
+                                    <th class="text-center">Sản Phẩm Chiết Khấu</th>
                                     <th class="text-center">Voucher quà tặng</th>
-                                    <!-- <th class="text-center">Quà tặng đề xuất</th>
-                                    <th class="text-center">Mô tả</th>
-                                    <th class="text-center">Hình ảnh</th>                                  -->
+                                    <th class="text-center">Quà tặng đề xuất</th> 
+                                    <th class="text-center">Sử dụng</th>                          
+                                    <!-- 
+                                    <th class="text-center">Hình ảnh</th>                                   -->
                                     <th></th>
                                 </tr>
                             </thead>
@@ -67,6 +68,8 @@
                                     <td class="text-center" style="color:red"><b>{{item.total_score_card}}<b></td>
                                     <td class="text-center"><b> 50% </b>     </td>                                                                                         
                                     <td class="text-center"><b>{{+item.voucher|currency:'':0}} đ</b></td>
+                                    <td class="text-center"><b>{{item.promotion}}</b></td>
+                                    <td class="text-center"><b>{{item.isUsed ? "Đã sửa dụng" : "Chưa sử dụng"}}</b></td>
                                     <!-- <td class="text-center"></td>
                                     <td class="text-center"></td>                                              
                                     <td class="text-center"></td>                                                                                                -->
